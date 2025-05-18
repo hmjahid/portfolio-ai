@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Slider } from "@/components/ui/slider";
+import { Code, Server, Monitor, Cloud } from "lucide-react";
 
 interface Skill {
   name: string;
@@ -17,6 +18,8 @@ interface Skill {
 
 interface SkillCategory {
   title: string;
+  icon?: React.ReactNode;
+  gradient?: string;
   skills: Skill[];
 }
 
@@ -28,6 +31,8 @@ const Skills = () => {
   const categories: SkillCategory[] = [
     {
       title: 'WordPress',
+      icon: <Code className="h-6 w-6" />,
+      gradient: "from-blue-500 to-blue-600",
       skills: [
         { name: 'WordPress Development', level: 95 },
         { name: 'WooCommerce', level: 90 },
@@ -41,6 +46,8 @@ const Skills = () => {
     },
     {
       title: 'Backend Development',
+      icon: <Server className="h-6 w-6" />,
+      gradient: "from-purple-500 to-purple-600",
       skills: [
         { name: 'PHP 8.x', level: 95 },
         { name: 'Laravel', level: 90 },
@@ -54,6 +61,8 @@ const Skills = () => {
     },
     {
       title: 'Frontend',
+      icon: <Monitor className="h-6 w-6" />,
+      gradient: "from-green-500 to-green-600",
       skills: [
         { name: 'HTML5', level: 95 },
         { name: 'CSS3/SCSS', level: 90 },
@@ -67,6 +76,8 @@ const Skills = () => {
     },
     {
       title: 'DevOps',
+      icon: <Cloud className="h-6 w-6" />,
+      gradient: "from-orange-500 to-orange-600",
       skills: [
         { name: 'Git', level: 90 },
         { name: 'Docker', level: 85 },
@@ -150,42 +161,79 @@ const Skills = () => {
   );
 
   return (
-    <section ref={sectionRef} id="skills" className="section-padding bg-white">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="section-title">Skills & Expertise</h2>
+    <section ref={sectionRef} id="skills" className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="section-title"
+        >
+          Skills & Expertise
+        </motion.h2>
         
-        <div className="flex flex-wrap gap-4 mb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex flex-wrap gap-4 mb-12 justify-start"
+        >
           {categories.map((category) => (
-            <button
+            <motion.button
               key={category.title}
               onClick={() => handleCategoryChange(category.title)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                 activeCategory === category.title.toLowerCase()
-                  ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white shadow-md'
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
+                  ? `bg-gradient-to-r ${category.gradient} text-white shadow-lg`
+                  : 'bg-white text-gray-600 hover:bg-gray-100 shadow-md'
               }`}
             >
+              {category.icon}
               {category.title}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {categories
             .find(cat => cat.title.toLowerCase() === activeCategory)
-            ?.skills.map((skill) => (
+            ?.skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="font-semibold">{skill.name}</h3>
-                  <span className="text-sm text-gray-500">{progressValues[skill.name] || 0}%</span>
+                <div className="flex justify-between items-center mb-3">
+                  <h3 className="font-semibold text-gray-800">{skill.name}</h3>
+                  <motion.span 
+                    className="text-sm font-medium bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    {progressValues[skill.name] || 0}%
+                  </motion.span>
                 </div>
-                <Progress value={progressValues[skill.name] || 0} className="h-2" />
+                <div className="relative">
+                  <Progress 
+                    value={progressValues[skill.name] || 0} 
+                    className="h-2 bg-gray-100"
+                  />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-portfolio-blue to-blue-600 rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: progressValues[skill.name] ? progressValues[skill.name] / 100 : 0 }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                  />
+                </div>
               </motion.div>
             ))}
         </div>

@@ -177,7 +177,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="space-y-8"
+            className="flex flex-col h-full"
           >
             <div className="relative w-full h-48 mb-8 overflow-hidden rounded-xl shadow-lg">
               <img 
@@ -188,7 +188,7 @@ const Contact = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-portfolio-blue/30 to-blue-600/30"></div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex-grow">
               <h3 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">Get In Touch</h3>
               <p className="text-gray-700 mb-8 leading-relaxed">
                 Have a project in mind or want to discuss potential opportunities?
@@ -259,7 +259,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white p-8 rounded-xl shadow-lg border border-gray-100"
+            className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 h-full"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}

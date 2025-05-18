@@ -7,49 +7,155 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-blue-50"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.15),transparent_50%)]"></div>
+      
+      {/* Animated Background Shapes */}
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          rotate: [0, 5, 0],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          repeatType: "reverse"
+        }}
+        className="absolute top-1/4 -left-24 w-96 h-96 bg-portfolio-blue/5 rounded-full blur-3xl"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.3, 1],
+          rotate: [0, -5, 0],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          repeatType: "reverse"
+        }}
+        className="absolute bottom-1/4 -right-24 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl"
+      />
       
       <div className="container mx-auto px-4 md:px-6 relative">
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-16">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-10 md:mb-0 md:w-1/2"
+            className="md:w-1/2 space-y-8"
           >
-            <motion.h2 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl md:text-2xl font-medium text-portfolio-blue mb-3"
+              className="flex items-center gap-3"
             >
-              Hello, I'm
-            </motion.h2>
+              <div className="h-1 w-12 bg-gradient-to-r from-portfolio-blue to-blue-600 rounded-full"></div>
+              <span className="text-portfolio-blue font-medium tracking-wider">
+                Welcome to my portfolio
+              </span>
+            </motion.div>
+
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
             >
-              <span className="bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">
-                Md Jahid Hasan
-              </span>
+              <motion.span 
+                className="relative inline-flex items-center"
+              >
+                <span className="relative inline-flex items-center">
+                  <span className="bg-gradient-to-r from-portfolio-blue via-blue-500 to-blue-600 bg-clip-text text-transparent inline-flex items-center">
+                    <motion.div
+                      className="inline-block overflow-hidden"
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{
+                        duration: 1.5,
+                        ease: "easeInOut",
+                        delay: 0.5
+                      }}
+                    >
+                      <motion.span
+                        className="inline-block whitespace-nowrap"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                          duration: 0.1,
+                          delay: 0.5
+                        }}
+                      >
+                        MD JAHID HASAN
+                      </motion.span>
+                    </motion.div>
+                    <motion.span
+                      className="inline-block w-1 h-12 bg-gradient-to-r from-portfolio-blue to-blue-600 ml-1"
+                      initial={{ opacity: 1 }}
+                      animate={{ 
+                        opacity: [1, 0, 1, 0],
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        times: [0, 0.33, 0.66, 1],
+                        delay: 0.5
+                      }}
+                    />
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-portfolio-blue/20 via-blue-500/20 to-blue-600/20 blur-xl"
+                    animate={{
+                      opacity: [0.3, 0.6, 0.3],
+                      scale: [1, 1.05, 1],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut"
+                    }}
+                  />
+                  <motion.div
+                    className="absolute -inset-1 bg-gradient-to-r from-portfolio-blue/10 via-blue-500/10 to-blue-600/10 rounded-lg"
+                    animate={{
+                      opacity: [0.2, 0.4, 0.2],
+                      scale: [1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut"
+                    }}
+                  />
+                </span>
+              </motion.span>
             </motion.h1>
-            <motion.p 
+
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-xl md:text-2xl font-medium text-gray-600 mb-6"
+              className="flex items-center gap-4"
             >
-              WordPress Developer & DevOps Enthusiast
-            </motion.p>
+              <div className="h-12 w-12 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 flex items-center justify-center text-white font-bold text-xl">
+                WD
+              </div>
+              <div className="h-12 w-12 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 flex items-center justify-center text-white font-bold text-xl">
+                DE
+              </div>
+              <div className="h-px w-12 bg-gradient-to-r from-portfolio-blue to-blue-600"></div>
+              <span className="text-xl font-medium text-gray-600">
+                WordPress Developer & DevOps Enthusiast
+              </span>
+            </motion.div>
+
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="text-gray-600 mb-8 max-w-lg leading-relaxed"
+              className="text-gray-600 text-lg leading-relaxed max-w-lg"
             >
               Passionate about creating user-friendly websites using WordPress and modern web technologies. 
               Experienced in theme development, plugin customization, and implementing DevOps practices.
@@ -63,18 +169,18 @@ const Hero = () => {
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
-                  className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
                   asChild
                 >
                   <a href="#contact">
-                    Hire Me <ArrowRight className="ml-2 h-4 w-4" />
+                    Hire Me <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
                   variant="outline" 
-                  className="border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue/10 px-6 py-2 shadow-md hover:shadow-lg transition-all duration-300"
+                  className="border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue/10 px-8 py-3 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl"
                   asChild
                 >
                   <a 
@@ -92,37 +198,37 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="flex gap-4 mt-8"
+              className="flex gap-4"
             >
               <motion.a
                 href="https://github.com/hmjahid/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-10 w-10 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+                className="h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Github className="h-5 w-5 text-gray-700" />
+                <Github className="h-6 w-6 text-gray-700" />
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/in/hmjahid/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-10 w-10 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+                className="h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Linkedin className="h-5 w-5 text-gray-700" />
+                <Linkedin className="h-6 w-6 text-gray-700" />
               </motion.a>
               <motion.a
                 href="https://medium.com/@hmjahid"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-10 w-10 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+                className="h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <BookOpen className="h-5 w-5 text-gray-700" />
+                <BookOpen className="h-6 w-6 text-gray-700" />
               </motion.a>
             </motion.div>
           </motion.div>
