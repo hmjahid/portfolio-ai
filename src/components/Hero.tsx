@@ -87,7 +87,7 @@ const Hero = () => {
                           delay: 0.5
                         }}
                       >
-                        MD JAHID HASAN
+                        Md Jahid Hasan
                       </motion.span>
                     </motion.div>
                     <motion.span
