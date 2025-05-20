@@ -77,7 +77,7 @@ const Footer = () => {
               <Linkedin className="h-6 w-6" />
             </motion.a>
             <motion.a 
-              href="https://medium.com/@hmjahid" 
+              href="https://medium.com/@mdjahidhasan919" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"

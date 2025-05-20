@@ -35,13 +35,13 @@ const Skills = () => {
       gradient: "from-blue-500 to-blue-600",
       skills: [
         { name: 'WordPress Development', level: 95 },
-        { name: 'WooCommerce', level: 90 },
+        { name: 'WooCommerce', level: 50 },
         { name: 'WordPress Theme Development', level: 95 },
-        { name: 'WordPress Plugin Development', level: 90 },
-        { name: 'WordPress Security', level: 85 },
-        { name: 'WordPress Performance Optimization', level: 90 },
+        { name: 'WordPress Plugin Development', level: 40 },
+        { name: 'WordPress Security', level: 55 },
+        { name: 'WordPress Performance Optimization', level: 80 },
         { name: 'WordPress Multisite', level: 85 },
-        { name: 'WordPress REST API', level: 90 }
+        { name: 'WordPress REST API', level: 40 }
       ]
     },
     {
@@ -50,13 +50,13 @@ const Skills = () => {
       gradient: "from-purple-500 to-purple-600",
       skills: [
         { name: 'PHP 8.x', level: 95 },
-        { name: 'Laravel', level: 90 },
-        { name: 'Object-Oriented PHP', level: 95 },
-        { name: 'MySQL/MariaDB', level: 90 },
-        { name: 'Database Design', level: 85 },
-        { name: 'API Development', level: 90 },
+        { name: 'Laravel', level: 20 },
+        { name: 'Object-Oriented PHP', level: 45 },
+        { name: 'MySQL/MariaDB', level: 70 },
+        { name: 'Database Design', level: 65 },
+        { name: 'API Development', level: 30 },
         { name: 'Server Management', level: 85 },
-        { name: 'Security & Performance', level: 90 }
+        { name: 'Security & Performance', level: 80 }
       ]
     },
     {
@@ -66,12 +66,12 @@ const Skills = () => {
       skills: [
         { name: 'HTML5', level: 95 },
         { name: 'CSS3/SCSS', level: 90 },
-        { name: 'JavaScript', level: 90 },
-        { name: 'React', level: 85 },
-        { name: 'jQuery', level: 95 },
-        { name: 'Bootstrap', level: 90 },
-        { name: 'Tailwind CSS', level: 85 },
-        { name: 'Responsive Design', level: 95 }
+        { name: 'JavaScript', level: 80 },
+        { name: 'React', level: 35 },
+        { name: 'jQuery', level: 75 },
+        { name: 'Bootstrap', level: 80 },
+        { name: 'Tailwind CSS', level: 15 },
+        { name: 'Responsive Design', level: 85 }
       ]
     },
     {
@@ -79,14 +79,18 @@ const Skills = () => {
       icon: <Cloud className="h-6 w-6" />,
       gradient: "from-orange-500 to-orange-600",
       skills: [
-        { name: 'Git', level: 90 },
+        { name: 'Git', level: 80 },
         { name: 'Docker', level: 85 },
-        { name: 'CI/CD', level: 80 },
+        { name: 'Kubernetes', level: 55 },
+        { name: 'Minikube', level: 85 },
+        { name: 'CI/CD', level: 20 },
         { name: 'Linux', level: 85 },
-        { name: 'AWS', level: 80 },
-        { name: 'Nginx', level: 85 },
-        { name: 'Apache', level: 90 },
-        { name: 'SSL/TLS', level: 85 }
+        { name: 'AWS', level: 20 },
+        { name: 'Nginx', level: 35 },
+        { name: 'Nagios', level: 60 },
+        { name: 'Prometheus', level: 60 },
+        { name: 'Grafana', level: 60 },
+        { name: 'Proxmox', level: 60 },
       ]
     }
   ];

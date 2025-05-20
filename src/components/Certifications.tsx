@@ -1,49 +1,116 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award, ExternalLink, Calendar } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 
 const Certifications = () => {
-  const freeCodeCampCertifications = [
+  const scrollContainerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const wordpressCertifications = [
     {
-      title: "JavaScript Algorithms and Data Structures",
-      issuer: "freeCodeCamp",
-      date: "April 2023",
-      link: "https://www.freecodecamp.org/certification/fcc814fa65d-17d5-4ae2-bc1e-4e316e1c9f7d/javascript-algorithms-and-data-structures"
+      title: "Complete Wordpress Website Developer Course",
+      issuer: "Udemy",
+      date: "May 2023",
+      link: "https://www.udemy.com/certificate/UC-7b1fa35a-26e7-4410-9010-2942edde01cf/"
     },
     {
-      title: "Responsive Web Design",
-      issuer: "freeCodeCamp",
-      date: "February 2023",
-      link: "https://www.freecodecamp.org/certification/fcc814fa65d-17d5-4ae2-bc1e-4e316e1c9f7d/responsive-web-design"
+      title: "Ultimate Wordpress Optimization 2022",
+      issuer: "Udemy",
+      date: "May 2023",
+      link: "https://www.udemy.com/certificate/UC-c217ac3c-bf16-440e-af71-30c38533862e/"
     }
   ];
 
-  const metaCertifications = [
+  const programmingCertifications = [
     {
-      title: "Introduction to Front-End Development",
-      issuer: "Meta",
-      date: "May 2023",
-      link: "https://coursera.org/share/0f584e645a5db174e0534142e7abafb3"
+      title: "Python Scripting Complete Course",
+      issuer: "Udemy",
+      date: "Dec 2023",
+      link: "https://www.udemy.com/certificate/UC-63140e62-3145-4521-abe8-90dee1cbc160/"
     },
     {
-      title: "Programming with JavaScript",
+      title: "PHP for Beginners: PHP Crash Course 2024",
+      issuer: "Udemy",
+      date: "Jan 2024",
+      link: "https://www.udemy.com/certificate/UC-e3998a2c-9e43-4915-b712-41ed79d13fe8/"
+    }
+    
+  ];
+
+  const webDevelopmentCertifications = [
+    {
+      title: "SQL Bootcamp with MySQL, PHP & Python : 5 Courses in 1",
       issuer: "Meta",
-      date: "June 2023",
-      link: "https://coursera.org/share/155fd8cfbc5fa196e4e7911ef6782b17"
+      date: "Jul 2023",
+      link: "https://www.udemy.com/certificate/UC-d753bb95-6e94-452e-b71c-efea5b946335/"
     },
     {
-      title: "HTML and CSS in depth",
-      issuer: "Meta",
-      date: "June 2023",
-      link: "https://coursera.org/share/a8881271edc0713a95b30c55fdcc88a1"
+      title: "Test-Driven Development with React",
+      issuer: "Udemy",
+      date: "Apr 2023",
+      link: "https://www.udemy.com/certificate/UC-945332c7-6d33-4cd3-9084-8ffaf39c2e76/"
+    }
+  ];
+
+  const devopsCertifications = [
+    {
+      title: "Practical Git: for Absolute Beginners",
+      issuer: "Udemy",
+      date: "Apr 2023",
+      link: "https://www.udemy.com/certificate/UC-756f782d-1d2f-4fe5-ad40-db994351f9df/"
     },
     {
-      title: "Version Control",
-      issuer: "Meta",
-      date: "July 2023",
-      link: "https://coursera.org/share/4ed8d6381c5b99dcbaa83c0515e9a23a"
+      title: "DevOps Fundamentals",
+      issuer: "Udemy",
+      date: "Apr 2023",
+      link: "https://www.udemy.com/certificate/UC-a7d0107b-0196-480e-ba81-33755b41cd74/"
+    },
+    {
+      title: "NGINX Web Server from Scratch",
+      issuer: "Udemy",
+      date: "Feb 2024",
+      link: "https://www.udemy.com/certificate/UC-0cca0982-e6b9-4931-a618-3c2099afbb81/"
+    },
+    {
+      title: "AWS Builders Online Series Attendance Certificate",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Jan 2024",
+      link: "https://pages.awscloud.com/index.php/email/emailWebview?email=MTEyLVRaTS03NjYAAAGRJtdy84ydKzdoQRoZBbMC9VeFQgT35XdDAfsYiKqDqJGXo07mAxBijHLDRzXFW92cfiv1g6U-fSsW4GTfgw4vuNF0u9W-Qjb9RUc"
+    }
+  ];
+
+  const otherCertifications = [
+    {
+      title: "Linux Desktop Automation",
+      issuer: "Udemy",
+      date: "Jan 2024",
+      link: "https://www.udemy.com/certificate/UC-1cff1234-97ee-4b2e-b6e7-841f6d1a3d7e/"
     }
   ];
 
@@ -75,7 +142,7 @@ const Certifications = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-sm font-medium text-portfolio-blue hover:text-blue-600 transition-colors
-                           flex items-center gap-1 opacity-0 group-hover:opacity-100"
+                           flex items-center gap-1 lg:opacity-0 lg:group-hover:opacity-100"
                   whileHover={{ x: 5 }}
                 >
                   Verify <ExternalLink className="h-4 w-4" />
@@ -167,29 +234,61 @@ const Certifications = () => {
             viewport={{ once: true }}
             className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg"
           >
-            <Tabs defaultValue="freecodecamp" className="w-full">
-              <TabsList className="w-full md:w-fit mb-6 grid grid-cols-2 md:flex bg-gray-100/50 p-1 rounded-lg">
-                <TabsTrigger 
-                  value="freecodecamp" 
-                  className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm"
-                >
-                  <Award className="h-4 w-4" /> freeCodeCamp
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="meta" 
-                  className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm"
-                >
-                  <Award className="h-4 w-4" /> Meta
-                </TabsTrigger>
-              </TabsList>
+            <Tabs defaultValue="wordpress" className="w-full">
+              <div className="mb-6 min-h-[100px]">
+                <TabsList className="w-full flex flex-wrap gap-2 bg-gray-100/50 p-1 rounded-lg">
+                  <TabsTrigger 
+                    value="devops" 
+                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                  >
+                    <Award className="h-4 w-4" /> DevOps
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="wordpress" 
+                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                  >
+                    <Award className="h-4 w-4" /> WordPress
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="programming" 
+                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                  >
+                    <Award className="h-4 w-4" /> Programming
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="webdev" 
+                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                  >
+                    <Award className="h-4 w-4" /> Web Dev
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="others" 
+                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                  >
+                    <Award className="h-4 w-4" /> Others
+                  </TabsTrigger>
+                </TabsList>
+              </div>
               
               <div className="h-[600px] overflow-y-auto pr-4 custom-scrollbar">
-                <TabsContent value="freecodecamp">
-                  {renderCertificationCards(freeCodeCampCertifications)}
+                <TabsContent value="wordpress">
+                  {renderCertificationCards(wordpressCertifications)}
                 </TabsContent>
                 
-                <TabsContent value="meta">
-                  {renderCertificationCards(metaCertifications)}
+                <TabsContent value="programming">
+                  {renderCertificationCards(programmingCertifications)}
+                </TabsContent>
+
+                <TabsContent value="webdev">
+                  {renderCertificationCards(webDevelopmentCertifications)}
+                </TabsContent>
+
+                <TabsContent value="devops">
+                  {renderCertificationCards(devopsCertifications)}
+                </TabsContent>
+
+                <TabsContent value="others">
+                  {renderCertificationCards(otherCertifications)}
                 </TabsContent>
               </div>
             </Tabs>

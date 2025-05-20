@@ -13,53 +13,76 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    position: "WordPress Developer",
-    company: "Freelance",
-    period: "2021 - Present",
-    location: "Remote",
-    responsibilities: [
-      "Developed custom WordPress themes and plugins for various clients",
-      "Implemented responsive designs and optimized website performance",
-      "Integrated third-party APIs and payment gateways",
-      "Managed website maintenance and updates"
-    ]
-  },
-  {
-    position: "Web Developer",
-    company: "Tech Solutions Ltd",
-    period: "2020 - 2021",
-    location: "Dhaka, Bangladesh",
-    responsibilities: [
-      "Built and maintained client websites using WordPress",
-      "Collaborated with designers to implement UI/UX improvements",
-      "Optimized website speed and performance",
-      "Implemented SEO best practices"
-    ]
-  },
-  {
-    position: "Frontend Developer",
-    company: "Digital Solutions Inc",
-    period: "2019 - 2020",
-    location: "Dhaka, Bangladesh",
-    responsibilities: [
-      "Developed responsive web applications using React.js and Next.js",
-      "Implemented modern UI/UX designs using Tailwind CSS",
-      "Collaborated with backend team to integrate RESTful APIs",
-      "Optimized application performance and loading times",
-      "Participated in code reviews and mentored junior developers"
-    ]
-  },
-  {
     position: "Junior Web Developer",
-    company: "WebTech Solutions",
-    period: "2018 - 2019",
-    location: "Dhaka, Bangladesh",
+    company: "Monday Digital",
+    period: "June 2024 - Present",
+    location: "Hybrid (Bangladesh)",
     responsibilities: [
-      "Assisted in developing and maintaining client websites",
-      "Created responsive layouts using HTML5, CSS3, and JavaScript",
-      "Implemented WordPress themes and plugins",
-      "Conducted website testing and debugging",
-      "Assisted in content management and updates"
+      "Custom WordPress theme development: Designed and developed custom themes to meet client specifications, ensuring responsive and user-friendly layouts",
+      "Designed user-friendly websites based on Figma designs, translating visual concepts into functional, interactive web pages",
+      "Managed website maintenance, including content updates, plugin management, troubleshooting issues, and performance optimization",
+      "Worked with Elementor and WPBakery Builder to create dynamic, visually appealing, and highly functional websites",
+      "Collaborated with the development team to deliver timely and efficient web solutions, maintaining high-quality standards and client satisfaction"
+    ]
+  },
+  {
+    position: "Junior Web Developer (Internship)",
+    company: "Monday Digital",
+    period: "February 2024 - May 2024",
+    location: "On-site (Bangladesh)",
+    responsibilities: [
+      "Assisted in WordPress development, including theme customization, plugin integration, and content management",
+      "Supported website maintenance tasks, such as troubleshooting site issues, performing updates, and ensuring smooth functionality",
+      "Gained experience in Elementor Builder to create and enhance websites for better design and performance",
+      "Participated in team meetings and project discussions"
+    ]
+  },
+  {
+    position: "Junior WordPress Developer",
+    company: "WebFix Lab",
+    period: "July 2023 - February 2024",
+    location: "Remote (Bangladesh)",
+    responsibilities: [
+      "Developed, maintained, and updated WordPress websites for a diverse client base, ensuring high-quality design and functionality",
+      "Optimized website performance for speed, responsiveness, and SEO, adhering to best practices to improve search engine rankings and user experience",
+      "Ensured strict confidentiality and professionalism in handling client projects and sensitive information",
+      "Collaborated with cross-functional teams to deliver customized web solutions and enhancements"
+    ]
+  },
+  {
+    position: "Data Entry Operator, Lead Generation Expert & WordPress Designer",
+    company: "Upwork",
+    period: "April 2022 - February 2024",
+    location: "Remote (Freelance)",
+    responsibilities: [
+      "Provided freelance services in data entry and lead generation",
+      "Designed and developed WordPress websites for clients",
+      "Managed multiple projects simultaneously",
+      "Maintained high client satisfaction through quality deliverables"
+    ]
+  },
+  {
+    position: "CNC Operator, Machinist and Programmer",
+    company: "Nichima Precision Engineering Sdn. Bhd.",
+    period: "April 2016 - April 2022",
+    location: "On-site (Malaysia)",
+    responsibilities: [
+      "Operated and programmed GOODWAY GCL2BL 2-axis CNC Lathe machines",
+      "Managed 3-axis CNC Milling operations",
+      "Led a team of 5-6 people in manufacturing operations",
+      "Gained valuable experience in industrial culture, leadership, and teamwork"
+    ]
+  },
+  {
+    position: "Office Assistant Cum Computer Operator",
+    company: "Nichima Precision Engineering Sdn. Bhd.",
+    period: "March 2016 - April 2016",
+    location: "On-site (Malaysia)",
+    responsibilities: [
+      "Assisted HR manager with payroll preparation",
+      "Managed database entry for the sales department",
+      "Worked in QC department as a QC Inspector",
+      "Handled various administrative tasks efficiently"
     ]
   }
 ];
@@ -100,9 +123,12 @@ const ExperienceCard: React.FC<{ experience: Experience; index: number }> = ({ e
                 >
                   <Briefcase className="h-5 w-5 text-portfolio-blue" />
                 </motion.div>
-                <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
-                  {experience.position}
-                </CardTitle>
+                <div>
+                  <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
+                    {experience.position}
+                  </CardTitle>
+                  <p className="text-portfolio-blue font-medium mt-1">{experience.company}</p>
+                </div>
               </motion.div>
               
               <motion.div 
@@ -213,7 +239,7 @@ const Experience: React.FC = () => {
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="space-y-8 relative">
+          <div className="order-2 md:order-1 space-y-8 relative">
             {/* Animated background shapes */}
             <motion.div
               animate={{
@@ -232,7 +258,7 @@ const Experience: React.FC = () => {
             ))}
           </div>
           
-          <div className="md:sticky md:top-24 md:self-start md:h-screen">
+          <div className="order-1 md:order-2 md:sticky md:top-24 md:self-start md:h-screen">
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -240,7 +266,7 @@ const Experience: React.FC = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative w-full h-[600px] overflow-hidden rounded-2xl shadow-xl">
+              <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden rounded-2xl shadow-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                   alt="Professional Experience" 

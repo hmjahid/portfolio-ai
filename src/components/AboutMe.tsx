@@ -12,10 +12,10 @@ const AboutMe = () => {
   };
 
   const stats = {
-    yearsOfExperience: 5,
-    projectsCompleted: 50,
-    clientsServed: 30,
-    codeContributions: 1000,
+    yearsOfExperience: 3,
+    projectsCompleted: 10,
+    clientsServed: 8,
+    codeContributions: 1500,
     skills: 15,
     awards: 8
   };
@@ -82,7 +82,8 @@ const AboutMe = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-600 mt-4 max-w-2xl mx-auto"
           >
-            A passionate developer with a keen eye for detail and a love for creating exceptional digital experiences.
+            A passionate Web & WordPress Developer with 2 years of hands-on experience in WordPress and 3+ years in web development, 
+            specializing in building high-quality WordPress sites using Elementor and Divi.
           </motion.p>
         </motion.div>
 
@@ -204,9 +205,9 @@ const AboutMe = () => {
             >
               <h3 className="text-xl font-semibold text-portfolio-blue mb-4">Professional Background</h3>
               <p className="text-gray-600 leading-relaxed">
-                I am a passionate WordPress and PHP developer with over {stats.yearsOfExperience} years of experience in creating robust, 
-                scalable, and user-friendly web applications. My expertise lies in WordPress theme and plugin development, 
-                custom PHP solutions, and building secure, high-performance websites.
+                I am a passionate Web & WordPress Developer with 2 years of hands-on experience in WordPress and 3+ years in web development. 
+                My expertise lies in building high-quality WordPress sites using Elementor and Divi, with a strong focus on Linux-based environments. 
+                I specialize in creating robust, scalable, and user-friendly web applications that meet modern standards and client requirements.
               </p>
             </motion.div>
 
@@ -216,10 +217,10 @@ const AboutMe = () => {
             >
               <h3 className="text-xl font-semibold text-portfolio-blue mb-4">Technical Expertise</h3>
               <p className="text-gray-600 leading-relaxed">
-                With a strong foundation in both frontend and backend development, I specialize in creating seamless 
-                user experiences while ensuring optimal performance and security. My experience includes developing 
-                custom WordPress themes, WooCommerce solutions, and complex PHP applications using modern frameworks 
-                like Laravel.
+                Beyond development, I'm deeply interested in Linux system administration and DevOps. I have expertise in containerization (Docker, Kubernetes), 
+                cloud computing (AWS), automation (Ansible), and monitoring (Prometheus, Grafana, Nagios). My skill set extends to infrastructure as code, 
+                CI/CD, and virtualization tools, enabling me to optimize and manage scalable infrastructures. I thrive on learning new technologies and 
+                solving complex problems, whether working independently or in a team.
               </p>
             </motion.div>
 
@@ -227,11 +228,11 @@ const AboutMe = () => {
               variants={itemVariants}
               className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
-              <h3 className="text-xl font-semibold text-portfolio-blue mb-4">Commitment to Quality</h3>
+              <h3 className="text-xl font-semibold text-portfolio-blue mb-4">Commitment to Excellence</h3>
               <p className="text-gray-600 leading-relaxed">
-                I am committed to writing clean, maintainable code and following best practices in web development. 
-                My goal is to deliver high-quality solutions that meet client requirements while maintaining 
-                excellent performance and security standards.
+                I am committed to delivering high-quality solutions that combine technical excellence with practical business value. 
+                My approach focuses on creating efficient, secure, and maintainable systems while staying current with industry best practices 
+                and emerging technologies. I'm always eager to take on new challenges and contribute to innovative projects.
               </p>
             </motion.div>
 
@@ -244,7 +245,7 @@ const AboutMe = () => {
                   className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
                   asChild
                 >
-                  <a href="https://drive.google.com/file/d/11lKB0RNXQxegyZFzXF-U1GD5911lMf8C/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <a href="/assets/Md_Jahid_Hasan_Resume.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-5 w-5" />
                     Download CV
                   </a>

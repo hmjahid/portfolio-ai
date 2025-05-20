@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center pt-32 pb-24 md:pt-16 md:pb-0 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]"></div>
@@ -184,7 +184,7 @@ const Hero = () => {
                   asChild
                 >
                   <a 
-                    href="https://drive.google.com/file/d/11lKB0RNXQxegyZFzXF-U1GD5911lMf8C/view?usp=sharing" 
+                    href="/assets/Md_Jahid_Hasan_Resume.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
@@ -221,7 +221,7 @@ const Hero = () => {
                 <Linkedin className="h-6 w-6 text-gray-700" />
               </motion.a>
               <motion.a
-                href="https://medium.com/@hmjahid"
+                href="https://medium.com/@mdjahidhasan919"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
