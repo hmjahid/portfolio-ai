@@ -104,7 +104,7 @@ const Navbar = () => {
             <Sheet>
               <SheetTrigger asChild>
                 <motion.button 
-                  className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                  className="md:hidden absolute right-4 top-4 p-2 hover:bg-gray-100 rounded-lg transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >

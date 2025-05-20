@@ -38,12 +38,12 @@ const Hero = () => {
       />
       
       <div className="container mx-auto px-4 md:px-6 relative">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-16">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-16">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="md:w-1/2 space-y-8"
+            className="w-full md:w-1/2 space-y-6 md:space-y-8"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ const Hero = () => {
               className="flex items-center gap-3"
             >
               <div className="h-1 w-12 bg-gradient-to-r from-portfolio-blue to-blue-600 rounded-full"></div>
-              <span className="text-portfolio-blue font-medium tracking-wider">
+              <span className="text-portfolio-blue font-medium tracking-wider text-sm sm:text-base">
                 Welcome to my portfolio
               </span>
             </motion.div>
@@ -61,7 +61,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
             >
               <motion.span 
                 className="relative inline-flex items-center"
@@ -155,7 +155,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="text-gray-600 text-lg leading-relaxed max-w-lg"
+              className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-lg"
             >
               Passionate about creating user-friendly websites using WordPress and modern web technologies. 
               Experienced in theme development, plugin customization, and implementing DevOps practices.
@@ -165,22 +165,22 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-3 sm:gap-4"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
-                  className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
+                  className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
                   asChild
                 >
                   <a href="#contact">
-                    Hire Me <ArrowRight className="ml-2 h-5 w-5" />
+                    Hire Me <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </a>
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
                   variant="outline" 
-                  className="border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue/10 px-8 py-3 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl"
+                  className="border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue/10 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 rounded-xl"
                   asChild
                 >
                   <a 
