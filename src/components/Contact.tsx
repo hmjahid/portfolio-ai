@@ -168,7 +168,7 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-600 mt-4 max-w-2xl mx-auto"
           >
-            Have a project in mind or want to discuss potential opportunities? I'm always open to new challenges and collaborations.
+            Ready to bring your ideas to life? Let's discuss how we can work together to create something amazing.
           </motion.p>
         </motion.div>
         
@@ -191,8 +191,7 @@ const Contact = () => {
             <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex-grow">
               <h3 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">Get In Touch</h3>
               <p className="text-gray-700 mb-8 leading-relaxed">
-                Have a project in mind or want to discuss potential opportunities?
-                Feel free to reach out. I'm always open to new challenges and collaborations.
+                Looking for a reliable developer for your next project? I'm here to help you achieve your goals with professional expertise and dedicated support.
               </p>
               
               <div className="space-y-6">

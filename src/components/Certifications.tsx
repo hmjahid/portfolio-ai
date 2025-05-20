@@ -137,22 +137,24 @@ const Certifications = () => {
                   </CardTitle>
                   <CardDescription className="mt-1 text-gray-600">{cert.issuer}</CardDescription>
                 </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center text-sm text-gray-500">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  {cert.date}
+                </div>
                 <motion.a 
                   href={cert.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-sm font-medium text-portfolio-blue hover:text-blue-600 transition-colors
-                           flex items-center gap-1 lg:opacity-0 lg:group-hover:opacity-100"
+                           flex items-center gap-1"
                   whileHover={{ x: 5 }}
                 >
                   Verify <ExternalLink className="h-4 w-4" />
                 </motion.a>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center text-sm text-gray-500">
-                <Calendar className="h-4 w-4 mr-2" />
-                {cert.date}
               </div>
             </CardContent>
           </Card>

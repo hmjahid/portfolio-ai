@@ -35,14 +35,14 @@ const Footer = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8 md:mb-0"
+            className="mb-8 md:mb-6 text-left"
           >
-            <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">
+            <h3 className="text-3xl font-bold mb-2 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">
               Md Jahid Hasan
             </h3>
             <p className="text-gray-600 text-lg">Transforming Ideas into Digital Excellence</p>
@@ -52,7 +52,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex mb-8 md:mb-0"
+            className="flex mb-4 md:mb-6 justify-start"
           >
             <motion.a 
               href="https://github.com/hmjahid/" 
@@ -111,12 +111,12 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-gray-200 mt-6 md:mt-8 pt-4 md:pt-6 text-left text-gray-500 flex flex-col md:flex-row justify-between items-start md:items-center"
         >
           <p className="text-base">
             &copy; {currentYear} <a href={currentUrl} className="hover:text-portfolio-blue transition-colors font-medium">Md Jahid Hasan</a>. All rights reserved.
           </p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
+          <div className="mt-4 md:mt-3 flex space-x-6">
             <motion.a 
               href="#about" 
               className="hover:text-portfolio-blue transition-colors font-medium"
