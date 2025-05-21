@@ -96,7 +96,7 @@ const Footer = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 onClick={scrollToTop}
-                className="fixed bottom-8 right-8 bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white h-12 w-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+                className="fixed bottom-40 right-8 bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white h-12 w-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-[100] md:bottom-28 lg:bottom-28 xl:bottom-28 [@media(min-width:1278px)_and_(max-width:1540px)]:bottom-28"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Scroll to top"
@@ -111,36 +111,38 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="border-t border-gray-200 mt-6 md:mt-8 pt-4 md:pt-6 text-left text-gray-500 flex flex-col md:flex-row justify-between items-start md:items-center"
+          className="border-t border-gray-200 mt-6 md:mt-8 pt-4 md:pt-6 text-left text-gray-500"
         >
-          <p className="text-base">
-            &copy; {currentYear} <a href={currentUrl} className="hover:text-portfolio-blue transition-colors font-medium">Md Jahid Hasan</a>. All rights reserved.
-          </p>
-          <div className="mt-4 md:mt-3 flex space-x-6">
-            <motion.a 
-              href="#about" 
-              className="hover:text-portfolio-blue transition-colors font-medium"
-              whileHover={{ y: -2 }}
-              whileTap={{ y: 0 }}
-            >
-              About
-            </motion.a>
-            <motion.a 
-              href="#projects" 
-              className="hover:text-portfolio-blue transition-colors font-medium"
-              whileHover={{ y: -2 }}
-              whileTap={{ y: 0 }}
-            >
-              Projects
-            </motion.a>
-            <motion.a 
-              href="#contact" 
-              className="hover:text-portfolio-blue transition-colors font-medium"
-              whileHover={{ y: -2 }}
-              whileTap={{ y: 0 }}
-            >
-              Contact
-            </motion.a>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
+            <div className="flex space-x-6 order-1 md:order-2 pt-2 md:pt-0">
+              <motion.a 
+                href="#about" 
+                className="hover:text-portfolio-blue transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+              >
+                About
+              </motion.a>
+              <motion.a 
+                href="#projects" 
+                className="hover:text-portfolio-blue transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+              >
+                Projects
+              </motion.a>
+              <motion.a 
+                href="#contact" 
+                className="hover:text-portfolio-blue transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+              >
+                Contact
+              </motion.a>
+            </div>
+            <p className="text-base order-2 md:order-1">
+              &copy; {currentYear} <a href={currentUrl} className="hover:text-portfolio-blue transition-colors font-medium">Md Jahid Hasan</a>. All rights reserved.
+            </p>
           </div>
         </motion.div>
       </div>

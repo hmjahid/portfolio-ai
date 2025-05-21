@@ -208,7 +208,7 @@ const Certifications = () => {
           </motion.p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 md:max-w-[80%] md:mx-auto lg:max-w-none">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}

@@ -238,8 +238,8 @@ const Experience: React.FC = () => {
           </motion.p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="order-2 md:order-1 space-y-8 relative">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 md:max-w-[80%] md:mx-auto lg:max-w-none">
+          <div className="order-2 lg:order-1 space-y-8 relative">
             {/* Animated background shapes */}
             <motion.div
               animate={{
@@ -258,7 +258,7 @@ const Experience: React.FC = () => {
             ))}
           </div>
           
-          <div className="order-1 md:order-2 md:sticky md:top-24 md:self-start md:h-screen">
+          <div className="order-1 lg:order-2 lg:sticky lg:top-24 lg:self-start lg:h-screen">
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -266,7 +266,7 @@ const Experience: React.FC = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden rounded-2xl shadow-xl">
+              <div className="relative w-full h-[400px] lg:h-[600px] overflow-hidden rounded-2xl shadow-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                   alt="Professional Experience" 

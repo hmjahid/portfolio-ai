@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-32 pb-24 md:pt-16 md:pb-0 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center pt-32 pb-24 md:pt-32 md:pb-32 lg:pt-16 lg:pb-0 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]"></div>
@@ -38,12 +38,12 @@ const Hero = () => {
       />
       
       <div className="container mx-auto px-4 md:px-6 relative">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-20 lg:gap-16 md:max-w-[80%] md:mx-auto lg:max-w-none">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full md:w-1/2 space-y-6 md:space-y-8"
+            className="w-full lg:w-1/2 space-y-6 md:space-y-8"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -237,7 +237,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-            className="md:w-5/12"
+            className="md:w-[80%] md:mx-auto lg:w-5/12"
           >
             <div className="relative">
               <motion.div 
@@ -252,7 +252,7 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 src="/assets/Photo.png"
                 alt="Md Jahid Hasan"
-                className="w-72 h-72 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-xl relative z-10"
+                className="w-72 h-72 md:w-96 md:h-96 lg:w-80 lg:h-80 object-cover rounded-full border-4 border-white shadow-xl relative z-10"
               />
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0 }}

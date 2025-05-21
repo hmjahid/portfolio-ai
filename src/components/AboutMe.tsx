@@ -82,12 +82,13 @@ const AboutMe = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-600 mt-4 max-w-2xl mx-auto"
           >
-            A passionate Web & WordPress Developer with 2 years of hands-on experience in WordPress and 3+ years in web development, 
-            specializing in building high-quality WordPress sites using Elementor and Divi.
+            A passionate WordPress Developer & DevOps Enthusiast with expertise in building high-quality WordPress sites 
+            and managing scalable cloud infrastructures. Specializing in WordPress development, Linux administration, 
+            and modern DevOps practices.
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center md:max-w-[80%] md:mx-auto lg:max-w-none">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
