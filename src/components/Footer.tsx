@@ -96,7 +96,7 @@ const Footer = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 onClick={scrollToTop}
-                className="fixed bottom-40 right-8 bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white h-12 w-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-[100] md:bottom-28 lg:bottom-28 xl:bottom-28 [@media(min-width:1278px)_and_(max-width:1540px)]:bottom-28"
+                className="fixed bottom-24 right-8 bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white h-12 w-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-[100] md:bottom-28 lg:bottom-28 xl:bottom-28 [@media(min-width:1278px)_and_(max-width:1540px)]:bottom-28"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Scroll to top"
