@@ -147,7 +147,7 @@ const Hero = () => {
               </div>
               <div className="h-px w-12 bg-gradient-to-r from-portfolio-blue to-blue-600"></div>
               <span className="text-xl font-medium text-gray-600">
-                WordPress Developer & DevOps Enthusiast
+                Web & WordPress Developer | DevOps Enthusiast
               </span>
             </motion.div>
 

@@ -82,7 +82,7 @@ const AboutMe = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-600 mt-4 max-w-2xl mx-auto"
           >
-            A passionate WordPress Developer & DevOps Enthusiast with expertise in building high-quality WordPress sites 
+            A passionate Web & WordPress Developer and DevOps Enthusiast with expertise in building high-quality WordPress sites 
             and managing scalable cloud infrastructures. Specializing in WordPress development, Linux administration, 
             and modern DevOps practices.
           </motion.p>
