@@ -204,31 +204,34 @@ const Hero = () => {
                 href="https://github.com/hmjahid/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label="GitHub"
               >
-                <Github className="h-6 w-6 text-gray-700" />
+                <Github className="h-6 w-6" />
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/in/hmjahid/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label="LinkedIn"
               >
-                <Linkedin className="h-6 w-6 text-gray-700" />
+                <Linkedin className="h-6 w-6" />
               </motion.a>
               <motion.a
                 href="https://medium.com/@mdjahidhasan919"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label="Medium"
               >
-                <BookOpen className="h-6 w-6 text-gray-700" />
+                <BookOpen className="h-6 w-6" />
               </motion.a>
             </motion.div>
           </motion.div>
