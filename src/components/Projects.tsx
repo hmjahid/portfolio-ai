@@ -63,6 +63,30 @@ const wordpressProjects: Project[] = [
 const devopsProjects: Project[] = [
   {
     id: 1,
+    title: "Building a Comprehensive Server Monitoring System with Docker",
+    description: "I built a robust server monitoring stack using Node Exporter, Prometheus, Grafana, Redis, Alertmanager, and cAdvisor, later expanding it with Nagios Core and Uptime Kuma for deeper observability",
+    image: "/assets/server-monitoring.png",
+    codeLink: "https://github.com/hmjahid/devops-projects/tree/main/docker/server-monitoring-stack",
+    blogLink: "https://medium.com/@mdjahidhasan919/building-a-comprehensive-server-monitoring-system-with-docker-a-one-year-journey-b9226d6e8ef2",
+    technologies: ["Docker", "DevOps", "Grafana", "Prometheus.io", "Nagios Core", "Uptime Kuma"],
+    features: [
+      "Node Exporter for metrics collection",
+      "Prometheus for data storage and querying",
+      "Grafana for visualization and dashboarding",
+      "Redis for caching and real-time data",
+      "Alertmanager for alerting and notifications",
+      "cAdvisor for container resource utilization"
+    ],
+    role: "DevOps Engineer",
+    duration: "1 week",
+    challenges: [
+      "Setting up persistent storage for Prometheus",
+      "Configuring Alertmanager for alerting",
+      "Implementing Nagios Core for deeper observability"
+    ]
+  },
+  {
+    id: 2,
     title: "Multi-Tier Web Application Deployment",
     description: "Designed and deployed a scalable, six-tier web application using Docker to demonstrate expertise in containerization and DevOps practices.",
     image: "/assets/multi-tier-php-application.jpg",
@@ -211,23 +235,23 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Tabs defaultValue="wordpress" className="w-full">
+          <Tabs defaultValue="devops" className="w-full">
             <TabsList className="w-full md:w-fit mb-8 grid grid-cols-2 md:flex bg-gray-100/50 p-1 rounded-lg">
-              <TabsTrigger 
-                value="wordpress" 
-                className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm"
-              >
-                <Globe className="h-4 w-4" /> WordPress
-              </TabsTrigger>
               <TabsTrigger 
                 value="devops" 
                 className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm"
               >
                 <Code className="h-4 w-4" /> DevOps
               </TabsTrigger>
+              <TabsTrigger 
+                value="wordpress" 
+                className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm"
+              >
+                <Globe className="h-4 w-4" /> WordPress
+              </TabsTrigger>
             </TabsList>
             
-            <TabsContent value="wordpress">
+            <TabsContent value="devops">
               <Carousel
                 opts={{
                   align: "start",
@@ -236,7 +260,7 @@ const Projects = () => {
                 className="w-full"
               >
                 <CarouselContent className="-ml-2 md:-ml-4">
-                  {wordpressProjects.map((project) => (
+                  {devopsProjects.map((project) => (
                     <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                       <ProjectCard project={project} onOpen={setSelectedProject} />
                     </CarouselItem>
@@ -249,7 +273,7 @@ const Projects = () => {
               </Carousel>
             </TabsContent>
             
-            <TabsContent value="devops">
+            <TabsContent value="wordpress">
               <Carousel
                 opts={{
                   align: "start",
@@ -258,7 +282,7 @@ const Projects = () => {
                 className="w-full"
               >
                 <CarouselContent className="-ml-2 md:-ml-4">
-                  {devopsProjects.map((project) => (
+                  {wordpressProjects.map((project) => (
                     <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                       <ProjectCard project={project} onOpen={setSelectedProject} />
                     </CarouselItem>
