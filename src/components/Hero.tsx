@@ -243,26 +243,68 @@ const Hero = () => {
             className="md:w-[80%] md:mx-auto lg:w-5/12"
           >
             <div className="relative">
+              {/* Outer decorative border */}
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute -top-6 -left-6 w-full h-full rounded-full border-2 border-portfolio-blue"
+                className="absolute -inset-6 rounded-full border-2 border-dashed border-portfolio-blue/30"
               />
-              <motion.img
+              
+              {/* Rotating border */}
+              <motion.div 
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ 
+                  scale: 1, 
+                  opacity: 1,
+                  rotate: 360
+                }}
+                transition={{ 
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                className="absolute -inset-4 rounded-full border-2 border-portfolio-blue/20"
+              />
+              
+              {/* Main image container */}
+              <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                src="/assets/Photo.png"
-                alt="Md Jahid Hasan"
-                className="w-72 h-72 md:w-96 md:h-96 lg:w-80 lg:h-80 object-cover rounded-full border-4 border-white shadow-xl relative z-10"
-              />
-              <motion.div 
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-                className="absolute -bottom-6 -right-6 w-full h-full rounded-full border-2 border-portfolio-accent"
-              />
+                className="relative"
+              >
+                {/* Image shadow */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-portfolio-blue/20 to-blue-600/20 blur-xl"></div>
+                
+                {/* Main image */}
+                <motion.img
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                  src="/assets/Photo.png"
+                  alt="Md Jahid Hasan"
+                  className="w-72 h-72 md:w-96 md:h-96 lg:w-80 lg:h-80 object-cover rounded-full relative z-10 border-4 border-white shadow-2xl"
+                />
+                
+                {/* Corner accents */}
+                <motion.div 
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-gradient-to-br from-portfolio-blue to-blue-600 flex items-center justify-center"
+                >
+                  <div className="w-3 h-3 rounded-full bg-white"></div>
+                </motion.div>
+                <motion.div 
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                  className="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-gradient-to-br from-portfolio-blue to-blue-600 flex items-center justify-center"
+                >
+                  <div className="w-3 h-3 rounded-full bg-white"></div>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
