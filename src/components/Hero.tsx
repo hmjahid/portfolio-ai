@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
+import { RESUME_FILE, SOCIAL_LINKS } from '@/config/constants';
 
 const Hero = () => {
   return (
@@ -184,11 +185,11 @@ const Hero = () => {
                   asChild
                 >
                   <a 
-                    href="/assets/Md_Jahid_Hasan_Resume.pdf" 
+                    href={RESUME_FILE.path} 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
-                    Download CV
+                    {RESUME_FILE.label}
                   </a>
                 </Button>
               </motion.div>
@@ -201,7 +202,7 @@ const Hero = () => {
               className="flex gap-4"
             >
               <motion.a
-                href="https://github.com/hmjahid/"
+                href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
@@ -212,7 +213,7 @@ const Hero = () => {
                 <Github className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="https://www.linkedin.com/in/hmjahid/"
+                href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
@@ -223,7 +224,7 @@ const Hero = () => {
                 <Linkedin className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="https://medium.com/@mdjahidhasan919"
+                href={SOCIAL_LINKS.medium}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"

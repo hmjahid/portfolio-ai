@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { Mail, ArrowRight, Sparkles } from "lucide-react";
+import { Mail, ArrowRight, Sparkles, Download } from "lucide-react";
+import { RESUME_FILE } from '@/config/constants';
 
 const CallToAction = () => {
   const handleContactClick = () => {
@@ -124,9 +125,9 @@ const CallToAction = () => {
                 className="relative border-2 border-white text-white hover:bg-white hover:text-portfolio-blue transition-all duration-300 px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 text-base sm:text-lg md:text-xl shadow-md hover:shadow-lg rounded-xl sm:rounded-2xl bg-transparent backdrop-blur-sm"
                 asChild
               >
-                <a href="/assets/Md_Jahid_Hasan_Resume.pdf" target="_blank" rel="noopener noreferrer">
-                  Download Resume
-                  <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6" />
+                <a href={RESUME_FILE.path} target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-5 w-5" />
+                  {RESUME_FILE.label}
                 </a>
               </Button>
             </motion.div>

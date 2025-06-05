@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Code, Briefcase, Award, Star, Users } from "lucide-react";
+import { RESUME_FILE } from '@/config/constants';
 
 const AboutMe = () => {
   const handleContactClick = () => {
@@ -246,9 +247,9 @@ const AboutMe = () => {
                   className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
                   asChild
                 >
-                  <a href="/assets/Md_Jahid_Hasan_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href={RESUME_FILE.path} target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-5 w-5" />
-                    Download CV
+                    {RESUME_FILE.label}
                   </a>
                 </Button>
               </motion.div>
