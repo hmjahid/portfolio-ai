@@ -1,10 +1,19 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, BookOpen } from "lucide-react";
+import { ArrowRight, Github, Linkedin, BookOpen, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { RESUME_FILE, SOCIAL_LINKS } from '@/config/constants';
 
 const Hero = () => {
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      history.pushState(null, '', window.location.pathname);
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-32 pb-24 md:pt-32 md:pb-32 lg:pt-16 lg:pb-0 relative overflow-hidden">
       {/* Background Elements */}
@@ -170,12 +179,10 @@ const Hero = () => {
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
+                  onClick={handleContactClick}
                   className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
-                  asChild
                 >
-                  <a href="#contact">
-                    Hire Me <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  </a>
+                  Hire Me <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

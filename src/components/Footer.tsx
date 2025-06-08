@@ -121,6 +121,14 @@ const Footer = () => {
                 className="hover:text-portfolio-blue transition-colors font-medium"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#about');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    history.pushState(null, '', window.location.pathname);
+                  }
+                }}
               >
                 About
               </motion.a>
@@ -129,6 +137,14 @@ const Footer = () => {
                 className="hover:text-portfolio-blue transition-colors font-medium"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#projects');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    history.pushState(null, '', window.location.pathname);
+                  }
+                }}
               >
                 Projects
               </motion.a>
@@ -137,6 +153,14 @@ const Footer = () => {
                 className="hover:text-portfolio-blue transition-colors font-medium"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    history.pushState(null, '', window.location.pathname);
+                  }
+                }}
               >
                 Contact
               </motion.a>

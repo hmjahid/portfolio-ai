@@ -49,9 +49,16 @@ const Navbar = () => {
     setTimeout(() => {
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        // Prevent default hash behavior
+        const scrollOptions: ScrollIntoViewOptions = {
+          behavior: 'smooth',
+          block: 'start'
+        };
+        element.scrollIntoView(scrollOptions);
         // Force show scroll-to-top button after navigation
         setShowScrollTop(true);
+        // Prevent URL hash update
+        history.pushState(null, '', window.location.pathname);
       }
     }, 100);
   };
@@ -75,7 +82,10 @@ const Navbar = () => {
               className="text-2xl font-bold bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => handleNavigation('#home')}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation('#home');
+              }}
             >
               Md Jahid Hasan
             </motion.a>
@@ -115,10 +125,15 @@ const Navbar = () => {
                   className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                   asChild
                 >
-                  <a href="#contact" onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation('#contact');
-                  }}>Hire Me</a>
+                  <a 
+                    href="#contact" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation('#contact');
+                    }}
+                  >
+                    Hire Me
+                  </a>
                 </Button>
               </motion.div>
             </nav>
@@ -172,10 +187,15 @@ const Navbar = () => {
                       className="w-full bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                       asChild
                     >
-                      <a href="#contact" onClick={(e) => {
-                        e.preventDefault();
-                        handleNavigation('#contact');
-                      }}>Hire Me</a>
+                      <a 
+                        href="#contact" 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavigation('#contact');
+                        }}
+                      >
+                        Hire Me
+                      </a>
                     </Button>
                   </motion.div>
                 </nav>
