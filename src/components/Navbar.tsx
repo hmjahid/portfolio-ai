@@ -9,6 +9,7 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isDark, setIsDark] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +42,16 @@ const Navbar = () => {
     { label: 'Contact', href: '#contact' },
   ];
 
+  const handleNavigation = (href: string) => {
+    setIsOpen(false);
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <>
       <motion.div 
@@ -60,12 +71,13 @@ const Navbar = () => {
               className="text-2xl font-bold bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => handleNavigation('#home')}
             >
               Md Jahid Hasan
             </motion.a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <motion.a
                   key={item.href}
@@ -77,6 +89,10 @@ const Navbar = () => {
                   }`}
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.href);
+                  }}
                 >
                   {item.label}
                   {activeSection === item.href.slice(1) && (
@@ -95,23 +111,36 @@ const Navbar = () => {
                   className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                   asChild
                 >
-                  <a href="#contact">Hire Me</a>
+                  <a href="#contact" onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation('#contact');
+                  }}>Hire Me</a>
                 </Button>
               </motion.div>
             </nav>
 
             {/* Mobile Navigation */}
-            <Sheet>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <motion.button 
-                  className="md:hidden absolute right-4 top-4 p-2 hover:bg-gray-100 rounded-lg transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  className="lg:hidden absolute right-4 top-4 p-2.5 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95, y: 0 }}
                 >
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6 text-white" />
                 </motion.button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white/95 backdrop-blur-md">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white/95 backdrop-blur-md [&>button]:hidden">
+                <div className="flex justify-end -mt-2 -mr-2">
+                  <motion.button
+                    onClick={() => setIsOpen(false)}
+                    className="p-2.5 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95, y: 0 }}
+                  >
+                    <X className="h-6 w-6 text-white" />
+                  </motion.button>
+                </div>
                 <nav className="flex flex-col space-y-4 mt-8">
                   {navItems.map((item) => (
                     <motion.a
@@ -122,6 +151,10 @@ const Navbar = () => {
                       }`}
                       whileHover={{ x: 5 }}
                       whileTap={{ x: 0 }}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigation(item.href);
+                      }}
                     >
                       {item.label}
                     </motion.a>
@@ -135,7 +168,10 @@ const Navbar = () => {
                       className="w-full bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                       asChild
                     >
-                      <a href="#contact">Hire Me</a>
+                      <a href="#contact" onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigation('#contact');
+                      }}>Hire Me</a>
                     </Button>
                   </motion.div>
                 </nav>
