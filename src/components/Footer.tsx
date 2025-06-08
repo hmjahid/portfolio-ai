@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Github, Linkedin, ArrowUp, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useScroll } from '@/context/ScrollContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const currentUrl = typeof window !== 'undefined' ? window.location.origin : '';
-  const [showScrollTop, setShowScrollTop] = useState(false);
+  const { showScrollTop, setShowScrollTop } = useScroll();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +19,7 @@ const Footer = () => {
     // Initial check
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [setShowScrollTop]);
   
   const scrollToTop = () => {
     window.scrollTo({

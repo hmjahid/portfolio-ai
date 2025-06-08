@@ -188,18 +188,18 @@ const Contact = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-portfolio-blue/30 to-blue-600/30"></div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex-grow">
+            <div className="bg-white p-4 md:p-8 rounded-xl shadow-lg border border-gray-100 flex-grow">
               <h3 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">Get In Touch</h3>
               <p className="text-gray-700 mb-8 leading-relaxed">
                 Looking for a reliable developer for your next project? I'm here to help you achieve your goals with professional expertise and dedicated support.
               </p>
               
               <div className="space-y-6">
-                <div className="flex items-start bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors duration-200">
-                  <div className="bg-white p-2 rounded-lg shadow-sm mr-4">
+                <div className="flex flex-col sm:flex-row items-start bg-gray-50 p-4 md:p-6 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                  <div className="bg-white p-2 rounded-lg shadow-sm mb-2 sm:mb-0 sm:mr-4">
                     <Phone className="h-5 w-5 text-portfolio-blue" />
                   </div>
-                  <div>
+                  <div className="break-words break-all">
                     <p className="text-sm text-gray-500 font-medium">Phone</p>
                     <a 
                       href="tel:+8801771749213" 
@@ -219,11 +219,11 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors duration-200">
-                  <div className="bg-white p-2 rounded-lg shadow-sm mr-4">
+                <div className="flex flex-col sm:flex-row items-start bg-gray-50 p-4 md:p-6 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                  <div className="bg-white p-2 rounded-lg shadow-sm mb-2 sm:mb-0 sm:mr-4">
                     <Mail className="h-5 w-5 text-portfolio-blue" />
                   </div>
-                  <div>
+                  <div className="break-words break-all">
                     <p className="text-sm text-gray-500 font-medium">Email</p>
                     <a 
                       href="mailto:mdjahidhasan919@gmail.com" 
@@ -234,11 +234,11 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors duration-200">
-                  <div className="bg-white p-2 rounded-lg shadow-sm mr-4">
+                <div className="flex flex-col sm:flex-row items-start bg-gray-50 p-4 md:p-6 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                  <div className="bg-white p-2 rounded-lg shadow-sm mb-2 sm:mb-0 sm:mr-4">
                     <Linkedin className="h-5 w-5 text-portfolio-blue" />
                   </div>
-                  <div>
+                  <div className="break-words break-all">
                     <p className="text-sm text-gray-500 font-medium">LinkedIn</p>
                     <a 
                       href="https://www.linkedin.com/in/hmjahid/" 
@@ -258,7 +258,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 h-full"
+            className="bg-white p-4 md:p-8 rounded-xl shadow-lg border border-gray-100 h-full"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}

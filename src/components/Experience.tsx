@@ -280,7 +280,7 @@ const Experience: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-100 max-w-[80%]"
+                className="absolute -bottom-6 -left-6 max-[768px]:left-[10%] max-[768px]:-bottom-[10%] bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-100 max-w-[80%]"
               >
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Continuous Growth</h3>
                 <p className="text-gray-600">
