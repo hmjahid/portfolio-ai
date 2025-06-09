@@ -219,6 +219,9 @@ const Certifications = () => {
             <img 
               src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg" 
               alt="Certifications and Achievements" 
+              loading="lazy"
+              width={800}
+              height={600}
               className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-portfolio-blue/20 to-blue-600/20"></div>

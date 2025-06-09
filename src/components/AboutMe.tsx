@@ -78,6 +78,9 @@ const AboutMe = () => {
                 <img
                   src="/assets/Photo-2.png"
                   alt="Md Jahid Hasan"
+                  loading="lazy"
+                  width={600}
+                  height={800}
                   className="w-full h-full object-cover object-top"
                 />
                 <motion.div

@@ -292,6 +292,10 @@ const Hero = () => {
                   transition={{ duration: 0.5, delay: 0.7 }}
                   src="/assets/Photo.png"
                   alt="Md Jahid Hasan"
+                  loading="eager"
+                  fetchPriority="high"
+                  width={384}
+                  height={384}
                   className="w-72 h-72 md:w-96 md:h-96 lg:w-80 lg:h-80 object-cover rounded-full relative z-10 border-4 border-white shadow-2xl"
                 />
                 

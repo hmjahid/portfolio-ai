@@ -150,6 +150,9 @@ const ProjectCard = ({ project, onOpen }: { project: Project; onOpen: (project: 
           <img 
             src={project.image} 
             alt={project.title} 
+            loading="lazy"
+            width={400}
+            height={300}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -314,6 +317,9 @@ const Projects = () => {
                   <img 
                     src={selectedProject.image} 
                     alt={selectedProject.title} 
+                    loading="lazy"
+                    width={1200}
+                    height={600}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
