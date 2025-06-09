@@ -17,9 +17,9 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-32 pb-24 md:pt-32 md:pb-32 lg:pt-16 lg:pb-0 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.15),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white will-change-transform"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)] will-change-transform"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.15),transparent_50%)] will-change-transform"></div>
       
       {/* Animated Background Shapes */}
       <motion.div
@@ -32,7 +32,7 @@ const Hero = () => {
           repeat: Infinity,
           repeatType: "reverse"
         }}
-        className="absolute top-1/4 -left-24 w-96 h-96 bg-portfolio-blue/5 rounded-full blur-3xl"
+        className="absolute top-1/4 -left-24 w-96 h-96 bg-portfolio-blue/5 rounded-full blur-3xl will-change-transform"
       />
       <motion.div
         animate={{
@@ -44,7 +44,7 @@ const Hero = () => {
           repeat: Infinity,
           repeatType: "reverse"
         }}
-        className="absolute bottom-1/4 -right-24 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl"
+        className="absolute bottom-1/4 -right-24 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl will-change-transform"
       />
       
       <div className="container mx-auto px-4 md:px-6 relative">

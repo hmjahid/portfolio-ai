@@ -24,7 +24,16 @@ const CallToAction = () => {
   return (
     <section className="relative overflow-hidden py-16 sm:py-24 md:py-32">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 bg-[url('/assets/Photo.png')] bg-cover bg-center bg-no-repeat"></div>
+      <div 
+        className="absolute inset-0 bg-[url('/assets/Photo.png')] bg-cover bg-center bg-no-repeat will-change-transform"
+        style={{
+          backgroundImage: "url('/assets/Photo.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          transform: "translateZ(0)"
+        }}
+      ></div>
       <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/80"></div>
       
       {/* Enhanced animated background elements */}
