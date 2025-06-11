@@ -80,6 +80,12 @@ const Certifications = () => {
 
   const devopsCertifications = [
     {
+      title: "Linux Redhat Certified System Administrator (RHCSA - EX200)",
+      issuer: "Udemy",
+      date: "Dec 2023",
+      link: "https://www.udemy.com/certificate/UC-04d92b47-8d96-464a-a62e-3993a4734971/"
+    },
+    {
       title: "Practical Git: for Absolute Beginners",
       issuer: "Udemy",
       date: "Apr 2023",
@@ -239,7 +245,7 @@ const Certifications = () => {
             viewport={{ once: true }}
             className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg"
           >
-            <Tabs defaultValue="wordpress" className="w-full">
+            <Tabs defaultValue="devops" className="w-full">
               <div className="mb-6 min-h-[100px]">
                 <TabsList className="w-full flex flex-wrap gap-2 bg-gray-100/50 p-1 rounded-lg">
                   <TabsTrigger 
