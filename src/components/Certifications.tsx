@@ -243,38 +243,38 @@ const Certifications = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg"
+            className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg w-full"
           >
             <Tabs defaultValue="devops" className="w-full">
               <div className="mb-6 min-h-[100px]">
                 <TabsList className="w-full flex flex-wrap gap-2 bg-gray-100/50 p-1 rounded-lg">
                   <TabsTrigger 
                     value="devops" 
-                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
                   >
                     <Award className="h-4 w-4" /> DevOps
                   </TabsTrigger>
                   <TabsTrigger 
                     value="wordpress" 
-                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
                   >
                     <Award className="h-4 w-4" /> WordPress
                   </TabsTrigger>
                   <TabsTrigger 
                     value="programming" 
-                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
                   >
                     <Award className="h-4 w-4" /> Programming
                   </TabsTrigger>
                   <TabsTrigger 
                     value="webdev" 
-                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
                   >
                     <Award className="h-4 w-4" /> Web Dev
                   </TabsTrigger>
                   <TabsTrigger 
                     value="others" 
-                    className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-sm px-4 py-2"
+                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
                   >
                     <Award className="h-4 w-4" /> Others
                   </TabsTrigger>
