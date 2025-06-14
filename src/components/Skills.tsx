@@ -194,7 +194,7 @@ const Skills = () => {
               whileTap={{ scale: 0.95 }}
               className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                 activeCategory === category.title.toLowerCase()
-                  ? `bg-gradient-to-r ${category.gradient} text-white shadow-lg`
+                  ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white shadow-lg'
                   : 'bg-white text-gray-600 hover:bg-gray-100 shadow-md'
               }`}
             >
