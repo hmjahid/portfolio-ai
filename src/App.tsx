@@ -39,9 +39,9 @@ function App() {
                     <Hero />
                     <AboutMe />
                     <Skills />
-                    <Experience />
-                    <Projects />
                     <Certifications />
+                    <Projects />
+                    <Experience />
                     <CallToAction />
                     <Contact />
                   </>
