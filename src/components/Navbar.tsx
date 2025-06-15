@@ -4,16 +4,30 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { motion } from "framer-motion";
 import { useScroll } from '@/context/ScrollContext';
+import { navigateToSection } from '@/utils/navigation';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isDark, setIsDark] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { setShowScrollTop } = useScroll();
+  const location = useLocation();
 
   useEffect(() => {
+    // Reset active section when on 404 page
+    if (location.pathname !== '/') {
+      setActiveSection('');
+      return;
+    }
+
+    // Set home as active section on initial load
+    if (window.scrollY === 0) {
+      setActiveSection('home');
+    }
+
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       const currentProgress = (window.scrollY / totalScroll) * 100;
@@ -34,33 +48,21 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: 'home' },
+    { label: 'About', href: 'about' },
+    { label: 'Skills', href: 'skills' },
+    { label: 'Projects', href: 'projects' },
+    { label: 'Contact', href: 'contact' },
   ];
 
-  const handleNavigation = (href: string) => {
+  const handleNavigation = (sectionId: string) => {
     setIsOpen(false);
-    setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        // Prevent default hash behavior
-        const scrollOptions: ScrollIntoViewOptions = {
-          behavior: 'smooth',
-          block: 'start'
-        };
-        element.scrollIntoView(scrollOptions);
-        // Force show scroll-to-top button after navigation
-        setShowScrollTop(true);
-        // Prevent URL hash update
-        history.pushState(null, '', window.location.pathname);
-      }
-    }, 100);
+    navigateToSection(sectionId);
+    // Force show scroll-to-top button after navigation
+    setShowScrollTop(true);
   };
 
   return (
@@ -84,7 +86,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
               onClick={(e) => {
                 e.preventDefault();
-                handleNavigation('#home');
+                handleNavigation('home');
               }}
             >
               Md Jahid Hasan
@@ -95,9 +97,9 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <motion.a
                   key={item.href}
-                  href={item.href}
+                  href={`#${item.href}`}
                   className={`text-sm font-medium transition-colors relative ${
-                    activeSection === item.href.slice(1) 
+                    activeSection === item.href
                       ? 'text-portfolio-blue' 
                       : 'text-gray-600 hover:text-portfolio-blue'
                   }`}
@@ -109,7 +111,7 @@ const Navbar = () => {
                   }}
                 >
                   {item.label}
-                  {activeSection === item.href.slice(1) && (
+                  {activeSection === item.href && (
                     <motion.div
                       layoutId="activeSection"
                       className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-portfolio-blue to-blue-600"
@@ -129,7 +131,7 @@ const Navbar = () => {
                     href="#contact" 
                     onClick={(e) => {
                       e.preventDefault();
-                      handleNavigation('#contact');
+                      handleNavigation('contact');
                     }}
                   >
                     Hire Me
@@ -164,9 +166,9 @@ const Navbar = () => {
                   {navItems.map((item) => (
                     <motion.a
                       key={item.href}
-                      href={item.href}
+                      href={`#${item.href}`}
                       className={`text-lg font-medium transition-colors hover:text-portfolio-blue ${
-                        activeSection === item.href.slice(1) ? 'text-portfolio-blue' : 'text-gray-600'
+                        activeSection === item.href ? 'text-portfolio-blue' : 'text-gray-600'
                       }`}
                       whileHover={{ x: 5 }}
                       whileTap={{ x: 0 }}
@@ -191,7 +193,7 @@ const Navbar = () => {
                         href="#contact" 
                         onClick={(e) => {
                           e.preventDefault();
-                          handleNavigation('#contact');
+                          handleNavigation('contact');
                         }}
                       >
                         Hire Me

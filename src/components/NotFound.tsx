@@ -1,12 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { Home, ArrowLeft } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import { Home } from "lucide-react";
+import { navigateToSection } from '@/utils/navigation';
 
 const NotFound = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-white relative overflow-hidden">
       {/* Background Elements */}
@@ -70,25 +68,15 @@ const NotFound = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-4"
+            className="flex justify-center"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                onClick={() => navigate(-1)}
-                className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
+                onClick={() => navigateToSection('home')}
+                className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
               >
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Go Back
-              </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                onClick={() => navigate('/')}
-                variant="outline"
-                className="border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue hover:text-white px-6 py-3 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl"
-              >
-                <Home className="mr-2 h-5 w-5" />
-                Home Page
+                <Home className="mr-2 h-6 w-6" />
+                Back to Home
               </Button>
             </motion.div>
           </motion.div>

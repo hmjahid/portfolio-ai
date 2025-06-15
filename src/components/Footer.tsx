@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Github, Linkedin, ArrowUp, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScroll } from '@/context/ScrollContext';
+import { navigateToSection } from '@/utils/navigation';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -123,11 +124,7 @@ const Footer = () => {
                 whileTap={{ y: 0 }}
                 onClick={(e) => {
                   e.preventDefault();
-                  const element = document.querySelector('#about');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                    history.pushState(null, '', window.location.pathname);
-                  }
+                  navigateToSection('about');
                 }}
               >
                 About
@@ -139,11 +136,7 @@ const Footer = () => {
                 whileTap={{ y: 0 }}
                 onClick={(e) => {
                   e.preventDefault();
-                  const element = document.querySelector('#projects');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                    history.pushState(null, '', window.location.pathname);
-                  }
+                  navigateToSection('projects');
                 }}
               >
                 Projects
@@ -155,11 +148,7 @@ const Footer = () => {
                 whileTap={{ y: 0 }}
                 onClick={(e) => {
                   e.preventDefault();
-                  const element = document.querySelector('#contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                    history.pushState(null, '', window.location.pathname);
-                  }
+                  navigateToSection('contact');
                 }}
               >
                 Contact
