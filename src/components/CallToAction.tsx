@@ -97,7 +97,7 @@ const CallToAction = () => {
               Transform Your Digital Vision
             </h2>
             <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-2xl mx-auto">
-              With {stats.yearsOfExperience}+ years of expertise in WordPress and Web development, 
+              With 3+ years of expertise in WordPress and Web development, 
               I specialize in crafting high-performance websites and applications. From custom WordPress themes 
               to complex Web solutions, I bring your digital vision to life with precision and innovation.
             </p>
