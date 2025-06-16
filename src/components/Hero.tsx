@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, BookOpen, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { RESUME_FILE, SOCIAL_LINKS } from '@/config/constants';
+import { images } from '@/config/images';
 
 const Hero = () => {
   const handleContactClick = (e: React.MouseEvent) => {
@@ -290,7 +291,7 @@ const Hero = () => {
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.7 }}
-                  src="/assets/Photo.png"
+                  src={images.profile.main}
                   alt="Md Jahid Hasan"
                   loading="eager"
                   fetchPriority="high"

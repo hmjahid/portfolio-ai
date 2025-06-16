@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Code, Briefcase, Award, Star, Users } from "lucide-react";
 import { RESUME_FILE } from '@/config/constants';
+import { images } from '@/config/images';
 
 const AboutMe = () => {
   const handleContactClick = () => {
@@ -76,7 +77,7 @@ const AboutMe = () => {
                 className="relative w-full h-[600px] flex items-start justify-center p-0 -mt-8"
               >
                 <img
-                  src="/assets/Photo-2.png"
+                  src={images.profile.about}
                   alt="Md Jahid Hasan"
                   loading="lazy"
                   width={600}

@@ -17,6 +17,7 @@ import NotFound from './components/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import { Toaster } from "@/components/ui/toaster";
 import { handleStoredTargetSection } from './utils/navigation';
+import Testimonials from './components/Testimonials';
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ function App() {
                     <Certifications />
                     <Projects />
                     <Experience />
+                    {/* <Testimonials /> */}
                     <CallToAction />
                     <Contact />
                   </>

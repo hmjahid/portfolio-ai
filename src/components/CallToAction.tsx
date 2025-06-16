@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Mail, ArrowRight, Sparkles, Download } from "lucide-react";
 import { RESUME_FILE } from '@/config/constants';
+import { images } from '@/config/images';
 
 const CallToAction = () => {
   const handleContactClick = (e: React.MouseEvent) => {
@@ -25,9 +26,9 @@ const CallToAction = () => {
     <section className="relative overflow-hidden py-16 sm:py-24 md:py-32">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-[url('/assets/Photo.png')] bg-cover bg-center bg-no-repeat will-change-transform"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
         style={{
-          backgroundImage: "url('/assets/Photo.png')",
+          backgroundImage: `url(${images.profile.cta})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

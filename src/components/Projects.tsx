@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Globe, Code, ExternalLink, Github, X, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
+import { images } from '@/config/images';
 import {
   Carousel,
   CarouselContent,
@@ -39,7 +40,7 @@ const wordpressProjects: Project[] = [
     id: 1,
     title: "Hypnotherapy with Shelly O'Brien",
     description: "A personalized hypnotherapy service website helping clients recognize their potential, overcome challenges, and achieve their goals through professional hypnotherapy services.",
-    image: "/assets/Shelly-Obrien.png",
+    image: images.projects.wordpress.shellyObrien,
     demoLink: "https://shellyobrienhypnotherapy.com/",
     technologies: ["WordPress", "Divi Theme", "Divi Builder", "Contact Form 7", "Yoast SEO"],
     features: [
@@ -65,7 +66,7 @@ const devopsProjects: Project[] = [
     id: 1,
     title: "Building a Comprehensive Server Monitoring System with Docker",
     description: "I built a robust server monitoring stack using Node Exporter, Prometheus, Grafana, Redis, Alertmanager, and cAdvisor, later expanding it with Nagios Core and Uptime Kuma for deeper observability",
-    image: "/assets/server-monitoring.png",
+    image: images.projects.devops.serverMonitoring,
     codeLink: "https://github.com/hmjahid/devops-projects/tree/main/docker/server-monitoring-stack",
     blogLink: "https://medium.com/@mdjahidhasan919/building-a-comprehensive-server-monitoring-system-with-docker-a-one-year-journey-b9226d6e8ef2",
     technologies: ["Docker", "DevOps", "Grafana", "Prometheus.io", "Nagios Core", "Uptime Kuma"],
@@ -89,7 +90,7 @@ const devopsProjects: Project[] = [
     id: 2,
     title: "Multi-Tier Web Application Deployment",
     description: "Designed and deployed a scalable, six-tier web application using Docker to demonstrate expertise in containerization and DevOps practices.",
-    image: "/assets/multi-tier-php-application.jpg",
+    image: images.projects.devops.multiTierApp,
     codeLink: "https://github.com/hmjahid/devops-projects/tree/main/docker/6-tier-php-app",
     blogLink: "https://medium.com/@mdjahidhasan919/deploying-a-6-tier-php-application-with-docker-c6c35834b582",
     technologies: ["Docker", "Docker Compose", "Nginx", "PHP", "MySQL", "Redis"],
@@ -110,10 +111,10 @@ const devopsProjects: Project[] = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: "Autoscalable WooCommerce Deployment",
     description: "Deployed a full WooCommerce application with MySQL, Redis, phpMyAdmin, and FileBrowser in both Docker and Kubernetes (Minikube), implementing autoscaling for optimal performance.",
-    image: "/assets/auto-scalable-woocommerce.jpg",
+    image: images.projects.devops.woocommerce,
     codeLink: "https://github.com/hmjahid/devops-projects/tree/main/docker%2Bk8s/auto-scalable-woocommerce",
     blogLink: "https://medium.com/@mdjahidhasan919/deploying-woocommerce-with-mysql-redis-phpmyadmin-and-filebrowser-a-journey-to-docker-and-ec7e928c7bed",
     technologies: ["Docker", "Kubernetes", "Minikube", "MySQL", "Redis", "WooCommerce"],
