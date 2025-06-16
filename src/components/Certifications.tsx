@@ -223,7 +223,7 @@ const Certifications = () => {
             className="relative w-full h-full overflow-hidden rounded-xl shadow-xl"
           >
             <img 
-              src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg" 
+              src="/assets/certifications.webp" 
               alt="Certifications and Achievements" 
               loading="lazy"
               width={800}

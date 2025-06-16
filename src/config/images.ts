@@ -1,6 +1,6 @@
 // Profile Images
 export const profileImages = {
-  main: '/assets/Photo.webp',
+  main: '/assets/hero-photo.webp',
   about: '/assets/Photo-2.webp',
   cta: '/assets/Photo.webp',
 };
