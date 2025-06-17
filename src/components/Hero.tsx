@@ -183,7 +183,7 @@ const Hero = () => {
                   onClick={handleContactClick}
                   className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
                 >
-                  Hire Me <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    Hire Me <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -277,7 +277,7 @@ const Hero = () => {
               />
               
               {/* Main image container */}
-              <motion.div
+              <motion.div 
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
@@ -288,9 +288,9 @@ const Hero = () => {
                 
                 {/* Main image */}
                 <motion.img
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
                   src={images.profile.main}
                   alt="Md Jahid Hasan"
                   loading="eager"
