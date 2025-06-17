@@ -240,7 +240,7 @@ const Projects = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Tabs defaultValue="devops" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:w-[400px] bg-gray-100/50 backdrop-blur-sm p-1 rounded-xl shadow-lg gap-2">
+            <TabsList className="grid w-full grid-cols-2 lg:w-[400px] p-1 rounded-xl gap-2">
               <TabsTrigger 
                 value="wordpress" 
                 className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
@@ -255,7 +255,7 @@ const Projects = () => {
               </TabsTrigger>
             </TabsList>
             
-            <TabsContent value="devops">
+            <TabsContent value="devops" className="mt-8">
               <Carousel
                 opts={{
                   align: "start",
@@ -277,7 +277,7 @@ const Projects = () => {
               </Carousel>
             </TabsContent>
             
-            <TabsContent value="wordpress">
+            <TabsContent value="wordpress" className="mt-8">
               <Carousel
                 opts={{
                   align: "start",
