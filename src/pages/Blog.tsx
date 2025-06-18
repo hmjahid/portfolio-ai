@@ -14,7 +14,7 @@ const Blog = () => {
   const navigate = useNavigate();
   const POSTS_PER_PAGE = 3;
 
-  const mainCategories = ['WordPress', 'DevOps', 'Web Development' , 'Linux', 'Others'];
+  const mainCategories = ['DevOps', 'WordPress', 'Web Development' , 'Linux', 'Others'];
 
   const loadMore = async () => {
     setIsLoading(true);
