@@ -122,10 +122,9 @@ const BlogPost = () => {
             </div>
 
             {/* Share Buttons */}
-            <div className="mt-16 border-t pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <span className="font-bold  text-gray-700 flex items-center gap-2 text-[18px] md:text-[20px]">
-                FEEL FREE TO SHARE
-                <span className="hidden md:inline-block border-l h-5 mx-4"></span>
+            <div className="mt-16 border-t pt-8 flex flex-col md:flex-row md:items-center md:justify-center gap-6">
+              <span className="font-bold text-gray-700 flex items-center gap-2 text-[18px] md:text-[20px]">
+                Feel Free to Share:
               </span>
               <div className="flex items-center gap-4">
                 <button
