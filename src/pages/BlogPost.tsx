@@ -15,6 +15,16 @@ const BlogPost = () => {
   useEffect(() => {
     if (post) {
       document.title = `${post.title} | Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      const content = post.excerpt || 'Read this blog post by Md Jahid Hasan - Web & WordPress Developer and DevOps Enthusiast.';
+      if (metaDescription) {
+        metaDescription.setAttribute('content', content);
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'description';
+        meta.content = content;
+        document.head.appendChild(meta);
+      }
     }
   }, [post]);
 

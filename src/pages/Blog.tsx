@@ -34,6 +34,16 @@ const Blog = () => {
 
   useEffect(() => {
     document.title = 'Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const content = 'Read the latest articles on DevOps, WordPress, Linux, and web development by Md Jahid Hasan - Web & WordPress Developer and DevOps Enthusiast.';
+    if (metaDescription) {
+      metaDescription.setAttribute('content', content);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = content;
+      document.head.appendChild(meta);
+    }
   }, []);
 
   return (

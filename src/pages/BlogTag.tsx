@@ -30,8 +30,28 @@ const BlogTag = () => {
   useEffect(() => {
     if (tag) {
       document.title = `Posts tagged with ${tag.replace(/-/g, ' ')} | Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      const content = `Browse blog posts tagged with ${tag.replace(/-/g, ' ')} on Md Jahid Hasan's blog. Discover insights on DevOps, WordPress, Linux, and web development.`;
+      if (metaDescription) {
+        metaDescription.setAttribute('content', content);
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'description';
+        meta.content = content;
+        document.head.appendChild(meta);
+      }
     } else {
       document.title = 'Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast';
+      const metaDescription = document.querySelector('meta[name="description"]');
+      const content = 'Read the latest articles on DevOps, WordPress, Linux, and web development by Md Jahid Hasan - Web & WordPress Developer and DevOps Enthusiast.';
+      if (metaDescription) {
+        metaDescription.setAttribute('content', content);
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'description';
+        meta.content = content;
+        document.head.appendChild(meta);
+      }
     }
   }, [tag]);
 
