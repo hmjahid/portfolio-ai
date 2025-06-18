@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '@/config/blog';
@@ -31,6 +31,10 @@ const Blog = () => {
       : blogPosts.filter(post => post.category === selectedCategory);
 
   const hasMorePosts = visiblePosts < filteredPosts.length;
+
+  useEffect(() => {
+    document.title = 'Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast';
+  }, []);
 
   return (
     <section className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">

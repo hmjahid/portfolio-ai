@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '@/config/blog';
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -26,6 +26,14 @@ const BlogTag = () => {
     setVisiblePosts(prev => prev + POSTS_PER_PAGE);
     setIsLoading(false);
   };
+
+  useEffect(() => {
+    if (tag) {
+      document.title = `Posts tagged with ${tag.replace(/-/g, ' ')} | Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast`;
+    } else {
+      document.title = 'Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast';
+    }
+  }, [tag]);
 
   return (
     <section className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">

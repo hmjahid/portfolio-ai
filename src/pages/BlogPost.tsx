@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { blogPosts } from '@/config/blog';
@@ -11,6 +11,12 @@ const BlogPost = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const post = blogPosts.find(post => post.slug === slug);
+
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast`;
+    }
+  }, [post]);
 
   if (!post) {
     return (
