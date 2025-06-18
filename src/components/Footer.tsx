@@ -3,11 +3,13 @@ import { Github, Linkedin, ArrowUp, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScroll } from '@/context/ScrollContext';
 import { navigateToSection } from '@/utils/navigation';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const currentUrl = typeof window !== 'undefined' ? window.location.origin : '';
   const { showScrollTop, setShowScrollTop } = useScroll();
+  const navigate = useNavigate();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -146,6 +148,10 @@ const Footer = () => {
                 className="hover:text-portfolio-blue transition-colors font-medium"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/blog');
+                }}
               >
                 Blog
               </motion.a>

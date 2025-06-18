@@ -2,10 +2,20 @@ import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { blogPosts } from '@/config/blog';
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
-import { Facebook, Linkedin, Link as LinkIcon, Twitter } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin, Copy } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+
+// Helper function to format date as "DD MMM YYYY"
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { 
+    day: 'numeric',
+    month: 'short', 
+    year: 'numeric' 
+  });
+};
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -76,10 +86,10 @@ const BlogPost = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
 
-            <div className="flex items-center gap-4 text-sm text-gray-500 mb-12">
+            <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
-                <span>{new Date(post.date).toLocaleDateString()}</span>
+                <span>{formatDate(post.date)}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />
@@ -144,7 +154,7 @@ const BlogPost = () => {
                   className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
                   aria-label="Copy Link"
                 >
-                  <LinkIcon className="h-5 w-5" />
+                  <Copy className="h-5 w-5" />
                 </button>
               </div>
             </div>

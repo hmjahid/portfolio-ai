@@ -3,10 +3,20 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '@/config/blog';
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, Tag } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+// Helper function to format date as "DD MMM YYYY"
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { 
+    day: 'numeric',
+    month: 'short', 
+    year: 'numeric' 
+  });
+};
 
 const BlogTag = () => {
   const { tag } = useParams<{ tag: string }>();
@@ -59,7 +69,7 @@ const BlogTag = () => {
     <section className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">
       <div className="container mx-auto px-4 md:px-6 relative">
         <Link to="/blog" className="inline-block mb-8 text-portfolio-blue hover:underline font-medium">&larr; Back to Blog</Link>
-        {/* <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Posts tagged with "{tag}"</h2> */}
+        
         {/* Tag Filter Tabs */}
         <div className="mb-8 flex flex-wrap gap-3 items-center">
           <button
@@ -84,6 +94,7 @@ const BlogTag = () => {
             );
           })}
         </div>
+        
         {filteredPosts.length === 0 ? (
           <p className="text-gray-500 text-lg">No posts found for this tag.</p>
         ) : (
@@ -103,7 +114,7 @@ const BlogTag = () => {
                 <CardHeader>
                   <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
                     <Calendar className="h-4 w-4" />
-                    <span>{new Date(post.date).toLocaleDateString()}</span>
+                    <span>{formatDate(post.date)}</span>
                     <Clock className="h-4 w-4 ml-2" />
                     <span>{post.readTime}</span>
                   </div>
@@ -131,6 +142,7 @@ const BlogTag = () => {
             ))}
           </div>
         )}
+        
         {hasMorePosts && (
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -159,4 +171,4 @@ const BlogTag = () => {
   );
 };
 
-export default BlogTag; 
+export default BlogTag;

@@ -7,6 +7,16 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User, Loader2, X as CloseIcon } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
+// Helper function to format date as "DD MMM YYYY"
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { 
+    day: 'numeric',
+    month: 'short', 
+    year: 'numeric' 
+  });
+};
+
 const Blog = () => {
   const [visiblePosts, setVisiblePosts] = useState(9);
   const [isLoading, setIsLoading] = useState(false);
@@ -108,7 +118,7 @@ const Blog = () => {
                 <CardHeader>
                   <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
                     <Calendar className="h-4 w-4" />
-                    <span>{new Date(post.date).toLocaleDateString()}</span>
+                    <span>{formatDate(post.date)}</span>
                     <Clock className="h-4 w-4 ml-2" />
                     <span>{post.readTime}</span>
                   </div>
