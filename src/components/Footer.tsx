@@ -142,6 +142,14 @@ const Footer = () => {
                 Projects
               </motion.a>
               <motion.a 
+                href="/blog" 
+                className="hover:text-portfolio-blue transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+              >
+                Blog
+              </motion.a>
+              <motion.a 
                 href="#contact" 
                 className="hover:text-portfolio-blue transition-colors font-medium"
                 whileHover={{ y: -2 }}

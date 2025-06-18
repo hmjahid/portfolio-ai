@@ -5,16 +5,35 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { motion } from "framer-motion";
 import { useScroll } from '@/context/ScrollContext';
 import { navigateToSection } from '@/utils/navigation';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('home');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isDark, setIsDark] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { setShowScrollTop } = useScroll();
   const location = useLocation();
+  const navigate = useNavigate();
+  const isBlogActive = location.pathname.startsWith('/blog');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Set initial scroll state for blog pages
+  useEffect(() => {
+    if (location.pathname.startsWith('/blog')) {
+      setIsScrolled(true);
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     // Reset active section when on 404 page
@@ -55,12 +74,17 @@ const Navbar = () => {
     { label: 'About', href: 'about' },
     { label: 'Skills', href: 'skills' },
     { label: 'Projects', href: 'projects' },
+    { label: 'Blog', href: '/blog', isDirectLink: true },
     { label: 'Contact', href: 'contact' },
   ];
 
   const handleNavigation = (sectionId: string) => {
     setIsOpen(false);
-    navigateToSection(sectionId);
+    if (sectionId.startsWith('/')) {
+      navigate(sectionId);
+    } else {
+      navigateToSection(sectionId);
+    }
     // Force show scroll-to-top button after navigation
     setShowScrollTop(true);
   };
@@ -72,10 +96,10 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white/90 backdrop-blur-md shadow-lg' 
+          isScrolled || location.pathname.startsWith('/blog')
+            ? 'bg-white/80 backdrop-blur-md' 
             : 'bg-transparent'
-        }`}
+        } ${isScrolled ? 'shadow-lg' : ''}`}
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-20">
@@ -94,31 +118,34 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <motion.a
-                  key={item.href}
-                  href={`#${item.href}`}
-                  className={`text-sm font-medium transition-colors relative ${
-                    activeSection === item.href
-                      ? 'text-portfolio-blue' 
-                      : 'text-gray-600 hover:text-portfolio-blue'
-                  }`}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation(item.href);
-                  }}
-                >
-                  {item.label}
-                  {activeSection === item.href && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-portfolio-blue to-blue-600"
-                    />
-                  )}
-                </motion.a>
-              ))}
+              {navItems.map((item) => {
+                const isActive = item.label === 'Blog' ? isBlogActive : activeSection === item.href;
+                return (
+                  <motion.a
+                    key={item.href}
+                    href={item.isDirectLink ? item.href : `#${item.href}`}
+                    className={`text-sm font-medium transition-colors relative ${
+                      isActive
+                        ? 'text-portfolio-blue' 
+                        : 'text-gray-600 hover:text-portfolio-blue'
+                    }`}
+                    whileHover={{ y: -2 }}
+                    whileTap={{ y: 0 }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation(item.href);
+                    }}
+                  >
+                    {item.label}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeSection"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-portfolio-blue to-blue-600"
+                      />
+                    )}
+                  </motion.a>
+                );
+              })}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -163,23 +190,26 @@ const Navbar = () => {
                   </motion.button>
                 </div>
                 <nav className="flex flex-col space-y-4 mt-8">
-                  {navItems.map((item) => (
-                    <motion.a
-                      key={item.href}
-                      href={`#${item.href}`}
-                      className={`text-lg font-medium transition-colors hover:text-portfolio-blue ${
-                        activeSection === item.href ? 'text-portfolio-blue' : 'text-gray-600'
-                      }`}
-                      whileHover={{ x: 5 }}
-                      whileTap={{ x: 0 }}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavigation(item.href);
-                      }}
-                    >
-                      {item.label}
-                    </motion.a>
-                  ))}
+                  {navItems.map((item) => {
+                    const isActive = item.label === 'Blog' ? isBlogActive : activeSection === item.href;
+                    return (
+                      <motion.a
+                        key={item.href}
+                        href={item.isDirectLink ? item.href : `#${item.href}`}
+                        className={`text-lg font-medium transition-colors hover:text-portfolio-blue ${
+                          isActive ? 'text-portfolio-blue' : 'text-gray-600'
+                        }`}
+                        whileHover={{ x: 5 }}
+                        whileTap={{ x: 0 }}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavigation(item.href);
+                        }}
+                      >
+                        {item.label}
+                      </motion.a>
+                    );
+                  })}
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

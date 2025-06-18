@@ -242,16 +242,16 @@ const Projects = () => {
           <Tabs defaultValue="devops" className="w-full">
             <TabsList className="grid w-full grid-cols-2 lg:w-[400px] p-1 rounded-xl gap-2">
               <TabsTrigger 
-                value="wordpress" 
-                className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
-              >
-                <Globe className="h-4 w-4" /> WordPress
-              </TabsTrigger>
-              <TabsTrigger 
                 value="devops" 
                 className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
               >
                 <Code className="h-4 w-4" /> DevOps
+              </TabsTrigger>
+              <TabsTrigger 
+                value="wordpress" 
+                className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
+              >
+                <Globe className="h-4 w-4" /> WordPress
               </TabsTrigger>
             </TabsList>
             

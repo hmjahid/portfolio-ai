@@ -18,6 +18,9 @@ import ScrollToTop from './components/ScrollToTop';
 import { Toaster } from "@/components/ui/toaster";
 import { handleStoredTargetSection } from './utils/navigation';
 import Testimonials from './components/Testimonials';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import BlogTag from './pages/BlogTag';
 
 const queryClient = new QueryClient();
 
@@ -48,6 +51,9 @@ function App() {
                     <Contact />
                   </>
                 } />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path="/blog/tag/:tag" element={<BlogTag />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <Footer />

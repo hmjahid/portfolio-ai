@@ -1,0 +1,142 @@
+import React from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { blogPosts } from '@/config/blog';
+import { Badge } from "@/components/ui/badge";
+import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
+import { Facebook, Linkedin, Link as LinkIcon, Twitter } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+
+const BlogPost = () => {
+  const { slug } = useParams();
+  const navigate = useNavigate();
+  const post = blogPosts.find(post => post.slug === slug);
+
+  if (!post) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">Post Not Found</h1>
+          <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+          <Link 
+            to="/blog"
+            className="inline-flex items-center gap-2 text-portfolio-blue hover:text-portfolio-blue/80 transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Blog
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <article className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="max-w-full lg:max-w-[80%] mx-auto">
+            <Link 
+              to="/blog"
+              className="inline-flex items-center gap-2 text-portfolio-blue hover:text-portfolio-blue/80 transition-colors mb-8"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Blog
+            </Link>
+
+            <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-xl mb-8">
+              <img 
+                src={post.coverImage} 
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+
+            <div className="flex items-center gap-4 text-sm text-gray-500 mb-12">
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                <span>{new Date(post.date).toLocaleDateString()}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                <span>{post.readTime}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                <span>{post.author.name}</span>
+              </div>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              {post.title}
+            </h1>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              {post.tags.map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => navigate(`/blog/tag/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`)}
+                  className="px-2 py-1 rounded-full text-xs font-medium transition-colors duration-200 border bg-portfolio-blue/10 text-portfolio-blue border-portfolio-blue/20 hover:bg-portfolio-blue/20"
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+
+            <div className="prose prose-lg max-w-none prose-img:rounded-xl prose-img:shadow-lg">
+              <ReactMarkdown>{post.content}</ReactMarkdown>
+            </div>
+
+            {/* Share Buttons */}
+            <div className="mt-16 border-t pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <span className="font-bold  text-gray-700 flex items-center gap-2 text-[18px] md:text-[20px]">
+                FEEL FREE TO SHARE
+                <span className="hidden md:inline-block border-l h-5 mx-4"></span>
+              </span>
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank')}
+                  className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
+                  aria-label="Share on Facebook"
+                >
+                  <Facebook className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={() => window.open(`https://twitter.com/intent/tweet?url=${window.location.href}&text=${encodeURIComponent(post.title)}`, '_blank')}
+                  className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
+                  aria-label="Share on Twitter"
+                >
+                  <Twitter className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank')}
+                  className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
+                  aria-label="Share on LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={() => {navigator.clipboard.writeText(window.location.href)}}
+                  className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
+                  aria-label="Copy Link"
+                >
+                  <LinkIcon className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </article>
+  );
+};
+
+export default BlogPost; 
