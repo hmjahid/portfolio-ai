@@ -109,9 +109,9 @@ const BlogSection = () => {
               sessionStorage.setItem('scrollToTop', 'true');
               navigate('/blog');
             }}
-            className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white px-8 py-6 text-lg transition-all duration-300"
+            className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white h-10 px-4 py-2 md:h-auto md:px-8 md:py-4 text-lg rounded-lg font-semibold shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:scale-105 text-center"
           >
-            View All
+            <span className="w-full text-center">View All</span>
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </motion.div>

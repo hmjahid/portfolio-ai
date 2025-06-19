@@ -198,18 +198,21 @@ const BlogPost = () => {
                 Explore more insights and articles from our blog
               </p>
             </div>
-            <Link
-              to="/blog"
-              onClick={(e) => {
-                e.preventDefault();
-                sessionStorage.setItem('scrollToTop', 'true');
-                navigate('/blog');
-              }}
-              className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white px-8 py-4 text-lg rounded-lg font-semibold shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:scale-105"
-            >
-              View All
-              <ArrowRight className="h-5 w-5" />
-            </Link>
+            {/* Desktop View All Button in Header Row */}
+            <div className="hidden md:flex justify-end">
+              <Link
+                to="/blog"
+                onClick={(e) => {
+                  e.preventDefault();
+                  sessionStorage.setItem('scrollToTop', 'true');
+                  navigate('/blog');
+                }}
+                className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white px-8 py-4 text-lg rounded-lg font-semibold shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:scale-105 text-center"
+              >
+                <span className="w-full text-center">View All</span>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -265,6 +268,22 @@ const BlogPost = () => {
                   </Card>
                 </motion.div>
               ))}
+          </div>
+
+          {/* Responsive View All Button at Bottom */}
+          <div className="flex md:hidden justify-center mt-10">
+            <Link
+              to="/blog"
+              onClick={(e) => {
+                e.preventDefault();
+                sessionStorage.setItem('scrollToTop', 'true');
+                navigate('/blog');
+              }}
+              className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white h-10 px-4 py-2 rounded-lg font-semibold shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:scale-105 text-center"
+            >
+              <span className="text-center">View All</span>
+              <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>
