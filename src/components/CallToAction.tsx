@@ -4,15 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Mail, ArrowRight, Sparkles, Download } from "lucide-react";
 import { RESUME_FILE } from '@/config/constants';
 import { images } from '@/config/images';
+import { navigateToSection } from '@/utils/navigation';
 
 const CallToAction = () => {
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-      history.pushState(null, '', window.location.pathname);
-    }
+    navigateToSection('contact');
   };
 
   const stats = {

@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { blogPosts } from '@/config/blog';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin, Copy } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin, Copy, ArrowRight } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import CallToAction from '@/components/CallToAction';
+import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
 
 // Helper function to format date as "DD MMM YYYY"
 const formatDate = (dateString: string) => {
@@ -46,6 +48,14 @@ const BlogPost = () => {
           <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
           <Link 
             to="/blog"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/blog');
+              // Scroll to top after a small delay to ensure page loads
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }, 100);
+            }}
             className="inline-flex items-center gap-2 text-portfolio-blue hover:text-portfolio-blue/80 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -57,110 +67,211 @@ const BlogPost = () => {
   }
 
   return (
-    <article className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      
-      <div className="container mx-auto px-4 md:px-6 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="max-w-full lg:max-w-[80%] mx-auto">
-            <Link 
+    <>
+      <article className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        
+        <div className="container mx-auto px-4 md:px-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="max-w-full lg:max-w-[80%] mx-auto">
+              <Link 
+                to="/blog"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/blog');
+                  // Scroll to top after a small delay to ensure page loads
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }, 100);
+                }}
+                className="inline-flex items-center gap-2 text-portfolio-blue hover:text-portfolio-blue/80 transition-colors mb-8"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back to Blog
+              </Link>
+
+              <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-xl mb-8">
+                <img 
+                  src={post.coverImage} 
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+
+              <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  <span>{formatDate(post.date)}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4" />
+                  <span>{post.readTime}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  <span>{post.author.name}</span>
+                </div>
+              </div>
+
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                {post.title}
+              </h1>
+
+              <div className="flex flex-wrap gap-2 mb-8">
+                {post.tags.map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => navigate(`/blog/tag/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`)}
+                    className="px-2 py-1 rounded-full text-xs font-medium transition-colors duration-200 border bg-portfolio-blue/10 text-portfolio-blue border-portfolio-blue/20 hover:bg-portfolio-blue/20"
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+
+              <div className="prose prose-lg max-w-none prose-img:rounded-xl prose-img:shadow-lg">
+                <ReactMarkdown>{post.content}</ReactMarkdown>
+              </div>
+
+              {/* Share Buttons */}
+              <div className="mt-16 border-t pt-8 flex flex-col md:flex-row md:items-center md:justify-center gap-6">
+                <span className="font-bold text-gray-700 flex items-center gap-2 text-[18px] md:text-[20px]">
+                  Feel Free to Share:
+                </span>
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank')}
+                    className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
+                    aria-label="Share on Facebook"
+                  >
+                    <Facebook className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={() => window.open(`https://twitter.com/intent/tweet?url=${window.location.href}&text=${encodeURIComponent(post.title)}`, '_blank')}
+                    className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
+                    aria-label="Share on Twitter"
+                  >
+                    <Twitter className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank')}
+                    className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
+                    aria-label="Share on LinkedIn"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={() => {navigator.clipboard.writeText(window.location.href)}}
+                    className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
+                    aria-label="Copy Link"
+                  >
+                    <Copy className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </article>
+
+      {/* Latest Posts Section */}
+      <section className="py-16 md:py-20 lg:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-6"
+          >
+            <div className="text-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-1">
+                Latest Posts
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl">
+                Explore more insights and articles from our blog
+              </p>
+            </div>
+            <Link
               to="/blog"
-              className="inline-flex items-center gap-2 text-portfolio-blue hover:text-portfolio-blue/80 transition-colors mb-8"
+              onClick={(e) => {
+                e.preventDefault();
+                sessionStorage.setItem('scrollToTop', 'true');
+                navigate('/blog');
+              }}
+              className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white px-8 py-4 text-lg rounded-lg font-semibold shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:scale-105"
             >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Blog
+              View All
+              <ArrowRight className="h-5 w-5" />
             </Link>
+          </motion.div>
 
-            <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-xl mb-8">
-              <img 
-                src={post.coverImage} 
-                alt={post.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            </div>
-
-            <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-              <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                <span>{formatDate(post.date)}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                <span>{post.readTime}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <User className="h-4 w-4" />
-                <span>{post.author.name}</span>
-              </div>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              {post.title}
-            </h1>
-
-            <div className="flex flex-wrap gap-2 mb-8">
-              {post.tags.map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => navigate(`/blog/tag/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`)}
-                  className="px-2 py-1 rounded-full text-xs font-medium transition-colors duration-200 border bg-portfolio-blue/10 text-portfolio-blue border-portfolio-blue/20 hover:bg-portfolio-blue/20"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogPosts
+              .filter(otherPost => otherPost.slug !== post.slug)
+              .slice(0, 3)
+              .map((otherPost) => (
+                <motion.div
+                  key={otherPost.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
                 >
-                  {tag}
-                </button>
+                  <Card className="h-full group hover:shadow-xl transition-all duration-300">
+                    <Link to={`/blog/${otherPost.slug}`}>
+                      <div className="relative h-48 overflow-hidden rounded-t-lg">
+                        <img 
+                          src={otherPost.coverImage} 
+                          alt={otherPost.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg"></div>
+                      </div>
+                    </Link>
+                    <CardHeader>
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                        <Calendar className="h-4 w-4" />
+                        <span>{formatDate(otherPost.date)}</span>
+                        <Clock className="h-4 w-4 ml-2" />
+                        <span>{otherPost.readTime}</span>
+                      </div>
+                      <Link to={`/blog/${otherPost.slug}`}>
+                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
+                          {otherPost.title}
+                        </h3>
+                      </Link>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 line-clamp-3">{otherPost.excerpt}</p>
+                    </CardContent>
+                    <CardFooter className="flex flex-wrap gap-2">
+                      {otherPost.tags.map((tag) => (
+                        <button
+                          key={tag}
+                          onClick={() => navigate(`/blog/tag/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`)}
+                          className="px-2 py-1 rounded-full text-xs font-medium transition-colors duration-200 border bg-portfolio-blue/10 text-portfolio-blue border-portfolio-blue/20 hover:bg-portfolio-blue/20"
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </CardFooter>
+                  </Card>
+                </motion.div>
               ))}
-            </div>
-
-            <div className="prose prose-lg max-w-none prose-img:rounded-xl prose-img:shadow-lg">
-              <ReactMarkdown>{post.content}</ReactMarkdown>
-            </div>
-
-            {/* Share Buttons */}
-            <div className="mt-16 border-t pt-8 flex flex-col md:flex-row md:items-center md:justify-center gap-6">
-              <span className="font-bold text-gray-700 flex items-center gap-2 text-[18px] md:text-[20px]">
-                Feel Free to Share:
-              </span>
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank')}
-                  className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
-                  aria-label="Share on Facebook"
-                >
-                  <Facebook className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => window.open(`https://twitter.com/intent/tweet?url=${window.location.href}&text=${encodeURIComponent(post.title)}`, '_blank')}
-                  className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
-                  aria-label="Share on Twitter"
-                >
-                  <Twitter className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank')}
-                  className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
-                  aria-label="Share on LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => {navigator.clipboard.writeText(window.location.href)}}
-                  className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
-                  aria-label="Copy Link"
-                >
-                  <Copy className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
           </div>
-        </motion.div>
-      </div>
-    </article>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <CallToAction />
+    </>
   );
 };
 

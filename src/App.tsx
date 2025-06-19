@@ -10,6 +10,7 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
+import BlogSection from './components/BlogSection';
 import CallToAction from './components/CallToAction';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -18,9 +19,9 @@ import ScrollToTop from './components/ScrollToTop';
 import { Toaster } from "@/components/ui/toaster";
 import { handleStoredTargetSection } from './utils/navigation';
 import Testimonials from './components/Testimonials';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
-import BlogTag from './pages/BlogTag';
+import Blog from '@/pages/Blog';
+import BlogPost from '@/pages/BlogPost';
+import BlogTag from '@/pages/BlogTag';
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ function App() {
                     <Experience />
                     {/* <Testimonials /> */}
                     <CallToAction />
+                    <BlogSection />
                     <Contact />
                   </>
                 } />

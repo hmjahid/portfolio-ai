@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Github, Linkedin, ArrowUp, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScroll } from '@/context/ScrollContext';
-import { navigateToSection } from '@/utils/navigation';
+import { navigateToSection, navigateToBlog } from '@/utils/navigation';
 import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
@@ -150,7 +150,7 @@ const Footer = () => {
                 whileTap={{ y: 0 }}
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate('/blog');
+                  navigateToBlog();
                 }}
               >
                 Blog

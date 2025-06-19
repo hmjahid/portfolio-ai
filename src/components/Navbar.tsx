@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { motion } from "framer-motion";
 import { useScroll } from '@/context/ScrollContext';
-import { navigateToSection } from '@/utils/navigation';
+import { navigateToSection, navigateToBlog } from '@/utils/navigation';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -53,7 +53,7 @@ const Navbar = () => {
       setScrollProgress(currentProgress);
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'blog', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -74,13 +74,15 @@ const Navbar = () => {
     { label: 'About', href: 'about' },
     { label: 'Skills', href: 'skills' },
     { label: 'Projects', href: 'projects' },
-    { label: 'Blog', href: '/blog', isDirectLink: true },
+    { label: 'Blog', href: 'blog', isBlogLink: true },
     { label: 'Contact', href: 'contact' },
   ];
 
   const handleNavigation = (sectionId: string) => {
     setIsOpen(false);
-    if (sectionId.startsWith('/')) {
+    if (sectionId === 'blog') {
+      navigateToBlog();
+    } else if (sectionId.startsWith('/')) {
       navigate(sectionId);
     } else {
       navigateToSection(sectionId);
@@ -119,11 +121,11 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => {
-                const isActive = item.label === 'Blog' ? isBlogActive : activeSection === item.href;
+                const isActive = activeSection === item.href;
                 return (
                   <motion.a
                     key={item.href}
-                    href={item.isDirectLink ? item.href : `#${item.href}`}
+                    href={item.isBlogLink ? item.href : `#${item.href}`}
                     className={`text-sm font-medium transition-colors relative ${
                       isActive
                         ? 'text-portfolio-blue' 
@@ -191,11 +193,11 @@ const Navbar = () => {
                 </div>
                 <nav className="flex flex-col space-y-4 mt-8">
                   {navItems.map((item) => {
-                    const isActive = item.label === 'Blog' ? isBlogActive : activeSection === item.href;
+                    const isActive = activeSection === item.href;
                     return (
                       <motion.a
                         key={item.href}
-                        href={item.isDirectLink ? item.href : `#${item.href}`}
+                        href={item.isBlogLink ? item.href : `#${item.href}`}
                         className={`text-lg font-medium transition-colors hover:text-portfolio-blue ${
                           isActive ? 'text-portfolio-blue' : 'text-gray-600'
                         }`}

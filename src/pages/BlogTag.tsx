@@ -7,6 +7,7 @@ import { Calendar, Clock, User, ArrowLeft, Tag } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import CallToAction from '@/components/CallToAction';
 
 // Helper function to format date as "DD MMM YYYY"
 const formatDate = (dateString: string) => {
@@ -66,9 +67,24 @@ const BlogTag = () => {
   }, [tag]);
 
   return (
+    <>
     <section className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">
       <div className="container mx-auto px-4 md:px-6 relative">
-        <Link to="/blog" className="inline-block mb-8 text-portfolio-blue hover:underline font-medium">&larr; Back to Blog</Link>
+        <Link 
+          to="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            navigate('/blog');
+            // Scroll to top after a small delay to ensure page loads
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 100);
+          }}
+          className="inline-flex items-center gap-2 text-portfolio-blue hover:text-portfolio-blue/80 transition-colors mb-8"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Blog
+        </Link>
         
         {/* Tag Filter Tabs */}
         <div className="mb-8 flex flex-wrap gap-3 items-center">
@@ -168,6 +184,10 @@ const BlogTag = () => {
         )}
       </div>
     </section>
+    
+    {/* CTA Section */}
+    <CallToAction />
+  </>
   );
 };
 
