@@ -34,7 +34,7 @@ const BlogSection = () => {
           transition={{ duration: 0.5 }}
           className="section-title mb-2 text-3xl md:text-4xl font-bold text-gray-800"
         >
-          Featured Blog Posts
+          Featured Posts
         </motion.h2>
         
         <motion.p 
