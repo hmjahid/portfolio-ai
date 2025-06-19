@@ -192,7 +192,7 @@ const Skills = () => {
               onClick={() => handleCategoryChange(category.title)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+              className={`px-4 py-2 text-xs md:px-6 md:py-3 md:text-sm rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
                 activeCategory === category.title.toLowerCase()
                   ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white shadow-lg'
                   : 'bg-white text-gray-600 hover:bg-gray-100 shadow-md'
