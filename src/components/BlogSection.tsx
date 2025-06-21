@@ -22,17 +22,17 @@ const BlogSection = () => {
   const featuredPosts = blogPosts.filter(post => post.featured).slice(0, 3);
   
   return (
-    <section id="blog" className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="blog" className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="section-title mb-2 text-3xl md:text-4xl font-bold text-gray-800"
+          className="section-title mb-2 text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200"
         >
           Featured Posts
         </motion.h2>
@@ -41,7 +41,7 @@ const BlogSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg text-gray-600 mb-8 max-w-2xl"
+          className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl"
         >
           Explore our featured articles and insights on DevOps, WordPress development, and more.
         </motion.p>
@@ -55,7 +55,7 @@ const BlogSection = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full group hover:shadow-xl transition-all duration-300">
+              <Card className="h-full group hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <Link to={`/blog/${post.slug}`}> 
                   <div className="relative h-48 overflow-hidden rounded-t-lg">
                     <img 
@@ -67,20 +67,20 @@ const BlogSection = () => {
                   </div>
                 </Link>
                 <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
                     <Calendar className="h-4 w-4" />
                     <span>{formatDate(post.date)}</span>
                     <Clock className="h-4 w-4 ml-2" />
                     <span>{post.readTime}</span>
                   </div>
                   <Link to={`/blog/${post.slug}`}> 
-                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-portfolio-blue transition-colors">
                       {post.title}
                     </h3>
                   </Link>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 line-clamp-3">{post.excerpt}</p>
+                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3">{post.excerpt}</p>
                 </CardContent>
                 <CardFooter className="flex flex-wrap gap-2">
                   {post.tags.map((tag) => (

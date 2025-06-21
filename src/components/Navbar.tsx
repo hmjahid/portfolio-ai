@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useScroll } from '@/context/ScrollContext';
 import { navigateToSection, navigateToBlog } from '@/utils/navigation';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -99,7 +100,7 @@ const Navbar = () => {
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled || location.pathname.startsWith('/blog')
-            ? 'bg-white/80 backdrop-blur-md' 
+            ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md' 
             : 'bg-transparent'
         } ${isScrolled ? 'shadow-lg' : ''}`}
       >
@@ -129,7 +130,7 @@ const Navbar = () => {
                     className={`text-sm font-medium transition-colors relative ${
                       isActive
                         ? 'text-portfolio-blue' 
-                        : 'text-gray-600 hover:text-portfolio-blue'
+                        : 'text-gray-600 dark:text-gray-300 hover:text-portfolio-blue'
                     }`}
                     whileHover={{ y: -2 }}
                     whileTap={{ y: 0 }}
@@ -148,6 +149,10 @@ const Navbar = () => {
                   </motion.a>
                 );
               })}
+              
+              {/* Theme Toggle */}
+              <ThemeToggle />
+              
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -180,7 +185,7 @@ const Navbar = () => {
                   <Menu className="h-6 w-6 text-white" />
                 </motion.button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white/95 backdrop-blur-md [&>button]:hidden">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white/95 backdrop-blur-md dark:bg-gray-900/95 [&>button]:hidden">
                 <div className="flex justify-end -mt-2 -mr-2">
                   <motion.button
                     onClick={() => setIsOpen(false)}
@@ -199,7 +204,7 @@ const Navbar = () => {
                         key={item.href}
                         href={item.isBlogLink ? item.href : `#${item.href}`}
                         className={`text-lg font-medium transition-colors hover:text-portfolio-blue ${
-                          isActive ? 'text-portfolio-blue' : 'text-gray-600'
+                          isActive ? 'text-portfolio-blue' : 'text-gray-600 dark:text-gray-300'
                         }`}
                         whileHover={{ x: 5 }}
                         whileTap={{ x: 0 }}
@@ -212,6 +217,13 @@ const Navbar = () => {
                       </motion.a>
                     );
                   })}
+                  
+                  {/* Theme Toggle for Mobile */}
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-lg font-medium text-gray-600 dark:text-gray-300">Theme</span>
+                    <ThemeToggle />
+                  </div>
+                  
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

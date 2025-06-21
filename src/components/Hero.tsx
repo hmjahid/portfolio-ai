@@ -18,9 +18,9 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-32 pb-24 md:pt-32 md:pb-32 lg:pt-16 lg:pb-0 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white will-change-transform"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)] will-change-transform"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.15),transparent_50%)] will-change-transform"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 will-change-transform"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] will-change-transform"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.15),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] will-change-transform"></div>
       
       {/* Animated Background Shapes */}
       <motion.div
@@ -33,7 +33,7 @@ const Hero = () => {
           repeat: Infinity,
           repeatType: "reverse"
         }}
-        className="absolute top-1/4 -left-24 w-96 h-96 bg-portfolio-blue/5 rounded-full blur-3xl will-change-transform"
+        className="absolute top-1/4 -left-24 w-96 h-96 bg-portfolio-blue/5 dark:bg-portfolio-blue/10 rounded-full blur-3xl will-change-transform"
       />
       <motion.div
         animate={{
@@ -45,7 +45,7 @@ const Hero = () => {
           repeat: Infinity,
           repeatType: "reverse"
         }}
-        className="absolute bottom-1/4 -right-24 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl will-change-transform"
+        className="absolute bottom-1/4 -right-24 w-96 h-96 bg-blue-600/5 dark:bg-blue-600/10 rounded-full blur-3xl will-change-transform"
       />
       
       <div className="container mx-auto px-4 md:px-6 relative">
@@ -157,7 +157,7 @@ const Hero = () => {
                 DE
               </div>
               <div className="h-px w-12 bg-gradient-to-r from-portfolio-blue to-blue-600"></div>
-              <span className="text-xl font-medium text-gray-600">
+              <span className="text-xl font-medium text-gray-600 dark:text-gray-300">
                 Web & WordPress Developer | DevOps Enthusiast
               </span>
             </motion.div>
@@ -166,7 +166,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-lg"
+              className="text-gray-600 dark:text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg"
             >
               Passionate about creating user-friendly websites using WordPress and modern web technologies. 
               Experienced in theme development, plugin customization, and implementing DevOps practices.
@@ -189,7 +189,7 @@ const Hero = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
                   variant="outline" 
-                  className="border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue/10 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 rounded-xl"
+                  className="border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue/10 dark:border-portfolio-blue dark:text-portfolio-blue dark:hover:bg-portfolio-blue/20 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 rounded-xl"
                   asChild
                 >
                   <a 
@@ -213,7 +213,7 @@ const Hero = () => {
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
+                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="GitHub"
@@ -224,7 +224,7 @@ const Hero = () => {
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
+                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="LinkedIn"
@@ -235,7 +235,7 @@ const Hero = () => {
                 href={SOCIAL_LINKS.medium}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
+                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Medium"
@@ -297,7 +297,7 @@ const Hero = () => {
                   fetchPriority="high"
                   width={384}
                   height={384}
-                  className="w-72 h-72 md:w-96 md:h-96 lg:w-80 lg:h-80 object-cover rounded-full relative z-10 border-4 border-white shadow-2xl"
+                  className="w-72 h-72 md:w-96 md:h-96 lg:w-80 lg:h-80 object-cover rounded-full relative z-10 border-4 border-white dark:border-gray-800 shadow-2xl"
                 />
                 
                 {/* Corner accents */}

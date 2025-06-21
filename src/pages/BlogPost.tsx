@@ -44,8 +44,8 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Post Not Found</h1>
-          <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+          <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-4">Post Not Found</h1>
+          <p className="text-gray-600 dark:text-gray-300 mb-8">The blog post you're looking for doesn't exist.</p>
           <Link 
             to="/blog"
             onClick={(e) => {
@@ -68,10 +68,10 @@ const BlogPost = () => {
 
   return (
     <>
-      <article className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">
+      <article className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
         
         <div className="container mx-auto px-4 md:px-6 relative">
           <motion.div
@@ -105,7 +105,7 @@ const BlogPost = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
 
-              <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+              <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300 mb-4">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
                   <span>{formatDate(post.date)}</span>
@@ -120,7 +120,7 @@ const BlogPost = () => {
                 </div>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-6">
                 {post.title}
               </h1>
 
@@ -136,13 +136,13 @@ const BlogPost = () => {
                 ))}
               </div>
 
-              <div className="prose prose-lg max-w-none prose-img:rounded-xl prose-img:shadow-lg">
+              <div className="prose prose-lg max-w-none prose-img:rounded-xl prose-img:shadow-lg dark:prose-invert">
                 <ReactMarkdown>{post.content}</ReactMarkdown>
               </div>
 
               {/* Share Buttons */}
-              <div className="mt-16 border-t pt-8 flex flex-col md:flex-row md:items-center md:justify-center gap-6">
-                <span className="font-bold text-gray-700 flex items-center gap-2 text-[18px] md:text-[20px]">
+              <div className="mt-16 border-t border-gray-200 dark:border-gray-700 pt-8 flex flex-col md:flex-row md:items-center md:justify-center gap-6">
+                <span className="font-bold text-gray-700 dark:text-gray-300 flex items-center gap-2 text-[18px] md:text-[20px]">
                   Feel Free to Share:
                 </span>
                 <div className="flex items-center gap-4">
@@ -182,7 +182,7 @@ const BlogPost = () => {
       </article>
 
       {/* Latest Posts Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -191,10 +191,10 @@ const BlogPost = () => {
             className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-6"
           >
             <div className="text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-1">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200 mb-2 md:mb-1">
                 Latest Posts
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl">
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl">
                 Explore more insights and articles from our blog
               </p>
             </div>
@@ -227,7 +227,7 @@ const BlogPost = () => {
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="h-full group hover:shadow-xl transition-all duration-300">
+                  <Card className="h-full group hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                     <Link to={`/blog/${otherPost.slug}`}>
                       <div className="relative h-48 overflow-hidden rounded-t-lg">
                         <img 
@@ -239,20 +239,20 @@ const BlogPost = () => {
                       </div>
                     </Link>
                     <CardHeader>
-                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                      <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
                         <Calendar className="h-4 w-4" />
                         <span>{formatDate(otherPost.date)}</span>
                         <Clock className="h-4 w-4 ml-2" />
                         <span>{otherPost.readTime}</span>
                       </div>
                       <Link to={`/blog/${otherPost.slug}`}>
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
+                        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-portfolio-blue transition-colors">
                           {otherPost.title}
                         </h3>
                       </Link>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-gray-600 line-clamp-3">{otherPost.excerpt}</p>
+                      <p className="text-gray-600 dark:text-gray-300 line-clamp-3">{otherPost.excerpt}</p>
                     </CardContent>
                     <CardFooter className="flex flex-wrap gap-2">
                       {otherPost.tags.map((tag) => (

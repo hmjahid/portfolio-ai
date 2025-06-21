@@ -131,23 +131,23 @@ const Certifications = () => {
           viewport={{ once: true }}
         >
           <Card 
-            className="group border border-gray-200 hover:border-portfolio-blue transition-all duration-300 
-                     hover:shadow-lg hover:-translate-y-1 bg-white/80 backdrop-blur-sm"
+            className="group border border-gray-200 dark:border-gray-700 hover:border-portfolio-blue transition-all duration-300 
+                     hover:shadow-lg hover:-translate-y-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm"
           >
             <CardHeader className="pb-4">
               <div className="flex items-start justify-between">
                 <div>
-                  <CardTitle className="flex items-center text-lg font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
+                  <CardTitle className="flex items-center text-lg font-semibold text-gray-800 dark:text-gray-200 group-hover:text-portfolio-blue transition-colors">
                     <Award className="h-5 w-5 text-portfolio-blue mr-2" />
                     {cert.title}
                   </CardTitle>
-                  <CardDescription className="mt-1 text-gray-600">{cert.issuer}</CardDescription>
+                  <CardDescription className="mt-1 text-gray-600 dark:text-gray-300">{cert.issuer}</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <div className="flex items-center justify-between">
-                <div className="flex items-center text-sm text-gray-500">
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                   <Calendar className="h-4 w-4 mr-2" />
                   {cert.date}
                 </div>
@@ -170,10 +170,10 @@ const Certifications = () => {
   );
 
   return (
-    <section id="certifications" className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="certifications" className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.div
@@ -208,7 +208,7 @@ const Certifications = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-gray-600 mt-4 max-w-2xl mx-auto"
+            className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto"
           >
             Professional certifications and achievements that validate my expertise in web development and technology.
           </motion.p>
@@ -243,38 +243,38 @@ const Certifications = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg w-full"
+            className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-lg w-full"
           >
             <Tabs defaultValue="devops" className="w-full">
               <div className="mb-6 min-h-[100px]">
-                <TabsList className="w-full flex flex-wrap gap-2 bg-gray-100/50 p-1 rounded-lg">
+                <TabsList className="w-full flex flex-wrap gap-2 bg-gray-100/50 dark:bg-gray-700/50 p-1 rounded-lg">
                   <TabsTrigger 
                     value="devops" 
-                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
+                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <Award className="h-4 w-4" /> DevOps
                   </TabsTrigger>
                   <TabsTrigger 
                     value="wordpress" 
-                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
+                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <Award className="h-4 w-4" /> WordPress
                   </TabsTrigger>
                   <TabsTrigger 
                     value="programming" 
-                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
+                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <Award className="h-4 w-4" /> Programming
                   </TabsTrigger>
                   <TabsTrigger 
                     value="webdev" 
-                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
+                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <Award className="h-4 w-4" /> Web Dev
                   </TabsTrigger>
                   <TabsTrigger 
                     value="others" 
-                    className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
+                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <Award className="h-4 w-4" /> Others
                   </TabsTrigger>

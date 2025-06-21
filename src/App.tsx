@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import ThemeProvider from '@/components/ThemeProvider';
 import { ScrollProvider } from '@/context/ScrollContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -32,38 +33,40 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ScrollProvider>
-        <TooltipProvider>
-          <Router>
-            <ScrollToTop />
-            <div className="relative">
-              <Navbar />
-              <Routes>
-                <Route path="/" element={
-                  <>
-                    <Hero />
-                    <AboutMe />
-                    <Skills />
-                    <Certifications />
-                    <Projects />
-                    <Experience />
-                    {/* <Testimonials /> */}
-                    <CallToAction />
-                    <BlogSection />
-                    <Contact />
-                  </>
-                } />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="/blog/tag/:tag" element={<BlogTag />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-              <Footer />
-              <Toaster />
-            </div>
-          </Router>
-        </TooltipProvider>
-      </ScrollProvider>
+      <ThemeProvider>
+        <ScrollProvider>
+          <TooltipProvider>
+            <Router>
+              <ScrollToTop />
+              <div className="relative">
+                <Navbar />
+                <Routes>
+                  <Route path="/" element={
+                    <>
+                      <Hero />
+                      <AboutMe />
+                      <Skills />
+                      <Certifications />
+                      <Projects />
+                      <Experience />
+                      <Testimonials />
+                      <CallToAction />
+                      <BlogSection />
+                      <Contact />
+                    </>
+                  } />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:slug" element={<BlogPost />} />
+                  <Route path="/blog/tag/:tag" element={<BlogTag />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+                <Footer />
+                <Toaster />
+              </div>
+            </Router>
+          </TooltipProvider>
+        </ScrollProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

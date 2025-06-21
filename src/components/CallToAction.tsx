@@ -32,15 +32,15 @@ const CallToAction = () => {
           transform: "translateZ(0)"
         }}
       ></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/80 dark:from-black/90 dark:via-black/80 dark:to-black/90"></div>
       
       {/* Enhanced animated background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
       
       {/* Animated gradient lines */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-portfolio-blue/30"></div>
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-portfolio-blue/30"></div>
       
       {/* Floating elements */}
       <motion.div
@@ -53,7 +53,7 @@ const CallToAction = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-20 left-10 w-24 h-24 bg-gradient-to-br from-white/10 to-white/5 rounded-full blur-xl"
+        className="absolute top-20 left-10 w-24 h-24 bg-gradient-to-br from-white/10 to-white/5 dark:from-portfolio-blue/20 dark:to-portfolio-blue/10 rounded-full blur-xl"
       />
       <motion.div
         animate={{
@@ -65,7 +65,7 @@ const CallToAction = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-white/10 to-white/5 rounded-full blur-xl"
+        className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-white/10 to-white/5 dark:from-portfolio-blue/20 dark:to-portfolio-blue/10 rounded-full blur-xl"
       />
       
       <div className="container mx-auto px-4 md:px-6 relative">
@@ -91,10 +91,10 @@ const CallToAction = () => {
             >
               <Sparkles className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 text-white" />
             </motion.div>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 sm:mb-10 md:mb-12 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent leading-[1.2]">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 sm:mb-10 md:mb-12 bg-gradient-to-r from-white to-blue-100 dark:from-white dark:to-portfolio-blue/80 bg-clip-text text-transparent leading-[1.2]">
               Transform Your Digital Vision
             </h2>
-            <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 dark:text-white/95 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-2xl mx-auto">
               With 3+ years of expertise in WordPress and Web development, 
               I specialize in crafting high-performance websites and applications. From custom WordPress themes 
               to complex Web solutions, I bring your digital vision to life with precision and innovation.
@@ -113,10 +113,10 @@ const CallToAction = () => {
               whileTap={{ scale: 0.95 }}
               className="relative group"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-white to-blue-100 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-white to-blue-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl blur opacity-30 dark:opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <Button 
                 onClick={handleContactClick}
-                className="relative bg-white hover:bg-blue-50 text-portfolio-blue px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 text-base sm:text-lg md:text-xl shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl sm:rounded-2xl"
+                className="relative bg-white hover:bg-blue-50 dark:bg-gray-900 dark:hover:bg-gray-800 text-portfolio-blue dark:text-white border border-gray-200 dark:border-gray-600 px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 text-base sm:text-lg md:text-xl shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl sm:rounded-2xl font-semibold"
               >
                 <Mail className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
                 Hire Me
@@ -128,10 +128,10 @@ const CallToAction = () => {
               whileTap={{ scale: 0.95 }}
               className="relative group"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-white to-blue-100 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-white to-blue-100 dark:from-portfolio-blue/50 dark:to-blue-600/50 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <Button 
                 variant="outline"
-                className="relative border-2 border-white text-white hover:bg-white hover:text-portfolio-blue transition-all duration-300 px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 text-base sm:text-lg md:text-xl shadow-md hover:shadow-lg rounded-xl sm:rounded-2xl bg-transparent backdrop-blur-sm"
+                className="relative border-2 border-white dark:border-portfolio-blue text-white dark:text-portfolio-blue hover:bg-white hover:text-portfolio-blue dark:hover:bg-portfolio-blue dark:hover:text-white transition-all duration-300 px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 text-base sm:text-lg md:text-xl shadow-md hover:shadow-lg rounded-xl sm:rounded-2xl bg-transparent backdrop-blur-sm"
                 asChild
               >
                 <a href={RESUME_FILE.path} target="_blank" rel="noopener noreferrer">

@@ -145,7 +145,7 @@ const ProjectCard = ({ project, onOpen }: { project: Project; onOpen: (project: 
       viewport={{ once: true }}
     >
       <Card 
-        className="group overflow-hidden transition-all duration-300 hover:shadow-xl h-full bg-white/80 backdrop-blur-sm border border-gray-100"
+        className="group overflow-hidden transition-all duration-300 hover:shadow-xl h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-100 dark:border-gray-700"
       >
         <div className="relative h-48 overflow-hidden">
           <img 
@@ -165,10 +165,10 @@ const ProjectCard = ({ project, onOpen }: { project: Project; onOpen: (project: 
           </Button>
         </div>
         <CardHeader>
-          <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
+          <CardTitle className="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-portfolio-blue transition-colors">
             {project.title}
           </CardTitle>
-          <CardDescription className="text-gray-600">{project.description}</CardDescription>
+          <CardDescription className="text-gray-600 dark:text-gray-300">{project.description}</CardDescription>
         </CardHeader>
         <CardFooter className="flex flex-col lg:flex-row gap-2">
           <Button
@@ -181,7 +181,7 @@ const ProjectCard = ({ project, onOpen }: { project: Project; onOpen: (project: 
             <Button 
               asChild 
               variant="outline"
-              className="group/btn flex items-center gap-2 hover:bg-portfolio-blue hover:text-white transition-colors w-full lg:w-auto"
+              className="group/btn flex items-center gap-2 hover:bg-portfolio-blue hover:text-white transition-colors w-full lg:w-auto border-gray-300 dark:border-gray-600"
             >
               <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
                 <Globe className="h-4 w-4 group-hover/btn:animate-pulse" />
@@ -210,10 +210,10 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="projects" className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="projects" className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.h2 
@@ -229,7 +229,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg text-gray-600 mb-8 max-w-2xl"
+          className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl"
         >
           Check out some of my recent projects and work samples. Each project represents a unique challenge and solution.
         </motion.p>
@@ -240,16 +240,16 @@ const Projects = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Tabs defaultValue="devops" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:w-[400px] p-1 rounded-xl gap-2">
+            <TabsList className="grid w-full grid-cols-2 lg:w-[400px] p-1 rounded-xl gap-2 bg-gray-100/50 dark:bg-gray-700/50">
               <TabsTrigger 
                 value="devops" 
-                className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
+                className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
               >
                 <Code className="h-4 w-4" /> DevOps
               </TabsTrigger>
               <TabsTrigger 
                 value="wordpress" 
-                className="flex items-center gap-2 bg-white/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100"
+                className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
               >
                 <Globe className="h-4 w-4" /> WordPress
               </TabsTrigger>
@@ -303,7 +303,7 @@ const Projects = () => {
       </div>
 
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-5xl p-0 overflow-hidden bg-gradient-to-br from-white to-gray-50 border-none">
+        <DialogContent className="max-w-5xl p-0 overflow-hidden bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 border-none">
           {selectedProject && (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -352,10 +352,10 @@ const Projects = () => {
                     <div>
                       <h3 className="text-xl font-semibold text-portfolio-blue mb-3">Project Overview</h3>
                       <div className="space-y-2">
-                        <p className="flex items-center gap-2 text-gray-600">
+                        <p className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                           <span className="font-medium">Role:</span> {selectedProject.role}
                         </p>
-                        <p className="flex items-center gap-2 text-gray-600">
+                        <p className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                           <span className="font-medium">Duration:</span> {selectedProject.duration}
                         </p>
                       </div>
@@ -379,7 +379,7 @@ const Projects = () => {
                       <h3 className="text-xl font-semibold text-portfolio-blue mb-3">Key Features</h3>
                       <ul className="space-y-2">
                         {selectedProject.features.map((feature, index) => (
-                          <li key={index} className="flex items-start gap-2 text-gray-600">
+                          <li key={index} className="flex items-start gap-2 text-gray-600 dark:text-gray-300">
                             <span className="text-portfolio-blue mt-1">•</span>
                             {feature}
                           </li>
@@ -398,8 +398,8 @@ const Projects = () => {
                       <h3 className="text-xl font-semibold text-portfolio-blue mb-3">Challenges & Solutions</h3>
                       <ul className="space-y-3">
                         {selectedProject.challenges.map((challenge, index) => (
-                          <li key={index} className="bg-gray-50 p-4 rounded-lg">
-                            <p className="text-gray-600">{challenge}</p>
+                          <li key={index} className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                            <p className="text-gray-600 dark:text-gray-300">{challenge}</p>
                           </li>
                         ))}
                       </ul>
@@ -410,7 +410,7 @@ const Projects = () => {
                         <Button 
                           asChild 
                           variant="outline"
-                          className="group/btn flex items-center gap-2 hover:bg-portfolio-blue hover:text-white transition-all duration-300 hover:scale-105"
+                          className="group/btn flex items-center gap-2 hover:bg-portfolio-blue hover:text-white transition-all duration-300 hover:scale-105 border-gray-300 dark:border-gray-600"
                         >
                           <a href={selectedProject.demoLink} target="_blank" rel="noopener noreferrer">
                             <Globe className="h-5 w-5 group-hover/btn:animate-pulse" />
@@ -433,7 +433,7 @@ const Projects = () => {
                         <Button 
                           asChild
                           variant="outline"
-                          className="group/btn flex items-center gap-2 hover:bg-portfolio-blue hover:text-white transition-all duration-300 hover:scale-105"
+                          className="group/btn flex items-center gap-2 hover:bg-portfolio-blue hover:text-white transition-all duration-300 hover:scale-105 border-gray-300 dark:border-gray-600"
                         >
                           <a href={selectedProject.blogLink} target="_blank" rel="noopener noreferrer">
                             <BookOpen className="h-5 w-5 group-hover/btn:animate-pulse" />

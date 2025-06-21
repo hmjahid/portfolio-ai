@@ -101,7 +101,7 @@ const ExperienceCard: React.FC<{ experience: Experience; index: number }> = ({ e
         <div className="absolute left-5 top-16 bottom-0 w-0.5 bg-gradient-to-b from-portfolio-blue to-blue-600/30"></div>
       )}
       
-      <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-sm border border-gray-100 hover:border-portfolio-blue/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <Card className="group relative overflow-hidden bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-100 dark:border-gray-700 hover:border-portfolio-blue/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
         {/* Animated gradient border */}
         <div className="absolute inset-0 bg-gradient-to-r from-portfolio-blue/0 via-portfolio-blue/10 to-portfolio-blue/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         
@@ -124,7 +124,7 @@ const ExperienceCard: React.FC<{ experience: Experience; index: number }> = ({ e
                   <Briefcase className="h-5 w-5 text-portfolio-blue" />
                 </motion.div>
                 <div>
-                  <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
+                  <CardTitle className="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-portfolio-blue transition-colors">
                     {experience.position}
                   </CardTitle>
                   <p className="text-portfolio-blue font-medium mt-1">{experience.company}</p>
@@ -139,7 +139,7 @@ const ExperienceCard: React.FC<{ experience: Experience; index: number }> = ({ e
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="flex items-center text-sm text-gray-600"
+                  className="flex items-center text-sm text-gray-600 dark:text-gray-300"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -147,7 +147,7 @@ const ExperienceCard: React.FC<{ experience: Experience; index: number }> = ({ e
                   {experience.period}
                 </motion.div>
                 <motion.div 
-                  className="flex items-center text-sm text-gray-600"
+                  className="flex items-center text-sm text-gray-600 dark:text-gray-300"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -168,7 +168,7 @@ const ExperienceCard: React.FC<{ experience: Experience; index: number }> = ({ e
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 + idx * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-start gap-2 text-gray-600 group/item"
+                className="flex items-start gap-2 text-gray-600 dark:text-gray-300 group/item"
               >
                 <motion.div
                   whileHover={{ rotate: 90, scale: 1.2 }}
@@ -194,10 +194,10 @@ const ExperienceCard: React.FC<{ experience: Experience; index: number }> = ({ e
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="experience" className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.div
@@ -232,7 +232,7 @@ const Experience: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-gray-600 mt-4 max-w-2xl mx-auto"
+            className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto"
           >
             A journey through my professional career, showcasing my growth and expertise in web development and technology.
           </motion.p>
@@ -251,7 +251,7 @@ const Experience: React.FC = () => {
                 repeat: Infinity,
                 repeatType: "reverse"
               }}
-              className="absolute -left-24 top-1/4 w-96 h-96 bg-portfolio-blue/5 rounded-full blur-3xl"
+              className="absolute -left-24 top-1/4 w-96 h-96 bg-portfolio-blue/5 dark:bg-portfolio-blue/10 rounded-full blur-3xl"
             />
             {experiences.map((exp, index) => (
               <ExperienceCard key={index} experience={exp} index={index} />
@@ -283,10 +283,10 @@ const Experience: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="absolute -bottom-6 -left-6 max-[768px]:left-[10%] max-[768px]:-bottom-[10%] bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-100 max-w-[80%]"
+                className="absolute -bottom-6 -left-6 max-[768px]:left-[10%] max-[768px]:-bottom-[10%] bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 max-w-[80%]"
               >
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Continuous Growth</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Continuous Growth</h3>
+                <p className="text-gray-600 dark:text-gray-300">
                   Each role has contributed to my growth as a developer, from mastering WordPress development to embracing modern DevOps practices.
                 </p>
               </motion.div>

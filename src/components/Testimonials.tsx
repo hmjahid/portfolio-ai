@@ -84,9 +84,9 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
       whileHover={{ y: -5, scale: 1.02 }}
-      className="group relative bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full"
+      className="group relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700 h-full"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-portfolio-blue/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-portfolio-blue/5 to-blue-600/5 dark:from-portfolio-blue/10 dark:to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-portfolio-blue to-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-y-0 group-hover:scale-y-100 origin-top"></div>
       
       <div className="relative">
@@ -96,7 +96,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Quote className="absolute -top-4 -left-2 h-8 w-8 text-portfolio-blue/20 group-hover:text-portfolio-blue/40 transition-colors duration-500" />
+          <Quote className="absolute -top-4 -left-2 h-8 w-8 text-portfolio-blue/20 dark:text-portfolio-blue/30 group-hover:text-portfolio-blue/40 transition-colors duration-500" />
         </motion.div>
         
         <div className="flex items-center gap-1 mb-6">
@@ -119,7 +119,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-gray-600 mb-8 text-left relative z-10 group-hover:text-gray-700 transition-colors duration-300"
+          className="text-gray-600 dark:text-gray-300 mb-8 text-left relative z-10 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300"
         >
           "{testimonial.content}"
         </motion.p>
@@ -130,7 +130,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-portfolio-blue/20 group-hover:ring-portfolio-blue/40 transition-all duration-500">
+            <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-portfolio-blue/20 dark:ring-portfolio-blue/30 group-hover:ring-portfolio-blue/40 transition-all duration-500">
               <motion.img
                 src={testimonial.avatar}
                 alt={testimonial.name}
@@ -154,10 +154,10 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors duration-300">
+            <h4 className="font-semibold text-gray-800 dark:text-gray-200 group-hover:text-portfolio-blue transition-colors duration-300">
               {testimonial.name}
             </h4>
-            <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300">
+            <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300">
               {testimonial.role} at {testimonial.company}
             </p>
           </motion.div>
@@ -169,10 +169,10 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="testimonials" className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.15),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.15),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-portfolio-blue/30 to-transparent"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative">
@@ -189,7 +189,7 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="text-lg text-gray-600 mb-12 max-w-2xl"
+          className="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl"
         >
           Don't just take our word for it. Here's what our clients have to say about working with us.
         </motion.p>
@@ -217,10 +217,10 @@ const Testimonials = () => {
             
             <div className="flex justify-center mt-12">
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                <CarouselPrevious className="relative static left-0 right-0 translate-y-0 mr-4 bg-white hover:bg-portfolio-blue hover:text-white text-gray-800 border-gray-200 hover:border-portfolio-blue transition-all duration-300 shadow-md hover:shadow-lg" />
+                <CarouselPrevious className="relative static left-0 right-0 translate-y-0 mr-4 bg-white dark:bg-gray-800 hover:bg-portfolio-blue hover:text-white text-gray-800 dark:text-gray-200 border-gray-200 dark:border-gray-600 hover:border-portfolio-blue transition-all duration-300 shadow-md hover:shadow-lg" />
               </motion.div>
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                <CarouselNext className="relative static left-0 right-0 translate-y-0 ml-4 bg-white hover:bg-portfolio-blue hover:text-white text-gray-800 border-gray-200 hover:border-portfolio-blue transition-all duration-300 shadow-md hover:shadow-lg" />
+                <CarouselNext className="relative static left-0 right-0 translate-y-0 ml-4 bg-white dark:bg-gray-800 hover:bg-portfolio-blue hover:text-white text-gray-800 dark:text-gray-200 border-gray-200 dark:border-gray-600 hover:border-portfolio-blue transition-all duration-300 shadow-md hover:shadow-lg" />
               </motion.div>
             </div>
           </Carousel>

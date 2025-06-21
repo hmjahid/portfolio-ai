@@ -44,7 +44,7 @@ const AboutMe = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ const AboutMe = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             A passionate Full Stack Developer with expertise in modern web technologies
             and a strong focus on creating efficient, scalable solutions.
           </p>
@@ -69,7 +69,7 @@ const AboutMe = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden bg-gradient-to-br from-portfolio-blue/10 to-blue-600/10 flex items-start justify-center backdrop-blur-sm border border-gray-100">
+            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden bg-gradient-to-br from-portfolio-blue/10 to-blue-600/10 dark:from-portfolio-blue/20 dark:to-blue-600/20 flex items-start justify-center backdrop-blur-sm border border-gray-100 dark:border-gray-700">
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
@@ -94,7 +94,7 @@ const AboutMe = () => {
                     repeat: Infinity,
                     repeatType: "reverse"
                   }}
-                  className="absolute inset-0 border-4 border-white/20"
+                  className="absolute inset-0 border-4 border-white/20 dark:border-gray-600/20"
                 />
               </motion.div>
             </div>
@@ -105,7 +105,7 @@ const AboutMe = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-portfolio-blue/10 to-blue-600/10 flex items-center justify-center">
@@ -113,7 +113,7 @@ const AboutMe = () => {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-portfolio-blue">3+</p>
-                    <p className="text-gray-600">Years Experience</p>
+                    <p className="text-gray-600 dark:text-gray-300">Years Experience</p>
                   </div>
                 </div>
               </motion.div>
@@ -123,7 +123,7 @@ const AboutMe = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-portfolio-blue/10 to-blue-600/10 flex items-center justify-center">
@@ -131,7 +131,7 @@ const AboutMe = () => {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-portfolio-blue">10+</p>
-                    <p className="text-gray-600">Projects Done</p>
+                    <p className="text-gray-600 dark:text-gray-300">Projects Done</p>
                   </div>
                 </div>
               </motion.div>
@@ -141,7 +141,7 @@ const AboutMe = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-portfolio-blue/10 to-blue-600/10 flex items-center justify-center">
@@ -149,7 +149,7 @@ const AboutMe = () => {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-portfolio-blue">8+</p>
-                    <p className="text-gray-600">Happy Clients</p>
+                    <p className="text-gray-600 dark:text-gray-300">Happy Clients</p>
                   </div>
                 </div>
               </motion.div>
@@ -159,7 +159,7 @@ const AboutMe = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-portfolio-blue/10 to-blue-600/10 flex items-center justify-center">
@@ -167,7 +167,7 @@ const AboutMe = () => {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-portfolio-blue">1500+</p>
-                    <p className="text-gray-600">Code Commits</p>
+                    <p className="text-gray-600 dark:text-gray-300">Code Commits</p>
                   </div>
                 </div>
               </motion.div>
@@ -183,10 +183,10 @@ const AboutMe = () => {
           >
             <motion.div
               variants={itemVariants}
-              className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
             >
               <h3 className="text-xl font-semibold text-portfolio-blue mb-4">Professional Background</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 I am a passionate Web & WordPress Developer with 2 years of hands-on experience in WordPress and 3+ years in web development. 
                 My expertise lies in building high-quality WordPress sites using Elementor and Divi, with a strong focus on Linux-based environments. 
                 I specialize in creating robust, scalable, and user-friendly web applications that meet modern standards and client requirements.
@@ -195,10 +195,10 @@ const AboutMe = () => {
 
             <motion.div
               variants={itemVariants}
-              className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
             >
               <h3 className="text-xl font-semibold text-portfolio-blue mb-4">Technical Expertise</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 Beyond development, I'm deeply interested in Linux system administration and DevOps. I have expertise in containerization (Docker, Kubernetes), 
                 cloud computing (AWS), automation (Ansible), and monitoring (Prometheus, Grafana, Nagios). My skill set extends to infrastructure as code, 
                 CI/CD, and virtualization tools, enabling me to optimize and manage scalable infrastructures. I thrive on learning new technologies and 
@@ -208,10 +208,10 @@ const AboutMe = () => {
 
             <motion.div
               variants={itemVariants}
-              className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
             >
               <h3 className="text-xl font-semibold text-portfolio-blue mb-4">Commitment to Excellence</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 I am committed to delivering high-quality solutions that combine technical excellence with practical business value. 
                 My approach focuses on creating efficient, secure, and maintainable systems while staying current with industry best practices 
                 and emerging technologies. I'm always eager to take on new challenges and contribute to innovative projects.

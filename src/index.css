@@ -124,7 +124,7 @@
 
 @layer components {
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 text-portfolio-dark relative inline-block;
+    @apply text-3xl md:text-4xl font-bold mb-6 text-foreground relative inline-block;
   }
   
   .section-title::after {

@@ -72,15 +72,15 @@ const Blog = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-100 via-blue-200 to-indigo-100 overflow-hidden min-h-screen flex items-center">
+      <section className="relative bg-gradient-to-br from-blue-100 via-blue-200 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden min-h-screen flex items-center">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.18),transparent_60%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.14),transparent_60%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.18),transparent_60%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_60%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.14),transparent_60%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.15),transparent_60%)]"></div>
         
         {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-100 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-32 h-32 bg-indigo-100 rounded-full blur-xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-purple-100 rounded-full blur-xl animate-pulse delay-500"></div>
+        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-100 dark:bg-blue-600/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-32 h-32 bg-indigo-100 dark:bg-indigo-600/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-purple-100 dark:bg-purple-600/20 rounded-full blur-xl animate-pulse delay-500"></div>
         
         <div className="container mx-auto px-4 md:px-6 relative pt-[120px] pb-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[180px] lg:pb-[120px]">
           <div className="max-w-5xl mx-auto text-center">
@@ -90,7 +90,7 @@ const Blog = () => {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <span className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full text-gray-700 text-sm font-medium border border-gray-200 shadow-lg">
+              <span className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full text-gray-700 dark:text-gray-100 text-sm font-medium border border-gray-200 dark:border-gray-600 shadow-lg">
                 <span className="text-xl">📚</span>
                 Latest Articles & Insights
                 <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
@@ -101,11 +101,11 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-8"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 dark:text-white mb-8"
               style={{ lineHeight: '1.3' }}
             >
               Discover Our
-              <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
                 Blog Collection
               </span>
             </motion.h1>
@@ -114,9 +114,9 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light"
             >
-              Dive into expert insights on <span className="font-semibold text-blue-600">DevOps</span>, <span className="font-semibold text-indigo-600">WordPress development</span>, <span className="font-semibold text-purple-600">Linux administration</span>, and modern web technologies. 
+              Dive into expert insights on <span className="font-semibold text-blue-600 dark:text-blue-400">DevOps</span>, <span className="font-semibold text-indigo-600 dark:text-indigo-400">WordPress development</span>, <span className="font-semibold text-purple-600 dark:text-purple-400">Linux administration</span>, and modern web technologies. 
               Stay updated with the latest trends and best practices.
             </motion.p>
             
@@ -124,17 +124,17 @@ const Blog = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-wrap justify-center gap-6 text-gray-600 mb-12"
+              className="flex flex-wrap justify-center gap-6 text-gray-600 dark:text-gray-300 mb-12"
             >
-              <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+              <div className="flex items-center gap-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-600 shadow-sm">
                 <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium">{blogPosts.length}+ Articles</span>
               </div>
-              <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+              <div className="flex items-center gap-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-600 shadow-sm">
                 <div className="w-3 h-3 bg-indigo-500 rounded-full animate-pulse delay-300"></div>
                 <span className="text-sm font-medium">5+ Categories</span>
               </div>
-              <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+              <div className="flex items-center gap-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-600 shadow-sm">
                 <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse delay-600"></div>
                 <span className="text-sm font-medium">Expert Insights</span>
               </div>
@@ -157,17 +157,17 @@ const Blog = () => {
             }
           }}
         >
-          <div className="flex flex-col items-center gap-2 text-blue-700 hover:text-blue-800 transition-colors duration-200">
+          <div className="flex flex-col items-center gap-2 text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-200 transition-colors duration-200">
             <span className="text-xs font-medium">Scroll to explore</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-blue-600 rounded-full flex justify-center hover:border-blue-700 transition-colors duration-200"
+              className="w-6 h-10 border-2 border-blue-600 dark:border-blue-400 rounded-full flex justify-center hover:border-blue-700 dark:hover:border-blue-300 transition-colors duration-200"
             >
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-3 bg-blue-600 rounded-full mt-2 hover:bg-blue-700 transition-colors duration-200"
+                className="w-1 h-3 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 hover:bg-blue-700 dark:hover:bg-blue-300 transition-colors duration-200"
               ></motion.div>
             </motion.div>
           </div>
@@ -175,10 +175,10 @@ const Blog = () => {
       </section>
 
       {/* Blog Content Section */}
-      <section className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[60px] pb-[60px] md:pt-[80px] md:pb-[80px] lg:pt-[100px] lg:pb-[100px]">
+      <section className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden pt-[60px] pb-[60px] md:pt-[80px] md:pb-[80px] lg:pt-[100px] lg:pb-[100px]">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
         
         <div className="container mx-auto px-4 md:px-6 relative">
           <motion.div
@@ -187,10 +187,10 @@ const Blog = () => {
             transition={{ duration: 0.5 }}
             className="text-left mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200 mb-4">
               Browse Articles
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl ml-0">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl ml-0">
               Filter by category or explore all our latest articles and insights.
             </p>
           </motion.div>
@@ -202,7 +202,7 @@ const Blog = () => {
                 key={category}
                 onClick={() => { setSelectedCategory(category); setVisiblePosts(9); }}
                 className={`px-4 py-2 rounded-full font-semibold transition-all duration-200 cursor-pointer outline-none focus:ring-2 focus:ring-portfolio-blue border text-sm
-                  ${selectedCategory === category ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white border-transparent shadow-md' : 'bg-white text-portfolio-blue border-portfolio-blue/30 hover:bg-portfolio-blue/10'}`}
+                  ${selectedCategory === category ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white border-transparent shadow-md' : 'bg-white dark:bg-gray-800 text-portfolio-blue border-portfolio-blue/30 dark:border-gray-600 hover:bg-portfolio-blue/10 dark:hover:bg-gray-700'}`}
               >
                 {category}
               </button>
@@ -218,7 +218,7 @@ const Blog = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full group hover:shadow-xl transition-all duration-300">
+                <Card className="h-full group hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                   <Link to={`/blog/${post.slug}`}> 
                     <div className="relative h-48 overflow-hidden rounded-t-lg">
                       <img 
@@ -230,20 +230,20 @@ const Blog = () => {
                     </div>
                   </Link>
                   <CardHeader>
-                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                    <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
                       <Calendar className="h-4 w-4" />
                       <span>{formatDate(post.date)}</span>
                       <Clock className="h-4 w-4 ml-2" />
                       <span>{post.readTime}</span>
                     </div>
                     <Link to={`/blog/${post.slug}`}> 
-                      <h3 className="text-xl font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
+                      <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-portfolio-blue transition-colors">
                         {post.title}
                       </h3>
                     </Link>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 line-clamp-3">{post.excerpt}</p>
+                    <p className="text-gray-600 dark:text-gray-300 line-clamp-3">{post.excerpt}</p>
                   </CardContent>
                   <CardFooter className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
@@ -274,7 +274,7 @@ const Blog = () => {
               <Button
                 onClick={loadMore}
                 disabled={isLoading}
-                className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white px-8 py-6 text-lg disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300"
+                className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white h-10 px-4 py-2 md:h-auto md:px-8 md:py-4 text-lg disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 rounded-lg font-semibold shadow-lg transform hover:scale-105"
               >
                 {isLoading ? (
                   <>

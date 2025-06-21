@@ -32,11 +32,11 @@ const Footer = () => {
   };
   
   return (
-    <footer className="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800 py-16 relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 py-16 relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
@@ -49,7 +49,7 @@ const Footer = () => {
             <h3 className="text-3xl font-bold mb-2 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">
               Md Jahid Hasan
             </h3>
-            <p className="text-gray-600 text-lg">Transforming Ideas into Digital Excellence</p>
+            <p className="text-gray-600 dark:text-gray-300 text-lg">Transforming Ideas into Digital Excellence</p>
           </motion.div>
           
           <motion.div 
@@ -62,7 +62,7 @@ const Footer = () => {
               href="https://github.com/hmjahid/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center mr-4 hover:scale-110"
+              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center mr-4 hover:scale-110"
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
               aria-label="GitHub"
@@ -73,7 +73,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/hmjahid/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center mr-4 hover:scale-110"
+              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center mr-4 hover:scale-110"
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
               aria-label="LinkedIn"
@@ -84,7 +84,7 @@ const Footer = () => {
               href="https://medium.com/@mdjahidhasan919" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
+              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Medium"
@@ -115,7 +115,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="border-t border-gray-200 mt-6 md:mt-8 pt-4 md:pt-6 text-left text-gray-500"
+          className="border-t border-gray-200 dark:border-gray-700 mt-6 md:mt-8 pt-4 md:pt-6 text-left text-gray-500 dark:text-gray-400"
         >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
             <div className="flex space-x-6 order-1 md:order-2 pt-2 md:pt-0">

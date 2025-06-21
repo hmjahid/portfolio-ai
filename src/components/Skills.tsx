@@ -165,10 +165,10 @@ const Skills = () => {
   );
 
   return (
-    <section ref={sectionRef} id="skills" className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section ref={sectionRef} id="skills" className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.h2 
@@ -195,7 +195,7 @@ const Skills = () => {
               className={`px-4 py-2 text-xs md:px-6 md:py-3 md:text-sm rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
                 activeCategory === category.title.toLowerCase()
                   ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-gray-100 shadow-md'
+                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-md'
               }`}
             >
               {category.icon}

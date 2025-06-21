@@ -68,7 +68,11 @@ const BlogTag = () => {
 
   return (
     <>
-    <section className="section-padding bg-gradient-to-b from-white to-gray-50 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">
+    <section className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden pt-[100px] pb-[60px] md:pt-[150px] md:pb-[90px] lg:pt-[200px] lg:pb-[120px]">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+      
       <div className="container mx-auto px-4 md:px-6 relative">
         <Link 
           to="/blog" 
@@ -91,7 +95,7 @@ const BlogTag = () => {
           <button
             onClick={() => navigate('/blog/tag/all')}
             className={`px-4 py-2 rounded-full font-semibold transition-all duration-200 cursor-pointer outline-none focus:ring-2 focus:ring-portfolio-blue border text-sm
-              ${tag && tag.toLowerCase() === 'all' ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white border-transparent shadow-md' : 'bg-white text-portfolio-blue border-portfolio-blue/30 hover:bg-portfolio-blue/10'}`}
+              ${tag && tag.toLowerCase() === 'all' ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white border-transparent shadow-md' : 'bg-white dark:bg-gray-800 text-portfolio-blue border-portfolio-blue/30 dark:border-gray-600 hover:bg-portfolio-blue/10 dark:hover:bg-gray-700'}`}
           >
             All
           </button>
@@ -103,7 +107,7 @@ const BlogTag = () => {
                 key={tagItem}
                 onClick={() => navigate(`/blog/tag/${encodeURIComponent(tagUrl)}`)}
                 className={`px-4 py-2 rounded-full font-semibold transition-all duration-200 cursor-pointer outline-none focus:ring-2 focus:ring-portfolio-blue border text-sm
-                  ${isActive ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white border-transparent shadow-md' : 'bg-white text-portfolio-blue border-portfolio-blue/30 hover:bg-portfolio-blue/10'}`}
+                  ${isActive ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white border-transparent shadow-md' : 'bg-white dark:bg-gray-800 text-portfolio-blue border-portfolio-blue/30 dark:border-gray-600 hover:bg-portfolio-blue/10 dark:hover:bg-gray-700'}`}
               >
                 {tagItem}
               </button>
@@ -112,11 +116,11 @@ const BlogTag = () => {
         </div>
         
         {filteredPosts.length === 0 ? (
-          <p className="text-gray-500 text-lg">No posts found for this tag.</p>
+          <p className="text-gray-500 dark:text-gray-400 text-lg">No posts found for this tag.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPosts.slice(0, visiblePosts).map((post) => (
-              <Card key={post.id} className="h-full group hover:shadow-xl transition-all duration-300">
+              <Card key={post.id} className="h-full group hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <Link to={`/blog/${post.slug}`}>
                   <div className="relative h-48 overflow-hidden rounded-t-lg">
                     <img 
@@ -128,20 +132,20 @@ const BlogTag = () => {
                   </div>
                 </Link>
                 <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
                     <Calendar className="h-4 w-4" />
                     <span>{formatDate(post.date)}</span>
                     <Clock className="h-4 w-4 ml-2" />
                     <span>{post.readTime}</span>
                   </div>
                   <Link to={`/blog/${post.slug}`}> 
-                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-portfolio-blue transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-portfolio-blue transition-colors">
                       {post.title}
                     </h3>
                   </Link>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 line-clamp-3">{post.excerpt}</p>
+                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3">{post.excerpt}</p>
                 </CardContent>
                 <CardFooter className="flex flex-wrap gap-2">
                   {post.tags.map((tagItem) => (
@@ -169,7 +173,7 @@ const BlogTag = () => {
             <Button
               onClick={loadMore}
               disabled={isLoading}
-              className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white px-8 py-6 text-lg disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300"
+              className="bg-gradient-to-r from-portfolio-blue to-blue-600 hover:from-portfolio-blue/90 hover:to-blue-600/90 text-white h-10 px-4 py-2 md:h-auto md:px-8 md:py-4 text-lg disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 rounded-lg font-semibold shadow-lg transform hover:scale-105"
             >
               {isLoading ? (
                 <>
