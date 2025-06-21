@@ -213,12 +213,12 @@ const Skills = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white dark:bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700/50"
               >
                 <div className="flex justify-between items-center mb-3">
-                  <h3 className="font-semibold text-gray-800">{skill.name}</h3>
+                  <h3 className="font-semibold text-gray-800 dark:text-gray-200">{skill.name}</h3>
                   <motion.span 
-                    className="text-sm font-medium bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent"
+                    className="text-sm font-medium text-blue-600 dark:text-sky-300"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
@@ -229,7 +229,7 @@ const Skills = () => {
                 <div className="relative">
                   <Progress 
                     value={progressValues[skill.name] || 0} 
-                    className="h-2 bg-gray-100"
+                    className="h-2 bg-gray-100 dark:bg-gray-700"
                   />
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-portfolio-blue to-blue-600 rounded-full"
