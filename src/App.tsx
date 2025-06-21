@@ -49,7 +49,7 @@ function App() {
                       <Certifications />
                       <Projects />
                       <Experience />
-                      <Testimonials />
+                      {/* <Testimonials /> */}
                       <CallToAction />
                       <BlogSection />
                       <Contact />
