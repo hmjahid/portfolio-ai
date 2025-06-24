@@ -33,7 +33,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-32 pb-52 sm:pt-4 sm:pb-64 md:pt-40 md:pb-80 lg:pt-56 lg:pb-60 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center pt-32 pb-52 sm:pt-4 sm:pb-64 md:pt-40 md:pb-80 lg:pt-52 lg:pb-64 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 will-change-transform"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] will-change-transform"></div>
