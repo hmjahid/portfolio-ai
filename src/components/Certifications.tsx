@@ -247,41 +247,46 @@ const Certifications = () => {
           >
             <Tabs defaultValue="devops" className="w-full">
               <div className="mb-6 min-h-[100px]">
-                <TabsList className="w-full flex flex-wrap gap-2 bg-gray-100/50 dark:bg-gray-700/50 p-1 rounded-lg">
+                <TabsList className="w-full flex flex-wrap gap-2 bg-transparent p-0">
                   <TabsTrigger 
                     value="devops" 
-                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
                   >
                     <Award className="h-4 w-4" /> DevOps
+                    <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 opacity-0 group-data-[state=active]:opacity-100 group-data-[state=active]:animate-pulse" />
                   </TabsTrigger>
                   <TabsTrigger 
                     value="wordpress" 
-                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
                   >
                     <Award className="h-4 w-4" /> WordPress
+                    <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 opacity-0 group-data-[state=active]:opacity-100 group-data-[state=active]:animate-pulse" />
                   </TabsTrigger>
                   <TabsTrigger 
                     value="programming" 
-                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
                   >
                     <Award className="h-4 w-4" /> Programming
+                    <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 opacity-0 group-data-[state=active]:opacity-100 group-data-[state=active]:animate-pulse" />
                   </TabsTrigger>
                   <TabsTrigger 
                     value="webdev" 
-                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
                   >
                     <Award className="h-4 w-4" /> Web Dev
+                    <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 opacity-0 group-data-[state=active]:opacity-100 group-data-[state=active]:animate-pulse" />
                   </TabsTrigger>
                   <TabsTrigger 
                     value="others" 
-                    className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
                   >
                     <Award className="h-4 w-4" /> Others
+                    <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 opacity-0 group-data-[state=active]:opacity-100 group-data-[state=active]:animate-pulse" />
                   </TabsTrigger>
                 </TabsList>
               </div>
               
-              <div className="h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="h-[600px] overflow-y-auto pr-4 custom-scrollbar">
                 <TabsContent value="wordpress">
                   {renderCertificationCards(wordpressCertifications)}
                 </TabsContent>
@@ -301,7 +306,7 @@ const Certifications = () => {
                 <TabsContent value="others">
                   {renderCertificationCards(otherCertifications)}
                 </TabsContent>
-              </div>
+              </motion.div>
             </Tabs>
           </motion.div>
         </div>

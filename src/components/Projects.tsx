@@ -240,18 +240,20 @@ const Projects = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Tabs defaultValue="devops" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:w-[400px] p-1 rounded-xl gap-2 bg-gray-100/50 dark:bg-gray-700/50">
+            <TabsList className="grid w-full grid-cols-2 lg:w-[400px] gap-2 bg-transparent p-0">
               <TabsTrigger 
                 value="devops" 
-                className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-md hover:shadow-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
               >
                 <Code className="h-4 w-4" /> DevOps
+                <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 opacity-0 group-data-[state=active]:opacity-100 group-data-[state=active]:animate-pulse" />
               </TabsTrigger>
               <TabsTrigger 
                 value="wordpress" 
-                className="flex items-center gap-2 bg-white/90 dark:bg-gray-700/90 shadow-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-md hover:shadow-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
               >
                 <Globe className="h-4 w-4" /> WordPress
+                <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 opacity-0 group-data-[state=active]:opacity-100 group-data-[state=active]:animate-pulse" />
               </TabsTrigger>
             </TabsList>
             

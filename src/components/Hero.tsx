@@ -33,7 +33,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-32 pb-52 sm:pt-4 sm:pb-64 md:pt-40 md:pb-80 lg:pt-52 lg:pb-64 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center pt-32 pb-52 sm:pt-4 sm:pb-64 md:pt-40 md:pb-80 lg:pt-40 lg:pb-64 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 will-change-transform"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)] will-change-transform"></div>
@@ -352,38 +352,37 @@ const Hero = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="text-center mb-4 sm:mb-6"
+            transition={{ duration: 0.5, delay: 1.2 }}
+            className="flex items-center justify-center mb-4 sm:mb-6"
           >
-            <div className="relative inline-flex items-center">
               {/* Decorative line before text */}
               <motion.div 
                 initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 0.8, delay: 1.4 }}
-                className="h-px w-6 sm:w-8 bg-gradient-to-r from-transparent via-portfolio-blue to-transparent mr-2 sm:mr-3"
+                animate={{ width: ['0%', '50%', '100%'] }}
+                transition={{ duration: 1, delay: 1.3, ease: "easeInOut" }}
+                className="h-px w-6 sm:w-8 bg-gradient-to-r from-transparent via-portfolio-blue to-transparent"
               />
               
               {/* Main text with gradient and animation */}
               <motion.h3 
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.3 }}
-                className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-portfolio-blue via-blue-600 to-purple-600 bg-clip-text text-transparent relative"
+                transition={{ duration: 0.6, delay: 1 }}
+                className="relative text-lg sm:text-xl md:text-2xl font-bold tracking-wide text-gray-800 dark:text-gray-200 whitespace-nowrap mx-2 sm:mx-4"
               >
                 <motion.span
-                  animate={{ 
-                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="bg-gradient-to-r from-portfolio-blue via-blue-600 to-purple-600 bg-clip-text text-transparent bg-[length:200%_200%]"
-                >
-                  Technologies I Work With
-                </motion.span>
+                    animate={{ 
+                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="bg-gradient-to-r from-portfolio-blue via-blue-600 to-purple-600 bg-clip-text text-transparent bg-[length:200%_200%]"
+                  >
+                    Technologies I Work With
+                  </motion.span>
                 
                 {/* Animated underline */}
                 <motion.div 
@@ -412,11 +411,10 @@ const Hero = () => {
               {/* Decorative line after text */}
               <motion.div 
                 initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 0.8, delay: 1.4 }}
-                className="h-px w-6 sm:w-8 bg-gradient-to-r from-transparent via-portfolio-blue to-transparent ml-2 sm:ml-3"
+                animate={{ width: ['0%', '50%', '100%'] }}
+                transition={{ duration: 1, delay: 1.3, ease: "easeInOut" }}
+                className="h-px w-6 sm:w-8 bg-gradient-to-l from-transparent via-portfolio-blue to-transparent"
               />
-            </div>
           </motion.div>
           
           <div className="relative">

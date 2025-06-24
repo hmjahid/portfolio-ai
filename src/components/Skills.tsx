@@ -24,11 +24,30 @@ interface SkillCategory {
 }
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState('wordpress');
+  const [activeCategory, setActiveCategory] = useState('devops');
   const [progressValues, setProgressValues] = useState<{ [key: string]: number }>({});
   const sectionRef = useRef<HTMLElement>(null);
 
   const categories: SkillCategory[] = [
+    {
+      title: 'DevOps',
+      icon: <Cloud className="h-6 w-6" />,
+      gradient: "from-orange-500 to-orange-600",
+      skills: [
+        { name: 'Git', level: 80 },
+        { name: 'Docker', level: 85 },
+        { name: 'Kubernetes', level: 55 },
+        { name: 'Minikube', level: 85 },
+        { name: 'CI/CD', level: 20 },
+        { name: 'Linux', level: 85 },
+        { name: 'AWS', level: 20 },
+        { name: 'Nginx', level: 35 },
+        { name: 'Nagios', level: 60 },
+        { name: 'Prometheus', level: 60 },
+        { name: 'Grafana', level: 60 },
+        { name: 'Proxmox', level: 60 },
+      ]
+    },
     {
       title: 'WordPress',
       icon: <Code className="h-6 w-6" />,
@@ -42,21 +61,6 @@ const Skills = () => {
         { name: 'WordPress Performance Optimization', level: 80 },
         { name: 'WordPress Multisite', level: 85 },
         { name: 'WordPress REST API', level: 40 }
-      ]
-    },
-    {
-      title: 'Backend Development',
-      icon: <Server className="h-6 w-6" />,
-      gradient: "from-purple-500 to-purple-600",
-      skills: [
-        { name: 'PHP 8.x', level: 95 },
-        { name: 'Laravel', level: 20 },
-        { name: 'Object-Oriented PHP', level: 45 },
-        { name: 'MySQL/MariaDB', level: 70 },
-        { name: 'Database Design', level: 65 },
-        { name: 'API Development', level: 30 },
-        { name: 'Server Management', level: 85 },
-        { name: 'Security & Performance', level: 80 }
       ]
     },
     {
@@ -75,22 +79,18 @@ const Skills = () => {
       ]
     },
     {
-      title: 'DevOps',
-      icon: <Cloud className="h-6 w-6" />,
-      gradient: "from-orange-500 to-orange-600",
+      title: 'Backend Development',
+      icon: <Server className="h-6 w-6" />,
+      gradient: "from-purple-500 to-purple-600",
       skills: [
-        { name: 'Git', level: 80 },
-        { name: 'Docker', level: 85 },
-        { name: 'Kubernetes', level: 55 },
-        { name: 'Minikube', level: 85 },
-        { name: 'CI/CD', level: 20 },
-        { name: 'Linux', level: 85 },
-        { name: 'AWS', level: 20 },
-        { name: 'Nginx', level: 35 },
-        { name: 'Nagios', level: 60 },
-        { name: 'Prometheus', level: 60 },
-        { name: 'Grafana', level: 60 },
-        { name: 'Proxmox', level: 60 },
+        { name: 'PHP 8.x', level: 95 },
+        { name: 'Laravel', level: 20 },
+        { name: 'Object-Oriented PHP', level: 45 },
+        { name: 'MySQL/MariaDB', level: 70 },
+        { name: 'Database Design', level: 65 },
+        { name: 'API Development', level: 30 },
+        { name: 'Server Management', level: 85 },
+        { name: 'Security & Performance', level: 80 }
       ]
     }
   ];
@@ -184,7 +184,7 @@ const Skills = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap gap-4 mb-12 justify-start"
+          className="flex flex-wrap gap-4 mb-6 justify-start"
         >
           {categories.map((category) => (
             <motion.button
@@ -192,19 +192,35 @@ const Skills = () => {
               onClick={() => handleCategoryChange(category.title)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 text-xs md:px-6 md:py-3 md:text-sm rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
-                activeCategory === category.title.toLowerCase()
-                  ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-md'
-              }`}
+              className={`relative px-4 py-2 text-xs md:px-6 md:py-3 md:text-sm rounded-xl font-medium transition-all duration-300 flex items-center gap-2 overflow-hidden
+                ${activeCategory === category.title.toLowerCase()
+                  ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white shadow-xl z-10 border-transparent'
+                  : 'bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 text-gray-600 dark:text-gray-300 hover:shadow-lg shadow-md'
+                }
+              `}
             >
               {category.icon}
               {category.title}
+              {/* Animated underline for active tab */}
+              {activeCategory === category.title.toLowerCase() && (
+                <motion.span
+                  layoutId="skills-tab-underline"
+                  className="absolute left-2 right-2 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 animate-pulse"
+                  initial={{ opacity: 0, scaleX: 0 }}
+                  animate={{ opacity: 1, scaleX: 1 }}
+                  transition={{ duration: 0.4 }}
+                />
+              )}
             </motion.button>
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           {categories
             .find(cat => cat.title.toLowerCase() === activeCategory)
             ?.skills.map((skill, index) => (
@@ -213,7 +229,8 @@ const Skills = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700/50"
+                className="bg-white/70 dark:bg-gray-800/60 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700/50 backdrop-blur-md"
+                style={{ backdropFilter: 'blur(12px)' }}
               >
                 <div className="flex justify-between items-center mb-3">
                   <h3 className="font-semibold text-gray-800 dark:text-gray-200">{skill.name}</h3>
@@ -240,7 +257,7 @@ const Skills = () => {
                 </div>
               </motion.div>
             ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
