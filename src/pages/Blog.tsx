@@ -42,7 +42,10 @@ const Blog = () => {
       ? blogPosts.filter(post => !mainCategories.slice(0, 4).includes(post.category))
       : blogPosts.filter(post => post.category === selectedCategory);
 
-  const hasMorePosts = visiblePosts < filteredPosts.length;
+  // Sort posts by date (latest first)
+  const sortedPosts = [...filteredPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const hasMorePosts = visiblePosts < sortedPosts.length;
 
   // Scroll to top when navigating from other pages (delayed smooth scroll)
   useEffect(() => {
@@ -210,7 +213,7 @@ const Blog = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredPosts.slice(0, visiblePosts).map((post) => (
+            {sortedPosts.slice(0, visiblePosts).map((post) => (
               <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 20 }}

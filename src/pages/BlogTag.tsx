@@ -29,8 +29,12 @@ const BlogTag = () => {
   const filteredPosts = (tag && tag.toLowerCase() !== 'all')
     ? blogPosts.filter(post => post.tags.some(t => t.toLowerCase() === urlTag.toLowerCase()))
     : blogPosts;
+  
+  // Sort posts by date (latest first)
+  const sortedPosts = [...filteredPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  
   const POSTS_PER_PAGE = 3;
-  const hasMorePosts = visiblePosts < filteredPosts.length;
+  const hasMorePosts = visiblePosts < sortedPosts.length;
   const loadMore = async () => {
     setIsLoading(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -115,11 +119,11 @@ const BlogTag = () => {
           })}
         </div>
         
-        {filteredPosts.length === 0 ? (
+        {sortedPosts.length === 0 ? (
           <p className="text-gray-500 dark:text-gray-400 text-lg">No posts found for this tag.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredPosts.slice(0, visiblePosts).map((post) => (
+            {sortedPosts.slice(0, visiblePosts).map((post) => (
               <Card key={post.id} className="h-full group hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <Link to={`/blog/${post.slug}`}>
                   <div className="relative h-48 overflow-hidden rounded-t-lg">

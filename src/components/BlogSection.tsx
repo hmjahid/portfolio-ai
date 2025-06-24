@@ -18,8 +18,11 @@ const formatDate = (dateString: string) => {
 
 const BlogSection = () => {
   const navigate = useNavigate();
-  // Get the featured blog posts
-  const featuredPosts = blogPosts.filter(post => post.featured).slice(0, 3);
+  // Get the featured blog posts and sort by date (latest first)
+  const featuredPosts = blogPosts
+    .filter(post => post.featured)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
   
   return (
     <section id="blog" className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
