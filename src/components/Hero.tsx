@@ -230,7 +230,7 @@ const Hero = () => {
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
+                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-700/80 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="GitHub"
@@ -241,7 +241,7 @@ const Hero = () => {
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
+                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-700/80 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="LinkedIn"
@@ -252,7 +252,7 @@ const Hero = () => {
                 href={SOCIAL_LINKS.medium}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
+                className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-700/80 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Medium"

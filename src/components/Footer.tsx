@@ -62,7 +62,7 @@ const Footer = () => {
               href="https://github.com/hmjahid/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center mr-4 hover:scale-110"
+              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-700/80 shadow-md hover:shadow-lg flex items-center justify-center mr-4 hover:scale-110"
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
               aria-label="GitHub"
@@ -73,7 +73,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/hmjahid/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center mr-4 hover:scale-110"
+              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-700/80 shadow-md hover:shadow-lg flex items-center justify-center mr-4 hover:scale-110"
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
               aria-label="LinkedIn"
@@ -84,7 +84,7 @@ const Footer = () => {
               href="https://medium.com/@mdjahidhasan919" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
+              className="hover:text-portfolio-blue transition-all duration-300 h-12 w-12 rounded-full bg-white dark:bg-gray-700/80 shadow-md hover:shadow-lg flex items-center justify-center hover:scale-110"
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Medium"
