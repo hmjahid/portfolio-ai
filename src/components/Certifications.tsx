@@ -246,8 +246,8 @@ const Certifications = () => {
             className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-lg w-full"
           >
             <Tabs defaultValue="devops" className="w-full">
-              <div className="mb-6 min-h-[100px]">
-                <TabsList className="w-full flex flex-wrap gap-2 bg-transparent p-0">
+              <div className="mb-6">
+                <TabsList className="w-full flex flex-wrap gap-3 bg-transparent p-0 justify-center h-auto min-h-0">
                   <TabsTrigger 
                     value="devops" 
                     className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
@@ -286,27 +286,25 @@ const Certifications = () => {
                 </TabsList>
               </div>
               
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="h-[600px] overflow-y-auto pr-4 custom-scrollbar">
-                <TabsContent value="wordpress">
-                  {renderCertificationCards(wordpressCertifications)}
-                </TabsContent>
-                
-                <TabsContent value="programming">
-                  {renderCertificationCards(programmingCertifications)}
-                </TabsContent>
+              <TabsContent value="wordpress" className="mt-6">
+                {renderCertificationCards(wordpressCertifications)}
+              </TabsContent>
+              
+              <TabsContent value="programming" className="mt-6">
+                {renderCertificationCards(programmingCertifications)}
+              </TabsContent>
 
-                <TabsContent value="webdev">
-                  {renderCertificationCards(webDevelopmentCertifications)}
-                </TabsContent>
+              <TabsContent value="webdev" className="mt-6">
+                {renderCertificationCards(webDevelopmentCertifications)}
+              </TabsContent>
 
-                <TabsContent value="devops">
-                  {renderCertificationCards(devopsCertifications)}
-                </TabsContent>
+              <TabsContent value="devops" className="mt-6">
+                {renderCertificationCards(devopsCertifications)}
+              </TabsContent>
 
-                <TabsContent value="others">
-                  {renderCertificationCards(otherCertifications)}
-                </TabsContent>
-              </motion.div>
+              <TabsContent value="others" className="mt-6">
+                {renderCertificationCards(otherCertifications)}
+              </TabsContent>
             </Tabs>
           </motion.div>
         </div>

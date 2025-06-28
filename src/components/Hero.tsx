@@ -19,7 +19,15 @@ import {
   SiTailwindcss, 
   SiNginx, 
   SiAmazon,
-  SiJenkins
+  SiJenkins,
+  SiGitlab,
+  SiGithub,
+  SiBitbucket,
+  SiProxmox,
+  SiGrafana,
+  SiPrometheus,
+  SiBootstrap,
+  SiYaml
 } from 'react-icons/si';
 
 const Hero = () => {
@@ -345,10 +353,10 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
-        className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 lg:-bottom-12 left-0 right-0 bg-gradient-to-t from-white/90 via-white/70 to-transparent dark:from-gray-900/90 dark:via-gray-900/70 dark:to-transparent backdrop-blur-sm py-4 sm:py-6 md:py-8 pb-12 sm:pb-16 md:pb-20 lg:pb-24 z-10"
+        className="absolute -bottom-1 sm:-bottom-1 md:-bottom-1 lg:-bottom-1 left-0 right-0 w-full bg-gradient-to-t from-white/90 via-white/70 to-transparent dark:from-gray-900/90 dark:via-gray-900/70 dark:to-transparent backdrop-blur-sm py-2 sm:py-3 md:py-4 pb-12 sm:pb-16 md:pb-20 lg:pb-24 z-10"
         style={{ marginBottom: '-1rem' }}
       >
-        <div className="container mx-auto px-4 md:px-6 pb-4 sm:pb-6 md:pb-8">
+        <div className="container mx-auto px-4 md:px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -389,7 +397,7 @@ const Hero = () => {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 0.8, delay: 1.6 }}
-                  className="absolute -bottom-0.5 left-0 h-0.5 bg-gradient-to-r from-portfolio-blue via-blue-600 to-purple-600 rounded-full"
+                  className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-portfolio-blue via-blue-600 to-purple-600 rounded-full"
                 />
                 
                 {/* Glowing effect */}
@@ -416,85 +424,316 @@ const Hero = () => {
                 className="h-px w-6 sm:w-8 bg-gradient-to-l from-transparent via-portfolio-blue to-transparent"
               />
           </motion.div>
-          
-          <div className="relative">
-            <div className="flex animate-marquee space-x-4 sm:space-x-6 md:space-x-8">
-              {/* First set of logos */}
-              <div className="flex items-center space-x-4 sm:space-x-6 md:space-x-8 min-w-max">
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-white/90 dark:bg-gray-800/90 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiLinux className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
-                  <span className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">Linux</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiJenkins className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">DevOps</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiDocker className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">Docker</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiKubernetes className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">Kubernetes</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-sky-50 dark:from-blue-900/30 dark:to-sky-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiWordpress className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">WordPress</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiPhp className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">PHP</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiMysql className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">MySQL</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/30 dark:to-orange-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-yellow-200/50 dark:border-yellow-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiJavascript className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-yellow-600 dark:text-yellow-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-yellow-700 dark:text-yellow-300">JavaScript</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-green-200/50 dark:border-green-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiHtml5 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-green-600 dark:text-green-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-green-700 dark:text-green-300">HTML5</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-900/30 dark:to-rose-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-pink-200/50 dark:border-pink-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiCss3 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-pink-600 dark:text-pink-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-pink-700 dark:text-pink-300">CSS3</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/30 dark:to-orange-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-red-200/50 dark:border-red-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiGit className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">Git</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-indigo-200/50 dark:border-indigo-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiReact className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-indigo-600 dark:text-indigo-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-indigo-700 dark:text-indigo-300">React</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900/30 dark:to-teal-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-cyan-200/50 dark:border-cyan-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiTailwindcss className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-cyan-600 dark:text-cyan-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-cyan-700 dark:text-cyan-300">Tailwind</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiNginx className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Nginx</span>
-                </div>
-                
-                <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-yellow-200/50 dark:border-yellow-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                  <SiAmazon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-yellow-600 dark:text-yellow-400" />
-                  <span className="text-xs sm:text-sm font-semibold text-yellow-700 dark:text-yellow-300">AWS</span>
-                </div>
+        </div>
+        {/* Full width infinite slider */}
+        <div className="w-full overflow-hidden">
+          <div className="flex animate-infinite-slider whitespace-nowrap">
+            {/* First set of logos */}
+            <div className="flex items-center space-x-4 sm:space-x-6 md:space-x-8 min-w-max">
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-white/90 dark:bg-gray-800/90 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiLinux className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+                <span className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">Linux</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiDocker className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">Docker</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiKubernetes className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">Kubernetes</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-sky-50 dark:from-blue-900/30 dark:to-sky-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiWordpress className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">WordPress</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiPhp className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">PHP</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiMysql className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">MySQL</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/30 dark:to-orange-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-yellow-200/50 dark:border-yellow-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiJavascript className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-yellow-600 dark:text-yellow-400" />
+                <span className="text-xs sm:text-sm font-semibold text-yellow-700 dark:text-yellow-300">JavaScript</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-green-200/50 dark:border-green-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiHtml5 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-green-600 dark:text-green-400" />
+                <span className="text-xs sm:text-sm font-semibold text-green-700 dark:text-green-300">HTML5</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-900/30 dark:to-rose-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-pink-200/50 dark:border-pink-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiCss3 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-pink-600 dark:text-pink-400" />
+                <span className="text-xs sm:text-sm font-semibold text-pink-700 dark:text-pink-300">CSS3</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/30 dark:to-orange-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-red-200/50 dark:border-red-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiGit className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
+                <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">Git</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-900/30 dark:to-slate-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiGithub className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-gray-800 dark:text-gray-200" />
+                <span className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">GitHub</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-indigo-200/50 dark:border-indigo-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiReact className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-indigo-600 dark:text-indigo-400" />
+                <span className="text-xs sm:text-sm font-semibold text-indigo-700 dark:text-indigo-300">React</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900/30 dark:to-teal-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-cyan-200/50 dark:border-cyan-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiTailwindcss className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-cyan-600 dark:text-cyan-400" />
+                <span className="text-xs sm:text-sm font-semibold text-cyan-700 dark:text-cyan-300">Tailwind</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiBootstrap className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">Bootstrap</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiNginx className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Nginx</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-yellow-200/50 dark:border-yellow-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiAmazon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-yellow-600 dark:text-yellow-400" />
+                <span className="text-xs sm:text-sm font-semibold text-yellow-700 dark:text-yellow-300">AWS</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-violet-50 dark:from-purple-900/30 dark:to-violet-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiProxmox className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">Proxmox</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/30 dark:to-red-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiPrometheus className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Prometheus</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/30 dark:to-yellow-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiGrafana className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Grafana</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-red-200/50 dark:border-red-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiYaml className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
+                <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">YAML</span>
+              </div>
+            </div>
+            
+            {/* Second set for seamless loop */}
+            <div className="flex items-center space-x-4 sm:space-x-6 md:space-x-8 min-w-max">
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-white/90 dark:bg-gray-800/90 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiLinux className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+                <span className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">Linux</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiDocker className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">Docker</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiKubernetes className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">Kubernetes</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-sky-50 dark:from-blue-900/30 dark:to-sky-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiWordpress className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">WordPress</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiPhp className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">PHP</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiMysql className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">MySQL</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/30 dark:to-orange-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-yellow-200/50 dark:border-yellow-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiJavascript className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-yellow-600 dark:text-yellow-400" />
+                <span className="text-xs sm:text-sm font-semibold text-yellow-700 dark:text-yellow-300">JavaScript</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-green-200/50 dark:border-green-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiHtml5 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-green-600 dark:text-green-400" />
+                <span className="text-xs sm:text-sm font-semibold text-green-700 dark:text-green-300">HTML5</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-900/30 dark:to-rose-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-pink-200/50 dark:border-pink-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiCss3 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-pink-600 dark:text-pink-400" />
+                <span className="text-xs sm:text-sm font-semibold text-pink-700 dark:text-pink-300">CSS3</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/30 dark:to-orange-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-red-200/50 dark:border-red-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiGit className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
+                <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">Git</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-900/30 dark:to-slate-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiGithub className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-gray-800 dark:text-gray-200" />
+                <span className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">GitHub</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-indigo-200/50 dark:border-indigo-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiReact className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-indigo-600 dark:text-indigo-400" />
+                <span className="text-xs sm:text-sm font-semibold text-indigo-700 dark:text-indigo-300">React</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900/30 dark:to-teal-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-cyan-200/50 dark:border-cyan-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiTailwindcss className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-cyan-600 dark:text-cyan-400" />
+                <span className="text-xs sm:text-sm font-semibold text-cyan-700 dark:text-cyan-300">Tailwind</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiBootstrap className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">Bootstrap</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiNginx className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Nginx</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-yellow-200/50 dark:border-yellow-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiAmazon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-yellow-600 dark:text-yellow-400" />
+                <span className="text-xs sm:text-sm font-semibold text-yellow-700 dark:text-yellow-300">AWS</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-violet-50 dark:from-purple-900/30 dark:to-violet-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiProxmox className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">Proxmox</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/30 dark:to-red-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiPrometheus className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Prometheus</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/30 dark:to-yellow-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiGrafana className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Grafana</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-red-200/50 dark:border-red-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiYaml className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
+                <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">YAML</span>
+              </div>
+            </div>
+            
+            {/* Third set for extra seamless loop */}
+            <div className="flex items-center space-x-4 sm:space-x-6 md:space-x-8 min-w-max">
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-white/90 dark:bg-gray-800/90 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiLinux className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+                <span className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">Linux</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiDocker className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">Docker</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiKubernetes className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">Kubernetes</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-sky-50 dark:from-blue-900/30 dark:to-sky-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiWordpress className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">WordPress</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiPhp className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">PHP</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiMysql className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300">MySQL</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/30 dark:to-orange-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-yellow-200/50 dark:border-yellow-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiJavascript className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-yellow-600 dark:text-yellow-400" />
+                <span className="text-xs sm:text-sm font-semibold text-yellow-700 dark:text-yellow-300">JavaScript</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-green-200/50 dark:border-green-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiHtml5 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-green-600 dark:text-green-400" />
+                <span className="text-xs sm:text-sm font-semibold text-green-700 dark:text-green-300">HTML5</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-900/30 dark:to-rose-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-pink-200/50 dark:border-pink-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiCss3 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-pink-600 dark:text-pink-400" />
+                <span className="text-xs sm:text-sm font-semibold text-pink-700 dark:text-pink-300">CSS3</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/30 dark:to-orange-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-red-200/50 dark:border-red-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiGit className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
+                <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">Git</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-900/30 dark:to-slate-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiGithub className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-gray-800 dark:text-gray-200" />
+                <span className="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">GitHub</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-indigo-200/50 dark:border-indigo-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiReact className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-indigo-600 dark:text-indigo-400" />
+                <span className="text-xs sm:text-sm font-semibold text-indigo-700 dark:text-indigo-300">React</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900/30 dark:to-teal-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-cyan-200/50 dark:border-cyan-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiTailwindcss className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-cyan-600 dark:text-cyan-400" />
+                <span className="text-xs sm:text-sm font-semibold text-cyan-700 dark:text-cyan-300">Tailwind</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiBootstrap className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">Bootstrap</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiNginx className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Nginx</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-yellow-200/50 dark:border-yellow-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiAmazon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-yellow-600 dark:text-yellow-400" />
+                <span className="text-xs sm:text-sm font-semibold text-yellow-700 dark:text-yellow-300">AWS</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-50 to-violet-50 dark:from-purple-900/30 dark:to-violet-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiProxmox className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300">Proxmox</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/30 dark:to-red-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiPrometheus className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Prometheus</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/30 dark:to-yellow-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiGrafana className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400" />
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">Grafana</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-red-200/50 dark:border-red-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <SiYaml className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
+                <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">YAML</span>
               </div>
             </div>
           </div>

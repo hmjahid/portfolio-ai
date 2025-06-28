@@ -34,6 +34,24 @@
   }
 }
 
+@keyframes smooth-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes infinite-slider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .animate-gradient {
   background-size: 200% 200%;
   animation: animate-gradient 3s ease infinite;
@@ -41,6 +59,14 @@
 
 .animate-marquee {
   animation: marquee 30s linear infinite;
+}
+
+.animate-smooth-marquee {
+  animation: smooth-marquee 40s linear infinite;
+}
+
+.animate-infinite-slider {
+  animation: infinite-slider 60s linear infinite;
 }
 
 @layer base {
@@ -150,5 +176,12 @@
 
   .skill-tag {
     @apply px-4 py-2 rounded-md bg-portfolio-blue/10 text-portfolio-blue font-medium hover:bg-portfolio-blue hover:text-white transition-all duration-300;
+  }
+
+  /* Custom breakpoint for extra small screens */
+  @media (max-width: 639px) {
+    .xsm\:min-h-\[100px\] {
+      min-height: 100px;
+    }
   }
 }
