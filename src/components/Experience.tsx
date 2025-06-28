@@ -13,9 +13,22 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    position: "Web Developer",
+    company: "Monday Digital",
+    period: "June 2025 - Present",
+    location: "Hybrid (Bangladesh)",
+    responsibilities: [
+      "Manage and maintain WordPress websites, ensuring they remain secure, updated, and fully functional",
+      "Supervise site performance, optimizing code for speed and SEO to improve search engine rankings and user experience",
+      "Troubleshoot and fix technical issues, providing timely solutions to maintain website functionality",
+      "Implement improvements for better user experience and reliability, focusing on modern web standards",
+      "Work closely with teams to deliver high-performing, scalable web solutions that meet client requirements"
+    ]
+  },
+  {
     position: "Junior Web Developer",
     company: "Monday Digital",
-    period: "June 2024 - Present",
+    period: "June 2024 - May 2025",
     location: "Hybrid (Bangladesh)",
     responsibilities: [
       "Custom WordPress theme development: Designed and developed custom themes to meet client specifications, ensuring responsive and user-friendly layouts",
