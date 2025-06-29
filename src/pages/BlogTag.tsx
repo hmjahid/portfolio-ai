@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import CallToAction from '@/components/CallToAction';
+import { getAllTags, getTagUrl, decodeTagUrl } from '@/utils/blogUtils';
 
 // Helper function to format date as "DD MMM YYYY"
 const formatDate = (dateString: string) => {
@@ -22,12 +23,17 @@ const formatDate = (dateString: string) => {
 const BlogTag = () => {
   const { tag } = useParams<{ tag: string }>();
   const navigate = useNavigate();
-  const urlTag = (tag || '').replace(/-/g, ' ');
-  const allTags = Array.from(new Set(blogPosts.flatMap(post => post.tags)));
+  
+  // Decode the tag URL to get the original tag name for filtering
+  const originalTag = tag ? decodeTagUrl(tag) : '';
+  const urlTag = originalTag.replace(/-/g, ' ');
+  const allTags = getAllTags();
   const [visiblePosts, setVisiblePosts] = React.useState(9);
   const [isLoading, setIsLoading] = React.useState(false);
-  const filteredPosts = (tag && tag.toLowerCase() !== 'all')
-    ? blogPosts.filter(post => post.tags.some(t => t.toLowerCase() === urlTag.toLowerCase()))
+  
+  // Filter posts by tag - show all posts if tag is 'all' or undefined
+  const filteredPosts = (tag && tag.toLowerCase() !== 'all' && originalTag)
+    ? blogPosts.filter(post => post.tags.some(t => t.toLowerCase() === originalTag.toLowerCase()))
     : blogPosts;
   
   // Sort posts by date (latest first)
@@ -43,10 +49,10 @@ const BlogTag = () => {
   };
 
   useEffect(() => {
-    if (tag) {
-      document.title = `Posts tagged with ${tag.replace(/-/g, ' ')} | Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast`;
+    if (tag && tag !== 'all') {
+      document.title = `Posts tagged with ${originalTag} | Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast`;
       const metaDescription = document.querySelector('meta[name="description"]');
-      const content = `Browse blog posts tagged with ${tag.replace(/-/g, ' ')} on Md Jahid Hasan's blog. Discover insights on DevOps, WordPress, Linux, and web development.`;
+      const content = `Browse blog posts tagged with ${originalTag} on Md Jahid Hasan's blog. Discover insights on DevOps, WordPress, Linux, and web development.`;
       if (metaDescription) {
         metaDescription.setAttribute('content', content);
       } else {
@@ -68,7 +74,7 @@ const BlogTag = () => {
         document.head.appendChild(meta);
       }
     }
-  }, [tag]);
+  }, [tag, originalTag]);
 
   return (
     <>
@@ -104,12 +110,12 @@ const BlogTag = () => {
             All
           </button>
           {allTags.map((tagItem) => {
-            const tagUrl = tagItem.toLowerCase().replace(/\s+/g, '-');
-            const isActive = urlTag.toLowerCase() === tagItem.toLowerCase();
+            const tagUrl = getTagUrl(tagItem);
+            const isActive = originalTag.toLowerCase() === tagItem.toLowerCase();
             return (
               <button
                 key={tagItem}
-                onClick={() => navigate(`/blog/tag/${encodeURIComponent(tagUrl)}`)}
+                onClick={() => navigate(tagUrl)}
                 className={`px-4 py-2 rounded-full font-semibold transition-all duration-200 cursor-pointer outline-none focus:ring-2 focus:ring-portfolio-blue border text-sm
                   ${isActive ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white border-transparent shadow-md' : 'bg-white dark:bg-gray-800 text-portfolio-blue border-portfolio-blue/30 dark:border-gray-600 hover:bg-portfolio-blue/10 dark:hover:bg-gray-700'}`}
               >
@@ -155,7 +161,7 @@ const BlogTag = () => {
                   {post.tags.map((tagItem) => (
                     <button
                       key={tagItem}
-                      onClick={() => navigate(`/blog/tag/${encodeURIComponent(tagItem.toLowerCase().replace(/\s+/g, '-'))}`)}
+                      onClick={() => navigate(getTagUrl(tagItem))}
                       className="px-2 py-1 rounded-full text-xs font-medium transition-colors duration-200 border bg-portfolio-blue/10 text-portfolio-blue border-portfolio-blue/20 hover:bg-portfolio-blue/20"
                     >
                       {tagItem}

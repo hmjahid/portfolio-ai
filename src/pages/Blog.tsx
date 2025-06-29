@@ -194,16 +194,19 @@ const Blog = () => {
               Browse Articles
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl ml-0">
-              Filter by category or explore all our latest articles and insights.
+              Filter by category to explore our latest articles and insights.
             </p>
           </motion.div>
 
           {/* Category Filter Tabs */}
-          <div className="mb-12 flex flex-wrap gap-3 items-center justify-start">
+          <div className="mb-8 flex flex-wrap gap-3 items-center justify-start">
             {['All', ...mainCategories].map(category => (
               <button
                 key={category}
-                onClick={() => { setSelectedCategory(category); setVisiblePosts(9); }}
+                onClick={() => { 
+                  setSelectedCategory(category); 
+                  setVisiblePosts(9); 
+                }}
                 className={`px-4 py-2 rounded-full font-semibold transition-all duration-200 cursor-pointer outline-none focus:ring-2 focus:ring-portfolio-blue border text-sm
                   ${selectedCategory === category ? 'bg-gradient-to-r from-portfolio-blue to-blue-600 text-white border-transparent shadow-md' : 'bg-white dark:bg-gray-800 text-portfolio-blue border-portfolio-blue/30 dark:border-gray-600 hover:bg-portfolio-blue/10 dark:hover:bg-gray-700'}`}
               >

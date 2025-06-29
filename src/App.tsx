@@ -56,8 +56,8 @@ function App() {
                     </>
                   } />
                   <Route path="/blog" element={<Blog />} />
-                  <Route path="/blog/:slug" element={<BlogPost />} />
                   <Route path="/blog/tag/:tag" element={<BlogTag />} />
+                  <Route path="/blog/:slug" element={<BlogPost />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />

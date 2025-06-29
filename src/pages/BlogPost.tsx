@@ -8,6 +8,8 @@ import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin, 
 import ReactMarkdown from 'react-markdown';
 import CallToAction from '@/components/CallToAction';
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
+import { getBlogPostBySlug, getTagUrl } from '@/utils/blogUtils';
+import { useToast } from "@/hooks/use-toast";
 
 // Helper function to format date as "DD MMM YYYY"
 const formatDate = (dateString: string) => {
@@ -22,7 +24,10 @@ const formatDate = (dateString: string) => {
 const BlogPost = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const post = blogPosts.find(post => post.slug === slug);
+  const { toast } = useToast();
+  
+  // Use utility function to get the blog post
+  const post = slug ? getBlogPostBySlug(slug) : null;
 
   useEffect(() => {
     if (post) {
@@ -128,7 +133,7 @@ const BlogPost = () => {
                 {post.tags.map((tag) => (
                   <button
                     key={tag}
-                    onClick={() => navigate(`/blog/tag/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`)}
+                    onClick={() => navigate(getTagUrl(tag))}
                     className="px-2 py-1 rounded-full text-xs font-medium transition-colors duration-200 border bg-portfolio-blue/10 text-portfolio-blue border-portfolio-blue/20 hover:bg-portfolio-blue/20"
                   >
                     {tag}
@@ -168,7 +173,14 @@ const BlogPost = () => {
                     <Linkedin className="h-5 w-5" />
                   </button>
                   <button
-                    onClick={() => {navigator.clipboard.writeText(window.location.href)}}
+                    onClick={() => {
+                      navigator.clipboard.writeText(window.location.href);
+                      toast({
+                        title: "Link copied!",
+                        description: "The blog post link has been copied to your clipboard.",
+                        duration: 3000,
+                      });
+                    }}
                     className="rounded-full p-2 bg-gradient-to-r from-portfolio-blue to-blue-600 text-white hover:opacity-90 transition-all duration-300 transform hover:scale-110"
                     aria-label="Copy Link"
                   >
@@ -259,7 +271,7 @@ const BlogPost = () => {
                       {otherPost.tags.map((tag) => (
                         <button
                           key={tag}
-                          onClick={() => navigate(`/blog/tag/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`)}
+                          onClick={() => navigate(getTagUrl(tag))}
                           className="px-2 py-1 rounded-full text-xs font-medium transition-colors duration-200 border bg-portfolio-blue/10 text-portfolio-blue border-portfolio-blue/20 hover:bg-portfolio-blue/20"
                         >
                           {tag}
