@@ -26,7 +26,7 @@ const Blog = () => {
   const location = useLocation();
   const POSTS_PER_PAGE = 3;
 
-  const mainCategories = ['DevOps', 'WordPress', 'Web Development' , 'Linux', 'Others'];
+  const mainCategories = ['DevOps', 'WordPress', 'Web Development', 'Linux', 'Artificial Intelligence', 'Cybersecurity', 'Computer Science', 'Others'];
 
   const loadMore = async () => {
     setIsLoading(true);
@@ -39,7 +39,7 @@ const Blog = () => {
   const filteredPosts = selectedCategory === 'All'
     ? blogPosts
     : selectedCategory === 'Others'
-      ? blogPosts.filter(post => !mainCategories.slice(0, 4).includes(post.category))
+      ? blogPosts.filter(post => !mainCategories.slice(0, 7).includes(post.category))
       : blogPosts.filter(post => post.category === selectedCategory);
 
   // Sort posts by date (latest first)
@@ -135,7 +135,7 @@ const Blog = () => {
               </div>
               <div className="flex items-center gap-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-600 shadow-sm">
                 <div className="w-3 h-3 bg-indigo-500 rounded-full animate-pulse delay-300"></div>
-                <span className="text-sm font-medium">5+ Categories</span>
+                <span className="text-sm font-medium">8+ Categories</span>
               </div>
               <div className="flex items-center gap-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-600 shadow-sm">
                 <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse delay-600"></div>
