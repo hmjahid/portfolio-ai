@@ -204,7 +204,7 @@ const BlogPost = () => {
           >
             <div className="text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200 mb-2 md:mb-1">
-                Latest Posts
+                Latest Articles
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl">
                 Explore more insights and articles from our blog

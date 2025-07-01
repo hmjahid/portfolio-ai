@@ -119,8 +119,8 @@ const Blog = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light"
             >
-              Dive into expert insights on <span className="font-semibold text-blue-600 dark:text-blue-400">DevOps</span>, <span className="font-semibold text-indigo-600 dark:text-indigo-400">WordPress development</span>, <span className="font-semibold text-purple-600 dark:text-purple-400">Linux administration</span>, and modern web technologies. 
-              Stay updated with the latest trends and best practices.
+              Dive into expert insights on <span className="font-semibold text-blue-600 dark:text-blue-400">DevOps</span>, <span className="font-semibold text-indigo-600 dark:text-indigo-400">WordPress development</span>, <span className="font-semibold text-purple-600 dark:text-purple-400">Linux administration</span>, <span className="font-semibold text-pink-600 dark:text-pink-400">Artificial Intelligence</span>, <span className="font-semibold text-green-600 dark:text-green-400">Computer Science</span>, and modern web technologies. 
+              Stay updated with the latest trends, research, and best practices in tech.
             </motion.p>
             
             <motion.div

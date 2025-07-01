@@ -169,6 +169,9 @@ const Certifications = () => {
     </div>
   );
 
+  // Height for 3 cards + spacing: card ~140px + 2*32px spacing = ~480px
+  const tabContentClass = "mt-6 max-h-[480px] overflow-y-auto pr-2";
+
   return (
     <section id="certifications" className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Background Elements */}
@@ -286,23 +289,23 @@ const Certifications = () => {
                 </TabsList>
               </div>
               
-              <TabsContent value="wordpress" className="mt-6">
+              <TabsContent value="wordpress" className={tabContentClass}>
                 {renderCertificationCards(wordpressCertifications)}
               </TabsContent>
               
-              <TabsContent value="programming" className="mt-6">
+              <TabsContent value="programming" className={tabContentClass}>
                 {renderCertificationCards(programmingCertifications)}
               </TabsContent>
 
-              <TabsContent value="webdev" className="mt-6">
+              <TabsContent value="webdev" className={tabContentClass}>
                 {renderCertificationCards(webDevelopmentCertifications)}
               </TabsContent>
 
-              <TabsContent value="devops" className="mt-6">
+              <TabsContent value="devops" className={tabContentClass}>
                 {renderCertificationCards(devopsCertifications)}
               </TabsContent>
 
-              <TabsContent value="others" className="mt-6">
+              <TabsContent value="others" className={tabContentClass}>
                 {renderCertificationCards(otherCertifications)}
               </TabsContent>
             </Tabs>
