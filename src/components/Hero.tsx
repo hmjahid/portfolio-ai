@@ -175,10 +175,10 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex items-center gap-4"
             >
-              <div className="h-12 w-12 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 flex items-center justify-center text-white font-bold text-xl">
+              <div className="h-10 w-10 min-w-[2.5rem] sm:h-12 sm:w-12 sm:min-w-[3rem] rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 flex items-center justify-center text-white font-bold text-xl">
                 WD
               </div>
-              <div className="h-12 w-12 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 flex items-center justify-center text-white font-bold text-xl">
+              <div className="h-10 w-10 min-w-[2.5rem] sm:h-12 sm:w-12 sm:min-w-[3rem] rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 flex items-center justify-center text-white font-bold text-xl">
                 DE
               </div>
               <div className="h-px w-12 bg-gradient-to-r from-portfolio-blue to-blue-600"></div>
