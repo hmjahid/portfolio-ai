@@ -529,6 +529,11 @@ const Hero = () => {
                 <SiYaml className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
                 <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">YAML</span>
               </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400 font-bold text-xs sm:text-sm flex items-center justify-center">L</div>
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">LAMP</span>
+              </div>
             </div>
             
             {/* Second set for seamless loop */}
@@ -632,6 +637,11 @@ const Hero = () => {
                 <SiYaml className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
                 <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">YAML</span>
               </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400 font-bold text-xs sm:text-sm flex items-center justify-center">L</div>
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">LAMP</span>
+              </div>
             </div>
             
             {/* Third set for extra seamless loop */}
@@ -734,6 +744,11 @@ const Hero = () => {
               <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-red-200/50 dark:border-red-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                 <SiYaml className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-red-600 dark:text-red-400" />
                 <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300">YAML</span>
+              </div>
+              
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 px-3 sm:px-4 md:px-5 py-2 sm:py-3 rounded-xl shadow-sm backdrop-blur-sm border border-orange-200/50 dark:border-orange-700/50 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-orange-600 dark:text-orange-400 font-bold text-xs sm:text-sm flex items-center justify-center">L</div>
+                <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-300">LAMP</span>
               </div>
             </div>
           </div>
