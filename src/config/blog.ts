@@ -72,7 +72,7 @@ DevOps is not just a set of tools, but a cultural shift that requires collaborat
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-18",
+    date: "2025-06-18",
     readTime: calculateReadTime(`DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the development lifecycle and provide continuous delivery with high software quality.
 
 ## What is DevOps?
@@ -155,7 +155,7 @@ Following these best practices will help you create secure, maintainable, and ef
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-19",
+    date: "2025-06-19",
     readTime: calculateReadTime(`WordPress is the most popular content management system, powering over 40% of all websites on the internet. Here's how to develop WordPress sites effectively.
 
 ## Theme Development
@@ -246,7 +246,7 @@ Docker simplifies the development process and ensures consistency across differe
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-21",
+    date: "2025-06-21",
     readTime: calculateReadTime(`Docker has revolutionized the way we develop, ship, and run applications. Let's explore the fundamentals of containerization.
 
 ## What are Containers?
@@ -337,7 +337,7 @@ Kubernetes provides powerful tools for managing containerized applications. Star
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-22",
+    date: "2025-06-22",
     readTime: calculateReadTime(`Kubernetes has become the de facto standard for container orchestration. Let's dive into its core concepts and practical applications.
 
 ## Understanding Kubernetes
@@ -429,7 +429,7 @@ WordPress theme development is a rewarding skill that combines creativity with t
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-23",
+    date: "2025-06-23",
     readTime: calculateReadTime(`Creating custom WordPress themes requires a combination of design skills and technical knowledge. Let's explore the process step by step.
 
 ## Design Principles
@@ -910,7 +910,7 @@ GitHub Actions provides a flexible and powerful platform for implementing CI/CD 
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-19",
+    date: "2025-06-19",
     readTime: calculateReadTime(`GitHub Actions provides a powerful platform for implementing CI/CD pipelines. Let's explore how to create efficient workflows.
 
 ## Understanding GitHub Actions
@@ -1001,7 +1001,7 @@ WordPress plugin development requires attention to detail and security. Follow b
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-21",
+    date: "2025-06-21",
     readTime: calculateReadTime(`WordPress plugins extend the functionality of your website. Let's learn how to create custom plugins effectively.
 
 ## Plugin Architecture
@@ -1092,7 +1092,7 @@ Terraform provides a powerful way to manage infrastructure. Start with basic con
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-22",
+    date: "2025-06-22",
     readTime: calculateReadTime(`Terraform has revolutionized infrastructure management through code. Let's explore its capabilities.
 
 ## Terraform Basics
@@ -1183,7 +1183,7 @@ Performance optimization is an ongoing process. Monitor your site and implement 
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-18",
+    date: "2025-06-18",
     readTime: calculateReadTime(`Performance optimization is crucial for WordPress sites. Let's explore various optimization techniques.
 
 ## Caching Strategies
@@ -1274,7 +1274,7 @@ Monitoring and logging are essential for maintaining system reliability. Start w
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-19",
+    date: "2025-06-19",
     readTime: calculateReadTime(`Effective monitoring and logging are crucial for maintaining system health. Let's explore best practices.
 
 ## Monitoring Tools
@@ -1365,7 +1365,7 @@ WordPress Multisite is powerful but requires careful management. Plan your setup
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-21",
+    date: "2025-06-21",
     readTime: calculateReadTime(`WordPress Multisite enables you to manage multiple sites from a single installation. Let's explore its features.
 
 ## Installation
@@ -1456,7 +1456,7 @@ Security should be integrated into every aspect of your DevOps pipeline. Stay vi
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-22",
+    date: "2025-06-22",
     readTime: calculateReadTime(`Security is crucial in DevOps. Let's explore best practices for securing your DevOps pipeline.
 
 ## Infrastructure Security
@@ -1547,7 +1547,7 @@ WordPress REST API enables powerful integrations. Start with basic endpoints and
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-18",
+    date: "2025-06-18",
     readTime: calculateReadTime(`The WordPress REST API provides powerful capabilities for extending WordPress functionality. Let's explore custom endpoint development.
 
 ## Understanding REST API
@@ -1638,7 +1638,7 @@ Docker Compose provides a powerful way to manage multi-container applications. S
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-19",
+    date: "2025-06-19",
     readTime: calculateReadTime(`Docker Compose simplifies the management of multi-container applications. Let's explore its capabilities.
 
 ## Docker Compose Basics
@@ -1729,7 +1729,7 @@ Gutenberg block development enables powerful content creation tools. Start with 
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-21",
+    date: "2025-06-21",
     readTime: calculateReadTime(`Gutenberg blocks extend WordPress content creation capabilities. Let's explore custom block development.
 
 ## Block Development Basics
@@ -1827,7 +1827,7 @@ Mastering these ES6+ features will make your JavaScript code more readable, main
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-22",
+    date: "2025-06-22",
     readTime: calculateReadTime(`Modern JavaScript has evolved significantly with ES6+ features. Let's explore the most important ones.
 
 ## Arrow Functions
@@ -1949,7 +1949,7 @@ React Hooks provide a powerful way to manage state and side effects in functiona
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-23",
+    date: "2025-06-23",
     readTime: calculateReadTime(`React Hooks revolutionized functional components. Let's explore the most important hooks.
 
 ## useState Hook
@@ -2075,7 +2075,7 @@ Choose the right tool for your specific layout needs. Often, combining both prov
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-22",
+    date: "2025-06-22",
     readTime: calculateReadTime(`CSS Grid and Flexbox are powerful layout systems. Let's understand when to use each.
 
 ## CSS Grid
@@ -2194,7 +2194,7 @@ Mastering these basic commands will make you more efficient in Linux environment
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-21",
+    date: "2025-06-21",
     readTime: calculateReadTime(`The Linux command line is a powerful tool for system administration and development. Let's explore the essential commands.
 
 ## File System Navigation
@@ -2325,7 +2325,7 @@ Understanding package managers is essential for efficient Linux system administr
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-22",
+    date: "2025-06-22",
     readTime: calculateReadTime(`Package management is crucial for maintaining Linux systems. Let's explore different package managers.
 
 ## Debian/Ubuntu (apt)
@@ -2453,7 +2453,7 @@ Proper user and permission management is crucial for system security and organiz
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-18",
+    date: "2025-06-18",
     readTime: calculateReadTime(`User and permission management is fundamental to Linux security. Let's explore the key concepts.
 
 ## User Management
@@ -2559,7 +2559,7 @@ Open source contribution is rewarding and educational. Start small and grow your
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-19",
+    date: "2025-06-19",
     readTime: calculateReadTime(`Contributing to open source is a great way to improve your skills and give back to the community. Let's explore how to get started.
 
 ## Finding the Right Project
@@ -2656,7 +2656,7 @@ Building an open source project takes time and effort, but the rewards are worth
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-21",
+    date: "2025-06-21",
     readTime: calculateReadTime(`Creating your own open source project can be a rewarding experience. Let's explore the process from start to finish.
 
 ## Project Planning
@@ -2765,7 +2765,7 @@ Choose a license that aligns with your project's goals and values.`,
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-22",
+    date: "2025-06-22",
     readTime: calculateReadTime(`Choosing the right license is crucial for your open source project. Let's explore the most common licenses.
 
 ## MIT License
@@ -2907,7 +2907,7 @@ The open source movement has democratized software development and continues to 
       name: "Md Jahid Hasan",
       avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
     },
-    date: "2024-06-24",
+    date: "2025-06-24",
     readTime: calculateReadTime(`Open source software has revolutionized the way we build and use technology. Let's explore why it matters and how it benefits everyone.
 
 ## What is Open Source Software?
