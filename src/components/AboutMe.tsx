@@ -16,7 +16,7 @@ const AboutMe = () => {
   const stats = {
     yearsOfExperience: 3,
     projectsCompleted: 10,
-    clientsServed: 8,
+    clientsServed: 10,
     codeContributions: 1500,
     skills: 15,
     awards: 8
@@ -148,7 +148,7 @@ const AboutMe = () => {
                     <Users className="h-6 w-6 text-portfolio-blue" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-portfolio-blue">8+</p>
+                    <p className="text-2xl font-bold text-portfolio-blue">10+</p>
                     <p className="text-gray-600 dark:text-gray-300">Happy Clients</p>
                   </div>
                 </div>
