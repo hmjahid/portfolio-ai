@@ -166,7 +166,7 @@ const AboutMe = () => {
                     <Code className="h-6 w-6 text-portfolio-blue" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-portfolio-blue">1500+</p>
+                    <p className="text-2xl font-bold text-portfolio-blue">2000+</p>
                     <p className="text-gray-600 dark:text-gray-300">Code Commits</p>
                   </div>
                 </div>

@@ -19,3 +19,13 @@ pipelines:
       - name: build
         run: |
           npm run build
+
+# Added via PipelineSetup
+pipelines:
+  - id: default
+    provider: github
+    branch: main
+    steps:
+      - name: build
+        run: |
+          npm run build
