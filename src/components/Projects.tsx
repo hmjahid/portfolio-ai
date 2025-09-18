@@ -136,6 +136,55 @@ const devopsProjects: Project[] = [
   }
 ];
 
+const openSourceProjects: Project[] = [
+  {
+    id: 1,
+    title: "Break Assistant",
+    description: "A smart break reminder application designed to help maintain a healthy work-life balance with intelligent scheduling and customizable notifications. Built with Python and CustomTkinter.",
+    image: images.projects.opensource.breakAssistant,
+    codeLink: "https://github.com/hmjahid/break-assistant",
+    technologies: ["Python", "CustomTkinter", "Pygame", "PyInstaller", "Cross-platform"],
+    features: [
+      "Intelligent break scheduling",
+      "Customizable notification preferences",
+      "Work-life balance tracking",
+      "Cross-platform desktop support",
+      "Modern UI with CustomTkinter",
+      "Audio notifications with Pygame"
+    ],
+    role: "Python Developer",
+    duration: "1 month",
+    challenges: [
+      "Creating intuitive scheduling algorithms",
+      "Implementing cross-platform packaging",
+      "Designing modern UI with CustomTkinter"
+    ]
+  },
+  {
+    id: 2,
+    title: "QualityTracker",
+    description: "A cross-platform desktop app for project and process management to ensure proper quality. Built with Electron and Vite, featuring dynamic work type cards, step management, and progress tracking.",
+    image: images.projects.opensource.qualityTracker,
+    codeLink: "https://github.com/hmjahid/quality-tracker",
+    technologies: ["Electron", "Vite", "JavaScript", "Node.js", "Cross-platform"],
+    features: [
+      "Dashboard with dynamic work type cards",
+      "Step management with drag-and-drop reordering",
+      "Progress tracking with visual indicators",
+      "Theme switching (System, Light, Dark)",
+      "Data export/import functionality",
+      "Cross-platform desktop support"
+    ],
+    role: "Full Stack Developer",
+    duration: "2 months",
+    challenges: [
+      "Converting from TypeScript to pure JavaScript",
+      "Implementing cross-platform compatibility",
+      "Creating intuitive drag-and-drop functionality"
+    ]
+  }
+];
+
 const ProjectCard = ({ project, onOpen }: { project: Project; onOpen: (project: Project) => void }) => {
   return (
     <motion.div
@@ -240,7 +289,7 @@ const Projects = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Tabs defaultValue="devops" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:w-[400px] gap-2 bg-transparent p-0">
+            <TabsList className="grid w-full grid-cols-3 lg:w-[600px] gap-2 bg-transparent p-0">
               <TabsTrigger 
                 value="devops" 
                 className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-md hover:shadow-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
@@ -253,6 +302,13 @@ const Projects = () => {
                 className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-md hover:shadow-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
               >
                 <Globe className="h-4 w-4" /> WordPress
+                <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 opacity-0 group-data-[state=active]:opacity-100 group-data-[state=active]:animate-pulse" />
+              </TabsTrigger>
+              <TabsTrigger 
+                value="opensource" 
+                className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-md hover:shadow-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-portfolio-blue data-[state=active]:to-blue-600 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:border-transparent data-[state=active]:relative data-[state=active]:z-10 px-4 py-2 rounded-lg transition-all duration-300 group"
+              >
+                <Github className="h-4 w-4" /> Open Source
                 <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 opacity-0 group-data-[state=active]:opacity-100 group-data-[state=active]:animate-pulse" />
               </TabsTrigger>
             </TabsList>
@@ -289,6 +345,28 @@ const Projects = () => {
               >
                 <CarouselContent className="-ml-2 md:-ml-4">
                   {wordpressProjects.map((project) => (
+                    <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                      <ProjectCard project={project} onOpen={setSelectedProject} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="flex justify-center mt-8">
+                  <CarouselPrevious className="relative static left-0 right-0 translate-y-0 mr-2 hover:bg-portfolio-blue hover:text-white transition-colors" />
+                  <CarouselNext className="relative static left-0 right-0 translate-y-0 ml-2 hover:bg-portfolio-blue hover:text-white transition-colors" />
+                </div>
+              </Carousel>
+            </TabsContent>
+            
+            <TabsContent value="opensource" className="mt-8">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {openSourceProjects.map((project) => (
                     <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                       <ProjectCard project={project} onOpen={setSelectedProject} />
                     </CarouselItem>

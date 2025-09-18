@@ -15,6 +15,10 @@ export const projectImages = {
     multiTierApp: '/assets/multi-tier-php-application.webp',
     woocommerce: '/assets/auto-scalable-woocommerce.webp',
   },
+  opensource: {
+    qualityTracker: '/assets/qt-interface.jpg',
+    breakAssistant: '/assets/ba-main-interface.png',
+  },
 };
 
 // Social Media Icons
