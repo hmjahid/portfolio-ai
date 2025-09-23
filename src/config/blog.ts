@@ -3956,7 +3956,7 @@ Remember: the key to mastering binary search is understanding the invariant (the
       name: "Md Jahid Hasan",
       avatar: "/assets/Photo-2.webp"
     },
-    date: new Date().toISOString().slice(0, 10),
+    date: "2025-09-22",
     readTime: calculateReadTime(`Binary search is one of the most fundamental and efficient search algorithms in computer science. It's a divide-and-conquer algorithm that can find an element in a sorted array in O(log n) time complexity, making it significantly faster than linear search for large datasets.
 
 ![Binary Search Visualization](https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&h=600&q=80)
@@ -4166,6 +4166,633 @@ Binary search is a powerful algorithm that demonstrates the elegance of divide-a
 
 Remember: the key to mastering binary search is understanding the invariant (the property that remains true throughout the algorithm) and being careful with boundary conditions. Practice implementing it from scratch, and you'll develop the confidence to tackle more advanced search and optimization problems.`),
     tags: ["Algorithms", "Binary Search", "Computer Science", "Programming", "Data Structures", "Search Algorithms"],
+    category: "Computer Science",
+    featured: false
+  },
+  {
+    id: "bubble-sort-algorithm",
+    title: "Understanding Bubble Sort: The Classic Sorting Algorithm",
+    slug: "understanding-bubble-sort-algorithm",
+    excerpt: "Learn how bubble sort works, its time complexity, and when to use this fundamental sorting algorithm. Includes step-by-step examples and implementation details.",
+    content: `Bubble sort is one of the simplest sorting algorithms to understand and implement. While it's not the most efficient algorithm for large datasets, it's an excellent starting point for learning sorting concepts and understanding how algorithms work.
+
+![Bubble Sort Visualization](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=600&q=80)
+
+## What is Bubble Sort?
+
+Bubble sort is a comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The process is repeated until the list is sorted. The algorithm gets its name because smaller elements "bubble" to the top of the list like bubbles rising to the surface.
+
+## How Bubble Sort Works
+
+The algorithm works by:
+
+1. **Comparing adjacent elements** in the array
+2. **Swapping them** if they are in the wrong order
+3. **Repeating this process** for each pair of adjacent elements
+4. **Continuing** until no more swaps are needed (the array is sorted)
+
+### Step-by-Step Example
+
+Let's sort the array [64, 34, 25, 12, 22, 11, 90]:
+
+**First Pass:**
+- Compare 64 and 34: 64 > 34, so swap → [34, 64, 25, 12, 22, 11, 90]
+- Compare 64 and 25: 64 > 25, so swap → [34, 25, 64, 12, 22, 11, 90]
+- Compare 64 and 12: 64 > 12, so swap → [34, 25, 12, 64, 22, 11, 90]
+- Compare 64 and 22: 64 > 22, so swap → [34, 25, 12, 22, 64, 11, 90]
+- Compare 64 and 11: 64 > 11, so swap → [34, 25, 12, 22, 11, 64, 90]
+- Compare 64 and 90: 64 < 90, so no swap → [34, 25, 12, 22, 11, 64, 90]
+
+**Second Pass:**
+- Continue the same process...
+- After multiple passes, the array becomes sorted: [11, 12, 22, 25, 34, 64, 90]
+
+## Algorithm Implementation
+
+Here's a basic implementation of bubble sort:
+
+\`\`\`javascript
+function bubbleSort(arr) {
+    const n = arr.length;
+    
+    // Outer loop for number of passes
+    for (let i = 0; i < n - 1; i++) {
+        // Inner loop for comparing adjacent elements
+        for (let j = 0; j < n - i - 1; j++) {
+            // Compare adjacent elements
+            if (arr[j] > arr[j + 1]) {
+                // Swap elements if they are in wrong order
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+    }
+    
+    return arr;
+}
+
+// Example usage
+const numbers = [64, 34, 25, 12, 22, 11, 90];
+console.log("Original array:", numbers);
+console.log("Sorted array:", bubbleSort([...numbers]));
+\`\`\`
+
+## Optimized Version
+
+We can optimize bubble sort by adding a flag to detect if any swaps occurred during a pass:
+
+\`\`\`javascript
+function optimizedBubbleSort(arr) {
+    const n = arr.length;
+    
+    for (let i = 0; i < n - 1; i++) {
+        let swapped = false;
+        
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                swapped = true;
+            }
+        }
+        
+        // If no swaps occurred, array is sorted
+        if (!swapped) {
+            break;
+        }
+    }
+    
+    return arr;
+}
+\`\`\`
+
+## Time and Space Complexity
+
+### Time Complexity:
+- **Best Case**: O(n) - when the array is already sorted (with optimization)
+- **Average Case**: O(n²) - for randomly ordered arrays
+- **Worst Case**: O(n²) - when the array is sorted in reverse order
+
+### Space Complexity:
+- **O(1)** - Only uses a constant amount of extra space (in-place sorting)
+
+## When to Use Bubble Sort
+
+### Suitable for:
+- **Educational purposes** - Great for learning sorting concepts
+- **Small datasets** - When n is very small (less than 50 elements)
+- **Nearly sorted data** - When only a few elements are out of place
+- **Simple implementations** - When you need a quick, simple sorting solution
+
+### Not suitable for:
+- **Large datasets** - Performance degrades significantly with size
+- **Production systems** - More efficient algorithms are available
+- **Time-critical applications** - O(n²) complexity is too slow
+
+## Comparison with Other Sorting Algorithms
+
+| Algorithm | Best Case | Average Case | Worst Case | Space | Stable |
+|-----------|-----------|--------------|------------|-------|--------|
+| Bubble Sort | O(n) | O(n²) | O(n²) | O(1) | Yes |
+| Selection Sort | O(n²) | O(n²) | O(n²) | O(1) | No |
+| Insertion Sort | O(n) | O(n²) | O(n²) | O(1) | Yes |
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) | Yes |
+| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) | No |
+
+## Visual Representation
+
+Here's how bubble sort works visually:
+
+\`\`\`
+Initial: [64, 34, 25, 12, 22, 11, 90]
+
+Pass 1:  [34, 25, 12, 22, 11, 64, 90]  (6 comparisons, 5 swaps)
+Pass 2:  [25, 12, 22, 11, 34, 64, 90]  (5 comparisons, 4 swaps)
+Pass 3:  [12, 22, 11, 25, 34, 64, 90]  (4 comparisons, 3 swaps)
+Pass 4:  [12, 11, 22, 25, 34, 64, 90]  (3 comparisons, 1 swap)
+Pass 5:  [11, 12, 22, 25, 34, 64, 90]  (2 comparisons, 1 swap)
+Pass 6:  [11, 12, 22, 25, 34, 64, 90]  (1 comparison, 0 swaps)
+
+Final:   [11, 12, 22, 25, 34, 64, 90]
+\`\`\`
+
+## Recursive Implementation
+
+Bubble sort can also be implemented recursively:
+
+\`\`\`javascript
+function recursiveBubbleSort(arr, n = arr.length) {
+    // Base case: if array has 1 or 0 elements, it's sorted
+    if (n <= 1) {
+        return arr;
+    }
+    
+    // One pass of bubble sort
+    for (let i = 0; i < n - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+        }
+    }
+    
+    // Recursively sort the remaining elements
+    return recursiveBubbleSort(arr, n - 1);
+}
+\`\`\`
+
+## Common Variations
+
+### 1. Cocktail Shaker Sort (Bidirectional Bubble Sort)
+This variation sorts in both directions:
+
+\`\`\`javascript
+function cocktailShakerSort(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+    let swapped = true;
+    
+    while (swapped) {
+        swapped = false;
+        
+        // Forward pass
+        for (let i = start; i < end; i++) {
+            if (arr[i] > arr[i + 1]) {
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                swapped = true;
+            }
+        }
+        
+        if (!swapped) break;
+        
+        end--;
+        
+        // Backward pass
+        for (let i = end; i > start; i--) {
+            if (arr[i] < arr[i - 1]) {
+                [arr[i], arr[i - 1]] = [arr[i - 1], arr[i]];
+                swapped = true;
+            }
+        }
+        
+        start++;
+    }
+    
+    return arr;
+}
+\`\`\`
+
+### 2. Odd-Even Sort
+Compares and swaps elements at odd and even positions:
+
+\`\`\`javascript
+function oddEvenSort(arr) {
+    const n = arr.length;
+    let sorted = false;
+    
+    while (!sorted) {
+        sorted = true;
+        
+        // Odd phase
+        for (let i = 1; i < n - 1; i += 2) {
+            if (arr[i] > arr[i + 1]) {
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                sorted = false;
+            }
+        }
+        
+        // Even phase
+        for (let i = 0; i < n - 1; i += 2) {
+            if (arr[i] > arr[i + 1]) {
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                sorted = false;
+            }
+        }
+    }
+    
+    return arr;
+}
+\`\`\`
+
+## Performance Analysis
+
+### Number of Comparisons:
+- **Total comparisons**: n(n-1)/2 in worst case
+- **For array of size 7**: 7×6/2 = 21 comparisons maximum
+
+### Number of Swaps:
+- **Worst case**: n(n-1)/2 swaps
+- **Best case**: 0 swaps (already sorted)
+
+### Memory Usage:
+- **In-place**: Only uses O(1) extra space
+- **Stable**: Maintains relative order of equal elements
+
+## Real-World Applications
+
+While bubble sort isn't commonly used in production systems, it has some niche applications:
+
+### 1. Educational Tools
+- **Algorithm visualization** - Easy to understand and visualize
+- **Computer science courses** - Introduces sorting concepts
+- **Coding interviews** - Sometimes asked as a basic implementation
+
+### 2. Small Embedded Systems
+- **Microcontrollers** - When memory is extremely limited
+- **Simple devices** - When you need a basic sorting solution
+
+### 3. Debugging and Testing
+- **Algorithm comparison** - Baseline for performance testing
+- **Code verification** - Simple implementation to verify correctness
+
+## Common Mistakes and Tips
+
+### 1. Off-by-One Errors
+\`\`\`javascript
+// Incorrect: j < n - i (missing -1)
+for (let j = 0; j < n - i; j++) // This will cause index out of bounds
+
+// Correct: j < n - i - 1
+for (let j = 0; j < n - i - 1; j++)
+\`\`\`
+
+### 2. Forgetting the Optimization
+Always include the swap flag for better performance:
+
+\`\`\`javascript
+// Always check if swaps occurred
+if (!swapped) {
+    break; // Array is already sorted
+}
+\`\`\`
+
+### 3. Modifying Original Array
+Be careful not to modify the original array unintentionally:
+
+\`\`\`javascript
+// Creates a copy to avoid modifying original
+const sortedArray = bubbleSort([...originalArray]);
+\`\`\`
+
+## Conclusion
+
+Bubble sort is an excellent algorithm for learning fundamental sorting concepts. While it's not efficient for large datasets, its simplicity makes it perfect for educational purposes and understanding how sorting algorithms work. The key takeaways are:
+
+1. **Simplicity**: Easy to understand and implement
+2. **Stability**: Maintains relative order of equal elements
+3. **In-place**: Uses only O(1) extra space
+4. **Educational value**: Great for learning algorithm concepts
+
+Remember that while bubble sort is a good starting point, more efficient algorithms like quicksort, mergesort, or heapsort should be used in production systems for better performance. The goal is to understand the principles and then move on to more sophisticated sorting techniques.`,
+    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: {
+      name: "Md Jahid Hasan",
+      avatar: "/assets/Photo-2.webp"
+    },
+    date: "2025-09-23",
+    readTime: calculateReadTime(`Bubble sort is one of the simplest sorting algorithms to understand and implement. While it's not the most efficient algorithm for large datasets, it's an excellent starting point for learning sorting concepts and understanding how algorithms work.
+
+![Bubble Sort Visualization](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=600&q=80)
+
+## What is Bubble Sort?
+
+Bubble sort is a comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The process is repeated until the list is sorted. The algorithm gets its name because smaller elements "bubble" to the top of the list like bubbles rising to the surface.
+
+## How Bubble Sort Works
+
+The algorithm works by:
+
+1. **Comparing adjacent elements** in the array
+2. **Swapping them** if they are in the wrong order
+3. **Repeating this process** for each pair of adjacent elements
+4. **Continuing** until no more swaps are needed (the array is sorted)
+
+### Step-by-Step Example
+
+Let's sort the array [64, 34, 25, 12, 22, 11, 90]:
+
+**First Pass:**
+- Compare 64 and 34: 64 > 34, so swap → [34, 64, 25, 12, 22, 11, 90]
+- Compare 64 and 25: 64 > 25, so swap → [34, 25, 64, 12, 22, 11, 90]
+- Compare 64 and 12: 64 > 12, so swap → [34, 25, 12, 64, 22, 11, 90]
+- Compare 64 and 22: 64 > 22, so swap → [34, 25, 12, 22, 64, 11, 90]
+- Compare 64 and 11: 64 > 11, so swap → [34, 25, 12, 22, 11, 64, 90]
+- Compare 64 and 90: 64 < 90, so no swap → [34, 25, 12, 22, 11, 64, 90]
+
+**Second Pass:**
+- Continue the same process...
+- After multiple passes, the array becomes sorted: [11, 12, 22, 25, 34, 64, 90]
+
+## Algorithm Implementation
+
+Here's a basic implementation of bubble sort:
+
+\`\`\`javascript
+function bubbleSort(arr) {
+    const n = arr.length;
+    
+    // Outer loop for number of passes
+    for (let i = 0; i < n - 1; i++) {
+        // Inner loop for comparing adjacent elements
+        for (let j = 0; j < n - i - 1; j++) {
+            // Compare adjacent elements
+            if (arr[j] > arr[j + 1]) {
+                // Swap elements if they are in wrong order
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+    }
+    
+    return arr;
+}
+
+// Example usage
+const numbers = [64, 34, 25, 12, 22, 11, 90];
+console.log("Original array:", numbers);
+console.log("Sorted array:", bubbleSort([...numbers]));
+\`\`\`
+
+## Optimized Version
+
+We can optimize bubble sort by adding a flag to detect if any swaps occurred during a pass:
+
+\`\`\`javascript
+function optimizedBubbleSort(arr) {
+    const n = arr.length;
+    
+    for (let i = 0; i < n - 1; i++) {
+        let swapped = false;
+        
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                swapped = true;
+            }
+        }
+        
+        // If no swaps occurred, array is sorted
+        if (!swapped) {
+            break;
+        }
+    }
+    
+    return arr;
+}
+\`\`\`
+
+## Time and Space Complexity
+
+### Time Complexity:
+- **Best Case**: O(n) - when the array is already sorted (with optimization)
+- **Average Case**: O(n²) - for randomly ordered arrays
+- **Worst Case**: O(n²) - when the array is sorted in reverse order
+
+### Space Complexity:
+- **O(1)** - Only uses a constant amount of extra space (in-place sorting)
+
+## When to Use Bubble Sort
+
+### Suitable for:
+- **Educational purposes** - Great for learning sorting concepts
+- **Small datasets** - When n is very small (less than 50 elements)
+- **Nearly sorted data** - When only a few elements are out of place
+- **Simple implementations** - When you need a quick, simple sorting solution
+
+### Not suitable for:
+- **Large datasets** - Performance degrades significantly with size
+- **Production systems** - More efficient algorithms are available
+- **Time-critical applications** - O(n²) complexity is too slow
+
+## Comparison with Other Sorting Algorithms
+
+| Algorithm | Best Case | Average Case | Worst Case | Space | Stable |
+|-----------|-----------|--------------|------------|-------|--------|
+| Bubble Sort | O(n) | O(n²) | O(n²) | O(1) | Yes |
+| Selection Sort | O(n²) | O(n²) | O(n²) | O(1) | No |
+| Insertion Sort | O(n) | O(n²) | O(n²) | O(1) | Yes |
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) | Yes |
+| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) | No |
+
+## Visual Representation
+
+Here's how bubble sort works visually:
+
+\`\`\`
+Initial: [64, 34, 25, 12, 22, 11, 90]
+
+Pass 1:  [34, 25, 12, 22, 11, 64, 90]  (6 comparisons, 5 swaps)
+Pass 2:  [25, 12, 22, 11, 34, 64, 90]  (5 comparisons, 4 swaps)
+Pass 3:  [12, 22, 11, 25, 34, 64, 90]  (4 comparisons, 3 swaps)
+Pass 4:  [12, 11, 22, 25, 34, 64, 90]  (3 comparisons, 1 swap)
+Pass 5:  [11, 12, 22, 25, 34, 64, 90]  (2 comparisons, 1 swap)
+Pass 6:  [11, 12, 22, 25, 34, 64, 90]  (1 comparison, 0 swaps)
+
+Final:   [11, 12, 22, 25, 34, 64, 90]
+\`\`\`
+
+## Recursive Implementation
+
+Bubble sort can also be implemented recursively:
+
+\`\`\`javascript
+function recursiveBubbleSort(arr, n = arr.length) {
+    // Base case: if array has 1 or 0 elements, it's sorted
+    if (n <= 1) {
+        return arr;
+    }
+    
+    // One pass of bubble sort
+    for (let i = 0; i < n - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+        }
+    }
+    
+    // Recursively sort the remaining elements
+    return recursiveBubbleSort(arr, n - 1);
+}
+\`\`\`
+
+## Common Variations
+
+### 1. Cocktail Shaker Sort (Bidirectional Bubble Sort)
+This variation sorts in both directions:
+
+\`\`\`javascript
+function cocktailShakerSort(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+    let swapped = true;
+    
+    while (swapped) {
+        swapped = false;
+        
+        // Forward pass
+        for (let i = start; i < end; i++) {
+            if (arr[i] > arr[i + 1]) {
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                swapped = true;
+            }
+        }
+        
+        if (!swapped) break;
+        
+        end--;
+        
+        // Backward pass
+        for (let i = end; i > start; i--) {
+            if (arr[i] < arr[i - 1]) {
+                [arr[i], arr[i - 1]] = [arr[i - 1], arr[i]];
+                swapped = true;
+            }
+        }
+        
+        start++;
+    }
+    
+    return arr;
+}
+\`\`\`
+
+### 2. Odd-Even Sort
+Compares and swaps elements at odd and even positions:
+
+\`\`\`javascript
+function oddEvenSort(arr) {
+    const n = arr.length;
+    let sorted = false;
+    
+    while (!sorted) {
+        sorted = true;
+        
+        // Odd phase
+        for (let i = 1; i < n - 1; i += 2) {
+            if (arr[i] > arr[i + 1]) {
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                sorted = false;
+            }
+        }
+        
+        // Even phase
+        for (let i = 0; i < n - 1; i += 2) {
+            if (arr[i] > arr[i + 1]) {
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                sorted = false;
+            }
+        }
+    }
+    
+    return arr;
+}
+\`\`\`
+
+## Performance Analysis
+
+### Number of Comparisons:
+- **Total comparisons**: n(n-1)/2 in worst case
+- **For array of size 7**: 7×6/2 = 21 comparisons maximum
+
+### Number of Swaps:
+- **Worst case**: n(n-1)/2 swaps
+- **Best case**: 0 swaps (already sorted)
+
+### Memory Usage:
+- **In-place**: Only uses O(1) extra space
+- **Stable**: Maintains relative order of equal elements
+
+## Real-World Applications
+
+While bubble sort isn't commonly used in production systems, it has some niche applications:
+
+### 1. Educational Tools
+- **Algorithm visualization** - Easy to understand and visualize
+- **Computer science courses** - Introduces sorting concepts
+- **Coding interviews** - Sometimes asked as a basic implementation
+
+### 2. Small Embedded Systems
+- **Microcontrollers** - When memory is extremely limited
+- **Simple devices** - When you need a basic sorting solution
+
+### 3. Debugging and Testing
+- **Algorithm comparison** - Baseline for performance testing
+- **Code verification** - Simple implementation to verify correctness
+
+## Common Mistakes and Tips
+
+### 1. Off-by-One Errors
+\`\`\`javascript
+// Incorrect: j < n - i (missing -1)
+for (let j = 0; j < n - i; j++) // This will cause index out of bounds
+
+// Correct: j < n - i - 1
+for (let j = 0; j < n - i - 1; j++)
+\`\`\`
+
+### 2. Forgetting the Optimization
+Always include the swap flag for better performance:
+
+\`\`\`javascript
+// Always check if swaps occurred
+if (!swapped) {
+    break; // Array is already sorted
+}
+\`\`\`
+
+### 3. Modifying Original Array
+Be careful not to modify the original array unintentionally:
+
+\`\`\`javascript
+// Creates a copy to avoid modifying original
+const sortedArray = bubbleSort([...originalArray]);
+\`\`\`
+
+## Conclusion
+
+Bubble sort is an excellent algorithm for learning fundamental sorting concepts. While it's not efficient for large datasets, its simplicity makes it perfect for educational purposes and understanding how sorting algorithms work. The key takeaways are:
+
+1. **Simplicity**: Easy to understand and implement
+2. **Stability**: Maintains relative order of equal elements
+3. **In-place**: Uses only O(1) extra space
+4. **Educational value**: Great for learning algorithm concepts
+
+Remember that while bubble sort is a good starting point, more efficient algorithms like quicksort, mergesort, or heapsort should be used in production systems for better performance. The goal is to understand the principles and then move on to more sophisticated sorting techniques.`),
+    tags: ["Algorithms", "Bubble Sort", "Computer Science", "Programming", "Data Structures", "Sorting Algorithms"],
     category: "Computer Science",
     featured: false
   }
