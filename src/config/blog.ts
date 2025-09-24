@@ -4795,5 +4795,132 @@ Remember that while bubble sort is a good starting point, more efficient algorit
     tags: ["Algorithms", "Bubble Sort", "Computer Science", "Programming", "Data Structures", "Sorting Algorithms"],
     category: "Computer Science",
     featured: false
+  },
+  {
+    id: "merge-sort-algorithm",
+    title: "Understanding Merge Sort: Divide and Conquer Sorting",
+    slug: "understanding-merge-sort-algorithm",
+    excerpt: "Master merge sort: a stable, O(n log n) divide-and-conquer sorting algorithm. Learn how it works, implementations, complexity, and when to use it.",
+    content: `Merge sort is a classic divide-and-conquer sorting algorithm known for its predictable O(n log n) time complexity and stability. It works by recursively splitting the array into halves, sorting each half, and merging the sorted halves back together.
+
+![Merge Sort Visualization](https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=600&q=80)
+
+## How Merge Sort Works
+
+1. Divide the array into two halves
+2. Recursively sort the left half
+3. Recursively sort the right half
+4. Merge the two sorted halves into a single sorted array
+
+## Implementation (Iterative-friendly Recursive Version)
+
+\`\`\`javascript
+function merge(left, right) {
+  const result = [];
+  let i = 0, j = 0;
+
+  while (i < left.length && j < right.length) {
+    if (left[i] <= right[j]) {
+      result.push(left[i]);
+      i++;
+    } else {
+      result.push(right[j]);
+      j++;
+    }
+  }
+
+  // Append remaining elements
+  while (i < left.length) result.push(left[i++]);
+  while (j < right.length) result.push(right[j++]);
+
+  return result;
+}
+
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+  const mid = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
+  return merge(left, right);
+}
+
+// Example
+const nums = [38, 27, 43, 3, 9, 82, 10];
+console.log(mergeSort(nums)); // [3, 9, 10, 27, 38, 43, 82]
+\`\`\`
+
+## Time and Space Complexity
+
+- Time: O(n log n) in best, average, and worst cases
+- Space: O(n) auxiliary space for merging (not in-place)
+- Stable: Yes (preserves order of equal elements)
+
+## When to Use Merge Sort
+
+- Large datasets requiring stable sorting
+- Linked lists (easy O(1) extra space merge)
+- External sorting (sorting data that doesn't fit in memory)
+
+## Bottom-Up (Iterative) Merge Sort
+
+\`\`\`javascript
+function bottomUpMergeSort(arr) {
+  const n = arr.length;
+  const temp = Array(n);
+
+  for (let width = 1; width < n; width *= 2) {
+    for (let i = 0; i < n; i += 2 * width) {
+      const left = i;
+      const mid = Math.min(i + width, n);
+      const right = Math.min(i + 2 * width, n);
+
+      // Merge arr[left:mid] and arr[mid:right] into temp[left:right]
+      let a = left, b = mid, t = left;
+      while (a < mid && b < right) {
+        if (arr[a] <= arr[b]) {
+          temp[t++] = arr[a++];
+        } else {
+          temp[t++] = arr[b++];
+        }
+      }
+      while (a < mid) temp[t++] = arr[a++];
+      while (b < right) temp[t++] = arr[b++];
+
+      // Copy back
+      for (let k = left; k < right; k++) arr[k] = temp[k];
+    }
+  }
+  return arr;
+}
+\`\`\`
+
+## Comparison with Other Sorting Algorithms
+
+| Algorithm | Best | Average | Worst | Space | Stable |
+|-----------|------|---------|-------|-------|--------|
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) | Yes |
+| Quick Sort | O(n log n) | O(n log n) | O(n^2) | O(log n) | No |
+| Heap Sort | O(n log n) | O(n log n) | O(n log n) | O(1) | No |
+| Bubble Sort | O(n) | O(n^2) | O(n^2) | O(1) | Yes |
+
+## Practical Tips
+
+- For arrays, prefer quicksort in practice for lower constants; use mergesort when stability is required
+- For linked lists, mergesort is often the best choice
+- Consider hybrid approaches (e.g., switch to insertion sort for small subarrays)
+
+## Conclusion
+
+Merge sort is a reliable, stable, and predictable O(n log n) sorting algorithm. While it uses extra memory, its stability and consistent performance make it a strong choice for many applications.`,
+    coverImage: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: {
+      name: "Md Jahid Hasan",
+      avatar: "/assets/Photo-2.webp"
+    },
+    date: "2025-09-24",
+    readTime: calculateReadTime(`Merge sort is a classic divide-and-conquer sorting algorithm known for its predictable O(n log n) time complexity and stability. It works by recursively splitting the array into halves, sorting each half, and merging the sorted halves back together.`),
+    tags: ["Algorithms", "Merge Sort", "Computer Science", "Programming", "Data Structures", "Sorting Algorithms"],
+    category: "Computer Science",
+    featured: false
   }
 ];
