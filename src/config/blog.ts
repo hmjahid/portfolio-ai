@@ -4922,5 +4922,91 @@ Merge sort is a reliable, stable, and predictable O(n log n) sorting algorithm. 
     tags: ["Algorithms", "Merge Sort", "Computer Science", "Programming", "Data Structures", "Sorting Algorithms"],
     category: "Computer Science",
     featured: false
+  },
+  {
+    id: "linear-search-algorithm",
+    title: "Understanding Linear Search: Simple and Effective",
+    slug: "understanding-linear-search-algorithm",
+    excerpt: "Learn linear search (sequential search): how it works, when to use it, complexity, and clear JavaScript implementations.",
+    content: `Linear search (also called sequential search) is the most straightforward way to find a target value in a collection. You scan elements one by one until you find the target or reach the end. While simple, it's a foundational technique and useful for small or unsorted datasets.
+
+![Linear Search Visualization](https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&h=600&q=80)
+
+## How Linear Search Works
+
+1. Start from the first element
+2. Compare the current element with the target
+3. If equal, return the index (or the element)
+4. Otherwise, move to the next element
+5. Repeat until found or end of collection
+
+## Implementation (Iterative)
+
+\`\`\`javascript
+function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) return i;
+  }
+  return -1; // not found
+}
+
+// Example
+const arr = [4, 2, 7, 1, 9, 3];
+console.log(linearSearch(arr, 7)); // 2
+console.log(linearSearch(arr, 5)); // -1
+\`\`\`
+
+## Implementation (Find First/All Occurrences)
+
+\`\`\`javascript
+// First occurrence (index or -1)
+function linearSearchFirst(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) return i;
+  }
+  return -1;
+}
+
+// All occurrences (indices array)
+function linearSearchAll(arr, target) {
+  const indices = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) indices.push(i);
+  }
+  return indices;
+}
+\`\`\`
+
+## Time and Space Complexity
+
+- Time: O(n) in worst and average cases; O(1) if the target is at the first position
+- Space: O(1) extra space
+
+## When to Use Linear Search
+
+- Small datasets where simplicity matters
+- Unsorted arrays where building an index is unnecessary
+- Linked lists or streams where random access isn't available
+- As a baseline or fallback search strategy
+
+## Practical Tips
+
+- For performance-critical systems on large datasets, prefer indexed or sorted structures (binary search, hash maps)
+- Consider early-exit checks or sentinels to reduce overhead
+- For objects, allow custom equality checks or predicates
+
+## Conclusion
+
+Linear search is simple, predictable, and sometimes exactly what you need. It's ideal for small or unsorted datasets and is essential knowledge before moving to more advanced searching strategies.`,
+    coverImage: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: {
+      name: "Md Jahid Hasan",
+      avatar: "/assets/Photo-2.webp"
+    },
+    date: "2025-09-25",
+    readTime: calculateReadTime(`Linear search (also called sequential search) is the most straightforward way to find a target value in a collection. You scan elements one by one until you find the target or reach the end.`),
+    tags: ["Algorithms", "Linear Search", "Computer Science", "Programming", "Data Structures", "Search Algorithms"],
+    category: "Computer Science",
+    featured: false
   }
 ];
