@@ -31,6 +31,77 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "20",
+    title: "Database Design Best Practices",
+    slug: "database-design-best-practices",
+    excerpt: "Learn the best practices for designing databases, from normalization to indexing and security.",
+    content: `Database design is a crucial aspect of software development. A well-designed database can improve performance, reduce redundancy, and ensure data integrity.
+
+## Normalization
+
+Normalization is the process of organizing the columns and tables of a relational database to minimize data redundancy.
+
+1. First Normal Form (1NF)
+2. Second Normal Form (2NF)
+3. Third Normal Form (3NF)
+
+## Indexing
+
+Indexing is a way to optimize the performance of a database by minimizing the number of disk accesses required when a query is processed.
+
+1. Clustered Indexes
+2. Non-Clustered Indexes
+
+## Security
+
+Database security is a set of measures used to protect the database from illegitimate use and malicious threats and attacks.
+
+1. Access Control
+2. Encryption
+3. Auditing
+
+## Conclusion
+
+Following these best practices will help you create a robust and efficient database.`,
+    coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: {
+      name: "Md Jahid Hasan",
+      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
+    },
+    date: "2025-10-17",
+    readTime: calculateReadTime(`Database design is a crucial aspect of software development. A well-designed database can improve performance, reduce redundancy, and ensure data integrity.
+
+## Normalization
+
+Normalization is the process of organizing the columns and tables of a relational database to minimize data redundancy.
+
+1. First Normal Form (1NF)
+2. Second Normal Form (2NF)
+3. Third Normal Form (3NF)
+
+## Indexing
+
+Indexing is a way to optimize the performance of a database by minimizing the number of disk accesses required when a query is processed.
+
+1. Clustered Indexes
+2. Non-Clustered Indexes
+
+## Security
+
+Database security is a set of measures used to protect the database from illegitimate use and malicious threats and attacks.
+
+1. Access Control
+2. Encryption
+3. Auditing
+
+## Conclusion
+
+Following these best practices will help you create a robust and efficient database.`),
+    tags: ["Database", "Software Development", "Best Practices"],
+    category: "Software Development",
+    featured: false
+  },
+  {
     id: "1",
     title: "Getting Started with DevOps: A Comprehensive Guide",
     slug: "getting-started-with-devops",
