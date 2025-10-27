@@ -49,7 +49,7 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-4">Post Not Found</h1>
+          <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-4">Post Not Found</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">The blog post you're looking for doesn't exist.</p>
           <Link 
             to="/blog"
@@ -110,7 +110,7 @@ const BlogPost = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
 
-              <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300 mb-4">
+              <div className="flex justify-between items-center text-sm text-gray-600 dark:text-gray-300 mb-4">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
                   <span>{formatDate(post.date)}</span>
@@ -118,10 +118,6 @@ const BlogPost = () => {
                 <div className="flex items-center gap-2">
                   <Clock className="h-4 w-4" />
                   <span>{post.readTime}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <User className="h-4 w-4" />
-                  <span>{post.author.name}</span>
                 </div>
               </div>
 

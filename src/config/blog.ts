@@ -16,6 +16,12 @@ export interface BlogPost {
   featured: boolean;
 }
 
+// Default author object
+const defaultAuthor = {
+  name: "",
+  avatar: ""
+};
+
 // Utility to calculate read time
 function calculateReadTime(content: string): string {
   const words = content.replace(/<[^>]+>/g, '').split(/\s+/).filter(Boolean).length;
@@ -35,9 +41,7 @@ export const blogPosts: BlogPost[] = [
     title: "Mastering Computer Networks: Fundamentals and Beyond",
     slug: "computer-networking-fundamentals",
     excerpt: "Dive into the essential concepts of computer networking, from the OSI model to modern networking protocols and best practices.",
-    content: `# Mastering Computer Networks: Fundamentals and Beyond
-
-Computer networks form the backbone of our digital world, enabling communication between devices across the globe. In this comprehensive guide, we'll explore the fundamental concepts that power modern networking.
+    content: `Computer networks form the backbone of our digital world, enabling communication between devices across the globe. In this comprehensive guide, we'll explore the fundamental concepts that power modern networking.
 
 ## The OSI Model
 
@@ -136,10 +140,7 @@ Understanding the Open Systems Interconnection (OSI) model is crucial for networ
 
 Mastering computer networks requires both theoretical knowledge and practical experience. Start with the fundamentals, practice in lab environments, and stay updated with the latest technologies and security practices.`, 
     coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-10-27",
     readTime: "8 min read",
     tags: ["Networking", "IT Infrastructure", "Technology", "Security"],
@@ -151,9 +152,7 @@ Mastering computer networks requires both theoretical knowledge and practical ex
     title: "Mastering Database Management: Best Practices and Strategies",
     slug: "database-management-best-practices",
     excerpt: "Explore essential database management techniques, optimization strategies, and best practices for building scalable and efficient database systems.",
-    content: `# Mastering Database Management: Best Practices and Strategies
-
-Database management is a critical skill for developers and system administrators. In this comprehensive guide, we'll explore essential concepts, optimization techniques, and best practices to help you manage databases effectively.
+    content: `Database management is a critical skill for developers and system administrators. In this comprehensive guide, we'll explore essential concepts, optimization techniques, and best practices to help you manage databases effectively.
 
 ## Database Design Principles
 
@@ -248,10 +247,7 @@ Database management is a critical skill for developers and system administrators
 
 Effective database management requires a combination of solid design principles, performance optimization, security measures, and regular maintenance. By implementing these best practices, you can ensure your databases are efficient, secure, and scalable.`,
     coverImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-10-26",
     readTime: "10 min read",
     tags: ["Database", "SQL", "Performance", "Best Practices", "DevOps"],
@@ -292,10 +288,7 @@ Database security is a set of measures used to protect the database from illegit
 
 Following these best practices will help you create a robust and efficient database.`,
     coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-10-17",
     readTime: calculateReadTime(`Database design is a crucial aspect of software development. A well-designed database can improve performance, reduce redundancy, and ensure data integrity.
 
@@ -367,10 +360,7 @@ To get started with DevOps, you need to:
 
 DevOps is not just a set of tools, but a cultural shift that requires collaboration and communication between teams. Start small, learn continuously, and scale your practices as you grow.`,
     coverImage: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-18",
     readTime: calculateReadTime(`DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the development lifecycle and provide continuous delivery with high software quality.
 
@@ -450,10 +440,7 @@ Security is crucial in WordPress development:
 
 Following these best practices will help you create secure, maintainable, and efficient WordPress websites.`,
     coverImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-19",
     readTime: calculateReadTime(`WordPress is the most popular content management system, powering over 40% of all websites on the internet. Here's how to develop WordPress sites effectively.
 
@@ -541,10 +528,7 @@ Follow these best practices for Docker:
 
 Docker simplifies the development process and ensures consistency across different environments. Start with the basics and gradually explore advanced features.`,
     coverImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-21",
     readTime: calculateReadTime(`Docker has revolutionized the way we develop, ship, and run applications. Let's explore the fundamentals of containerization.
 
@@ -632,10 +616,7 @@ Learn about different deployment strategies:
 
 Kubernetes provides powerful tools for managing containerized applications. Start with the basics and gradually explore advanced features.`,
     coverImage: "https://images.unsplash.com/photo-1624953587687-daf255b6b80a?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-22",
     readTime: calculateReadTime(`Kubernetes has become the de facto standard for container orchestration. Let's dive into its core concepts and practical applications.
 
@@ -724,10 +705,7 @@ Follow these best practices:
 
 WordPress theme development is a rewarding skill that combines creativity with technical expertise. Focus on user experience and performance.`,
     coverImage: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-23",
     readTime: calculateReadTime(`Creating custom WordPress themes requires a combination of design skills and technical knowledge. Let's explore the process step by step.
 
@@ -970,10 +948,7 @@ The future of AI holds immense potential, but it also requires careful considera
 
 Whether you're a developer, business leader, or simply curious about the future, understanding AI is becoming increasingly important. The journey into AI is one of continuous learning and adaptation, and the opportunities are limitless for those willing to explore this exciting field.`,
     coverImage: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-30",
     readTime: calculateReadTime(`Artificial Intelligence (AI) is transforming the world as we know it. From healthcare to finance, transportation to entertainment, AI is revolutionizing every industry. Let's explore the current state and future prospects of this groundbreaking technology.
 
@@ -1205,10 +1180,7 @@ Follow these best practices:
 
 GitHub Actions provides a flexible and powerful platform for implementing CI/CD pipelines. Start with basic workflows and gradually add complexity.`,
     coverImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-19",
     readTime: calculateReadTime(`GitHub Actions provides a powerful platform for implementing CI/CD pipelines. Let's explore how to create efficient workflows.
 
@@ -1296,10 +1268,7 @@ Important security aspects:
 
 WordPress plugin development requires attention to detail and security. Follow best practices and test thoroughly.`,
     coverImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-21",
     readTime: calculateReadTime(`WordPress plugins extend the functionality of your website. Let's learn how to create custom plugins effectively.
 
@@ -1387,10 +1356,7 @@ Follow these best practices:
 
 Terraform provides a powerful way to manage infrastructure. Start with basic configurations and gradually adopt advanced features.`,
     coverImage: "https://images.unsplash.com/photo-1624953587687-daf255b6b80a?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-22",
     readTime: calculateReadTime(`Terraform has revolutionized infrastructure management through code. Let's explore its capabilities.
 
@@ -1478,10 +1444,7 @@ Optimize your assets:
 
 Performance optimization is an ongoing process. Monitor your site and implement improvements gradually.`,
     coverImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-18",
     readTime: calculateReadTime(`Performance optimization is crucial for WordPress sites. Let's explore various optimization techniques.
 
@@ -1569,10 +1532,7 @@ Follow these best practices:
 
 Monitoring and logging are essential for maintaining system reliability. Start with basic tools and gradually expand your setup.`,
     coverImage: "https://images.unsplash.com/photo-1624953587687-daf255b6b80a?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-19",
     readTime: calculateReadTime(`Effective monitoring and logging are crucial for maintaining system health. Let's explore best practices.
 
@@ -1660,10 +1620,7 @@ Follow these best practices:
 
 WordPress Multisite is powerful but requires careful management. Plan your setup and follow best practices.`,
     coverImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-21",
     readTime: calculateReadTime(`WordPress Multisite enables you to manage multiple sites from a single installation. Let's explore its features.
 
@@ -1751,10 +1708,7 @@ Follow these best practices:
 
 Security should be integrated into every aspect of your DevOps pipeline. Stay vigilant and keep learning.`,
     coverImage: "https://images.unsplash.com/photo-1624953587687-daf255b6b80a?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-22",
     readTime: calculateReadTime(`Security is crucial in DevOps. Let's explore best practices for securing your DevOps pipeline.
 
@@ -1842,10 +1796,7 @@ Follow these best practices:
 
 WordPress REST API enables powerful integrations. Start with basic endpoints and gradually add complexity.`,
     coverImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-18",
     readTime: calculateReadTime(`The WordPress REST API provides powerful capabilities for extending WordPress functionality. Let's explore custom endpoint development.
 
@@ -1933,10 +1884,7 @@ Follow these best practices:
 
 Docker Compose provides a powerful way to manage multi-container applications. Start with basic configurations and gradually adopt advanced features.`,
     coverImage: "https://images.unsplash.com/photo-1624953587687-daf255b6b80a?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-19",
     readTime: calculateReadTime(`Docker Compose simplifies the management of multi-container applications. Let's explore its capabilities.
 
@@ -2024,10 +1972,7 @@ Follow these best practices:
 
 Gutenberg block development enables powerful content creation tools. Start with basic blocks and gradually add complexity.`,
     coverImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-21",
     readTime: calculateReadTime(`Gutenberg blocks extend WordPress content creation capabilities. Let's explore custom block development.
 
@@ -2122,10 +2067,7 @@ const message = \`Hello \${name}, you are \${age} years old!\`;
 
 Mastering these ES6+ features will make your JavaScript code more readable, maintainable, and efficient.`,
     coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-22",
     readTime: calculateReadTime(`Modern JavaScript has evolved significantly with ES6+ features. Let's explore the most important ones.
 
@@ -2244,10 +2186,7 @@ function useLocalStorage(key, initialValue) {
 
 React Hooks provide a powerful way to manage state and side effects in functional components.`,
     coverImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-23",
     readTime: calculateReadTime(`React Hooks revolutionized functional components. Let's explore the most important hooks.
 
@@ -2370,10 +2309,7 @@ Flexbox excels at one-dimensional layouts:
 
 Choose the right tool for your specific layout needs. Often, combining both provides the best results.`,
     coverImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-22",
     readTime: calculateReadTime(`CSS Grid and Flexbox are powerful layout systems. Let's understand when to use each.
 
@@ -2489,10 +2425,7 @@ top
 
 Mastering these basic commands will make you more efficient in Linux environments.`,
     coverImage: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-21",
     readTime: calculateReadTime(`The Linux command line is a powerful tool for system administration and development. Let's explore the essential commands.
 
@@ -2620,10 +2553,7 @@ Package management tips:
 
 Understanding package managers is essential for efficient Linux system administration.`,
     coverImage: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-22",
     readTime: calculateReadTime(`Package management is crucial for maintaining Linux systems. Let's explore different package managers.
 
@@ -2748,10 +2678,7 @@ Common permission combinations:
 
 Proper user and permission management is crucial for system security and organization.`,
     coverImage: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-18",
     readTime: calculateReadTime(`User and permission management is fundamental to Linux security. Let's explore the key concepts.
 
@@ -2854,10 +2781,7 @@ Follow these guidelines:
 
 Open source contribution is rewarding and educational. Start small and grow your involvement over time.`,
     coverImage: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-19",
     readTime: calculateReadTime(`Contributing to open source is a great way to improve your skills and give back to the community. Let's explore how to get started.
 
@@ -2951,10 +2875,7 @@ Building a community:
 
 Building an open source project takes time and effort, but the rewards are worth it.`,
     coverImage: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-21",
     readTime: calculateReadTime(`Creating your own open source project can be a rewarding experience. Let's explore the process from start to finish.
 
@@ -3060,10 +2981,7 @@ Consider these factors:
 
 Choose a license that aligns with your project's goals and values.`,
     coverImage: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-22",
     readTime: calculateReadTime(`Choosing the right license is crucial for your open source project. Let's explore the most common licenses.
 
@@ -3202,10 +3120,7 @@ Open source software is not just about free code—it's about collaboration, inn
 
 The open source movement has democratized software development and continues to drive innovation across all sectors of technology.`,
     coverImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-24",
     readTime: calculateReadTime(`Open source software has revolutionized the way we build and use technology. Let's explore why it matters and how it benefits everyone.
 
@@ -3440,10 +3355,7 @@ As organizations continue to adopt cloud-native technologies and microservices a
 
 The key to success is understanding that both approaches have their place in modern software development, and the most effective teams will leverage the strengths of both to create robust, secure, and efficient delivery pipelines.`,
     coverImage: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-06-29",
     readTime: calculateReadTime(`The software development landscape has evolved significantly over the past decade, from traditional waterfall methodologies to agile practices, and now to DevOps and GitOps. Let's explore how GitOps builds upon DevOps principles and represents the next evolution in modern software delivery.
 
@@ -3623,10 +3535,7 @@ LLMs are used in chatbots, virtual assistants, content creation, programming hel
 As LLMs continue to evolve, they will become even more capable, efficient, and widely adopted across industries. Understanding their strengths and limitations is key to leveraging their power responsibly.
 `,
     coverImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-07-01",
     readTime: calculateReadTime(`Large Language Models (LLMs) like GPT-4, Claude, and others are transforming the field of artificial intelligence. These models are trained on massive datasets and can generate human-like text, answer questions, write code, and much more.\n\n## What are LLMs?\n\nLLMs are deep learning models designed to understand and generate natural language. They use transformer architectures and are trained on diverse internet-scale data.\n\n## Key Capabilities\n\n- Text generation and completion\n- Summarization\n- Translation\n- Code generation\n- Conversational AI\n\n## Real-World Applications\n\nLLMs are used in chatbots, virtual assistants, content creation, programming help, and more. They are also being integrated into search engines, productivity tools, and customer support systems.\n\n## Challenges and Considerations\n\n- Bias and fairness\n- Data privacy\n- Computational resources\n- Responsible use\n\n## The Future of LLMs\n\nAs LLMs continue to evolve, they will become even more capable, efficient, and widely adopted across industries. Understanding their strengths and limitations is key to leveraging their power responsibly.`),
     tags: ["Artificial Intelligence", "LLM", "NLP", "Machine Learning", "Technology"],
@@ -3673,10 +3582,7 @@ To deploy an MCP server:
 
 MCP servers are essential for building robust, scalable, and real-time systems. Understanding their architecture and best practices will help you leverage their full potential.`,
     coverImage: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-07-09",
     readTime: calculateReadTime(`MCP (Media Control Protocol) servers are at the heart of many scalable, real-time communication and control systems. In this post, we'll explore what MCP servers are, their core architecture, and how they are used in modern applications.\n\n## What is an MCP Server?\n\nAn MCP server is designed to manage and route control messages between clients and media resources. It is commonly used in broadcasting, streaming, and large-scale communication platforms.\n\n## Key Features\n\n- Real-time message routing\n- Scalability for large user bases\n- Protocol extensibility\n- Security and access control\n\n## Use Cases\n\n- Live streaming platforms\n- Interactive broadcasting\n- IoT device management\n- Real-time analytics\n\n## Getting Started\n\nTo deploy an MCP server:\n\n1. Choose an implementation (open source or commercial)\n2. Set up your server environment\n3. Configure routing and security\n4. Integrate with client applications\n\n## Conclusion\n\nMCP servers are essential for building robust, scalable, and real-time systems. Understanding their architecture and best practices will help you leverage their full potential.`),
     tags: ["MCP", "Server", "Protocols", "Real-Time", "Scalability"],
@@ -3690,10 +3596,7 @@ MCP servers are essential for building robust, scalable, and real-time systems. 
     excerpt: "Discover how n8n can automate your workflows, connect your favorite apps, and boost productivity with no-code/low-code solutions.",
     content: `n8n is an open-source workflow automation tool that lets you connect different services and automate repetitive tasks without writing much code.\n\n## What is n8n?\n\nn8n (\"nodemation\") is a powerful automation platform that allows you to create workflows visually. It supports hundreds of integrations, making it easy to connect APIs, databases, and cloud services.\n\n![n8n Workflow](https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&h=600&q=80)\n\n## Key Features\n\n- Open-source and self-hostable\n- Visual workflow editor\n- Supports custom JavaScript code\n- Over 350 integrations\n- Scalable and flexible\n- Active community and regular updates\n- Built-in versioning and credential management\n\n## Getting Started\n\n1. Install n8n (Docker, npm, or desktop app)\n2. Create your first workflow using the drag-and-drop editor\n3. Connect nodes (triggers, actions, logic)\n4. Test and deploy your automation\n\n### Installation Tips\n- For production, use Docker or self-host on a VPS for full control\n- Use the desktop app for quick local testing\n- Secure your instance with authentication and HTTPS\n\n## Example Use Cases\n\n- Sync data between Google Sheets and Slack\n- Automate email notifications for new form submissions\n- Integrate with APIs (Twitter, GitHub, Notion, Airtable, etc.)\n- Monitor websites and send alerts to Telegram or Discord\n- Schedule regular backups of your databases\n- Scrape web data and aggregate results\n- Automate social media posting\n\n## Advanced Features\n\n- Conditional logic and branching\n- Looping and data transformation\n- Webhook triggers for real-time automation\n- Custom code nodes for advanced scenarios\n- Error handling and retry logic\n- Workflow versioning and sharing\n\n## Real-World Scenarios\n\n- **Marketing Automation:** Automatically collect leads from web forms, enrich them with third-party APIs, and add them to your CRM.\n- **DevOps:** Monitor server health, auto-restart services, and notify your team on incidents.\n- **E-commerce:** Sync orders between your store and fulfillment providers, send order updates to customers, and generate reports.\n- **Personal Productivity:** Aggregate news feeds, automate reminders, and sync tasks between apps like Todoist and Google Tasks.\n\n## Community & Resources\n\n- [n8n Documentation](https://docs.n8n.io/)\n- [n8n Community Forum](https://community.n8n.io/)\n- [Awesome n8n Workflows](https://github.com/n8n-io/n8n-workflows)\n- [YouTube Tutorials](https://www.youtube.com/c/n8n)\n\n## Tips for Success\n\n- Start with simple workflows and gradually add complexity\n- Use environment variables for sensitive data\n- Regularly update n8n to access new features and integrations\n- Explore community-contributed nodes and templates\n- Backup your workflows and credentials\n\n## Why Use n8n?\n\nn8n empowers both technical and non-technical users to automate business processes, save time, and reduce manual work. Its open-source nature means you control your data and can extend its capabilities. With a vibrant community and rapid development, n8n is a future-proof choice for workflow automation.\n\n## Conclusion\n\nStart automating with n8n today and unlock new productivity possibilities! Whether you're a business owner, developer, or hobbyist, n8n can help you connect your tools and automate your world.`,
     coverImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-07-14",
     readTime: calculateReadTime(`n8n is an open-source workflow automation tool that lets you connect different services and automate repetitive tasks without writing much code.\n\n## What is n8n?\n\nn8n (\"nodemation\") is a powerful automation platform that allows you to create workflows visually. It supports hundreds of integrations, making it easy to connect APIs, databases, and cloud services.\n\n## Key Features\n\n- Open-source and self-hostable\n- Visual workflow editor\n- Supports custom JavaScript code\n- Over 350 integrations\n- Scalable and flexible\n- Active community and regular updates\n- Built-in versioning and credential management\n\n## Getting Started\n\n1. Install n8n (Docker, npm, or desktop app)\n2. Create your first workflow using the drag-and-drop editor\n3. Connect nodes (triggers, actions, logic)\n4. Test and deploy your automation\n\n### Installation Tips\n- For production, use Docker or self-host on a VPS for full control\n- Use the desktop app for quick local testing\n- Secure your instance with authentication and HTTPS\n\n## Example Use Cases\n\n- Sync data between Google Sheets and Slack\n- Automate email notifications for new form submissions\n- Integrate with APIs (Twitter, GitHub, Notion, Airtable, etc.)\n- Monitor websites and send alerts to Telegram or Discord\n- Schedule regular backups of your databases\n- Scrape web data and aggregate results\n- Automate social media posting\n\n## Advanced Features\n\n- Conditional logic and branching\n- Looping and data transformation\n- Webhook triggers for real-time automation\n- Custom code nodes for advanced scenarios\n- Error handling and retry logic\n- Workflow versioning and sharing\n\n## Real-World Scenarios\n\n- **Marketing Automation:** Automatically collect leads from web forms, enrich them with third-party APIs, and add them to your CRM.\n- **DevOps:** Monitor server health, auto-restart services, and notify your team on incidents.\n- **E-commerce:** Sync orders between your store and fulfillment providers, send order updates to customers, and generate reports.\n- **Personal Productivity:** Aggregate news feeds, automate reminders, and sync tasks between apps like Todoist and Google Tasks.\n\n## Community & Resources\n\n- [n8n Documentation](https://docs.n8n.io/)\n- [n8n Community Forum](https://community.n8n.io/)\n- [Awesome n8n Workflows](https://github.com/n8n-io/n8n-workflows)\n- [YouTube Tutorials](https://www.youtube.com/c/n8n)\n\n## Tips for Success\n\n- Start with simple workflows and gradually add complexity\n- Use environment variables for sensitive data\n- Regularly update n8n to access new features and integrations\n- Explore community-contributed nodes and templates\n- Backup your workflows and credentials\n\n## Why Use n8n?\n\nn8n empowers both technical and non-technical users to automate business processes, save time, and reduce manual work. Its open-source nature means you control your data and can extend its capabilities. With a vibrant community and rapid development, n8n is a future-proof choice for workflow automation.\n\n## Conclusion\n\nStart automating with n8n today and unlock new productivity possibilities! Whether you're a business owner, developer, or hobbyist, n8n can help you connect your tools and automate your world.`),
     tags: ["n8n", "Automation", "No-Code", "Workflow"],
@@ -3742,10 +3645,7 @@ Algorithms are step-by-step procedures for solving problems. Common types of alg
 
 Mastering DSA is a journey that requires dedication and consistent effort. Start today and build a strong foundation for your career in tech.`,
     coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-07-31",
     readTime: calculateReadTime(`Data Structures and Algorithms (DSA) are the foundation of computer science. Mastering them is essential for solving complex problems and excelling in technical interviews.
 
@@ -3814,10 +3714,7 @@ Mastering DSA is a journey that requires dedication and consistent effort. Start
 
 Understanding Big O notation is fundamental for any aspiring software engineer. It is a powerful tool for analyzing and designing efficient algorithms. By mastering this concept, you can write more performant and scalable code.`,
     coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-07-31",
     readTime: calculateReadTime(`Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. In computer science, it is used to classify algorithms according to their running time or space requirements as the input size grows.
 
@@ -3942,10 +3839,7 @@ Mastering these fundamental algorithms will give you a solid foundation for solv
 
 The key to becoming proficient with algorithms is consistent practice and understanding the trade-offs between different approaches. Start with these fundamentals and gradually work your way up to more complex algorithms as you gain confidence.`,
     coverImage: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
-    },
+    author: defaultAuthor,
     date: "2025-08-10",
     readTime: calculateReadTime(`Algorithms are the building blocks of computer science and software development. Understanding and implementing them correctly can make the difference between an efficient, scalable application and one that struggles with performance.
 
@@ -4251,10 +4145,7 @@ Binary search is a powerful algorithm that demonstrates the elegance of divide-a
 
 Remember: the key to mastering binary search is understanding the invariant (the property that remains true throughout the algorithm) and being careful with boundary conditions. Practice implementing it from scratch, and you'll develop the confidence to tackle more advanced search and optimization problems.`,
     coverImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "/assets/Photo-2.webp"
-    },
+    author: defaultAuthor,
     date: "2025-09-22",
     readTime: calculateReadTime(`Binary search is one of the most fundamental and efficient search algorithms in computer science. It's a divide-and-conquer algorithm that can find an element in a sorted array in O(log n) time complexity, making it significantly faster than linear search for large datasets.
 
@@ -4780,10 +4671,7 @@ Bubble sort is an excellent algorithm for learning fundamental sorting concepts.
 
 Remember that while bubble sort is a good starting point, more efficient algorithms like quicksort, mergesort, or heapsort should be used in production systems for better performance. The goal is to understand the principles and then move on to more sophisticated sorting techniques.`,
     coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "/assets/Photo-2.webp"
-    },
+    author: defaultAuthor,
     date: "2025-09-23",
     readTime: calculateReadTime(`Bubble sort is one of the simplest sorting algorithms to understand and implement. While it's not the most efficient algorithm for large datasets, it's an excellent starting point for learning sorting concepts and understanding how algorithms work.
 
@@ -5212,10 +5100,7 @@ function bottomUpMergeSort(arr) {
 
 Merge sort is a reliable, stable, and predictable O(n log n) sorting algorithm. While it uses extra memory, its stability and consistent performance make it a strong choice for many applications.`,
     coverImage: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "/assets/Photo-2.webp"
-    },
+    author: defaultAuthor,
     date: "2025-09-24",
     readTime: calculateReadTime(`Merge sort is a classic divide-and-conquer sorting algorithm known for its predictable O(n log n) time complexity and stability. It works by recursively splitting the array into halves, sorting each half, and merging the sorted halves back together.`),
     tags: ["Algorithms", "Merge Sort", "Computer Science", "Programming", "Data Structures", "Sorting Algorithms"],
@@ -5298,10 +5183,7 @@ function linearSearchAll(arr, target) {
 
 Linear search is simple, predictable, and sometimes exactly what you need. It's ideal for small or unsorted datasets and is essential knowledge before moving to more advanced searching strategies.`,
     coverImage: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "/assets/Photo-2.webp"
-    },
+    author: defaultAuthor,
     date: "2025-09-25",
     readTime: calculateReadTime(`Linear search (also called sequential search) is the most straightforward way to find a target value in a collection. You scan elements one by one until you find the target or reach the end.`),
     tags: ["Algorithms", "Linear Search", "Computer Science", "Programming", "Data Structures", "Search Algorithms"],
@@ -5540,10 +5422,7 @@ The Software Development Life Cycle is a fundamental framework that guides succe
 
 Remember that SDLC is not a one-size-fits-all solution. Choose the methodology and practices that best fit your team, project requirements, and organizational culture. The key is to be flexible, learn from each project, and continuously improve your development processes.`,
     coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "/assets/Photo-2.webp"
-    },
+    author: defaultAuthor,
     date: "2025-09-26",
     readTime: calculateReadTime(`The Software Development Life Cycle (SDLC) is a structured process that guides the development of software applications from conception to deployment and maintenance. Understanding SDLC is crucial for project managers, developers, and stakeholders to ensure successful software delivery.`),
     tags: ["SDLC", "Software Development", "Project Management", "DevOps", "Agile", "Software Engineering"],
@@ -5875,10 +5754,7 @@ System design is a critical skill for building scalable, reliable, and efficient
 
 Remember that system design is an iterative process. Start with a simple design, identify bottlenecks, and gradually add complexity as needed. The goal is to build systems that can evolve and scale with your business requirements.`,
     coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "/assets/Photo-2.webp"
-    },
+    author: defaultAuthor,
     date: "2025-09-27",
     readTime: calculateReadTime(`System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It's a crucial skill for software engineers working on large-scale applications and distributed systems.`),
     tags: ["System Design", "Architecture", "Scalability", "Microservices", "Distributed Systems", "Software Engineering"],
@@ -6277,10 +6153,7 @@ System architecture patterns provide essential guidance for building robust, sca
 
 Remember that architecture is not just about technology choices but also about organizational structure, team capabilities, and business requirements. The best architecture is one that serves your specific context and can evolve with your needs.`,
     coverImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "/assets/Photo-2.webp"
-    },
+    author: defaultAuthor,
     date: "2025-09-28",
     readTime: calculateReadTime(`System architecture patterns provide proven solutions to common design problems in software development. These patterns help create maintainable, scalable, and robust systems by establishing clear structural guidelines and best practices.`),
     tags: ["System Architecture", "Design Patterns", "Software Engineering", "Microservices", "Event-Driven", "Architecture"],
@@ -6710,10 +6583,7 @@ Database fundamentals are essential for building robust, scalable applications. 
 
 Remember that database design is an iterative process. Start with a solid foundation, monitor performance, and evolve your database strategy as your application grows. The key is to balance performance, consistency, and maintainability based on your specific use case.`,
     coverImage: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&h=600&q=80",
-    author: {
-      name: "Md Jahid Hasan",
-      avatar: "/assets/Photo-2.webp"
-    },
+    author: defaultAuthor,
     date: "2025-09-30",
     readTime: calculateReadTime(`Databases are the backbone of modern applications, providing efficient storage, retrieval, and management of data. Understanding database fundamentals is crucial for building scalable, reliable, and performant applications.`),
     tags: ["Database", "SQL", "NoSQL", "Data Management", "Database Design", "Performance"],
