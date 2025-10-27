@@ -31,6 +31,122 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "networking-fundamentals-2025",
+    title: "Mastering Computer Networks: Fundamentals and Beyond",
+    slug: "computer-networking-fundamentals",
+    excerpt: "Dive into the essential concepts of computer networking, from the OSI model to modern networking protocols and best practices.",
+    content: `# Mastering Computer Networks: Fundamentals and Beyond
+
+Computer networks form the backbone of our digital world, enabling communication between devices across the globe. In this comprehensive guide, we'll explore the fundamental concepts that power modern networking.
+
+## The OSI Model
+
+Understanding the Open Systems Interconnection (OSI) model is crucial for network professionals:
+
+1. **Physical Layer**: Deals with the physical connection between devices
+2. **Data Link Layer**: Handles node-to-node data transfer
+3. **Network Layer**: Manages device addressing and routing
+4. **Transport Layer**: Ensures reliable data transmission
+5. **Session Layer**: Manages connections between applications
+6. **Presentation Layer**: Translates data between applications
+7. **Application Layer**: Provides network services to applications
+
+## Key Networking Concepts
+
+### IP Addressing
+- IPv4 vs IPv6
+- Subnetting and CIDR notation
+- Public vs Private IP addresses
+- NAT and PAT
+
+### Network Topologies
+- Star
+- Mesh
+- Bus
+- Ring
+- Hybrid
+
+### Common Protocols
+- **TCP/IP**: Transmission Control Protocol/Internet Protocol
+- **HTTP/HTTPS**: Web communication
+- **FTP/SFTP**: File transfer
+- **SSH**: Secure remote access
+- **DNS**: Domain Name System
+
+## Network Security Essentials
+
+### Firewalls
+- Stateful vs Stateless
+- Next-Generation Firewalls
+- Configuration best practices
+
+### VPNs
+- Site-to-Site VPN
+- Remote Access VPN
+- Encryption protocols (IPsec, SSL/TLS)
+
+### Common Threats
+- DDoS attacks
+- Man-in-the-Middle (MitM)
+- Phishing
+- Malware
+
+## Wireless Networking
+- Wi-Fi standards (802.11a/b/g/n/ac/ax)
+- Security protocols (WEP, WPA, WPA2, WPA3)
+- Best practices for secure wireless networks
+
+## Cloud Networking
+- Virtual Private Cloud (VPC)
+- Content Delivery Networks (CDN)
+- Load Balancing
+
+## Emerging Trends
+- Software-Defined Networking (SDN)
+- Network Function Virtualization (NFV)
+- 5G and its impact on networking
+- IoT networking challenges
+
+## Troubleshooting Common Issues
+
+### Connectivity Problems
+- Ping and traceroute
+- DNS resolution issues
+- Firewall rules
+
+### Performance Issues
+- Bandwidth monitoring
+- Latency analysis
+- Packet loss detection
+
+## Best Practices
+1. Regular network monitoring
+2. Keep firmware and software updated
+3. Implement proper access controls
+4. Regular security audits
+5. Document network configurations
+
+## Tools of the Trade
+- Wireshark for packet analysis
+- Nmap for network scanning
+- iperf for bandwidth measurement
+- Nagios for network monitoring
+
+## Conclusion
+
+Mastering computer networks requires both theoretical knowledge and practical experience. Start with the fundamentals, practice in lab environments, and stay updated with the latest technologies and security practices.`, 
+    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: {
+      name: "Md Jahid Hasan",
+      avatar: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80"
+    },
+    date: "2025-10-27",
+    readTime: "8 min read",
+    tags: ["Networking", "IT Infrastructure", "Technology", "Security"],
+    category: "Technology",
+    featured: false
+  },
+  {
     id: "db-mgmt-2025",
     title: "Mastering Database Management: Best Practices and Strategies",
     slug: "database-management-best-practices",
