@@ -37,6 +37,114 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "rate-limiting-2025",
+    title: "Understanding Rate Limiting: Protecting Your APIs and Services",
+    slug: "understanding-rate-limiting",
+    excerpt: "Learn about rate limiting techniques, why they're essential for your applications, and how to implement them effectively to protect your APIs and services from abuse.",
+    content: `# Understanding Rate Limiting: Protecting Your APIs and Services
+
+Rate limiting is a crucial mechanism for controlling the rate of requests a client can make to a server. In this post, we'll explore the importance of rate limiting, different strategies, and how to implement them in your applications.
+
+## What is Rate Limiting?
+
+Rate limiting is a strategy for limiting network traffic to prevent servers from being overwhelmed by too many requests. It helps to:
+
+- Prevent resource starvation
+- Protect against DDoS attacks
+- Ensure fair usage among users
+- Control operational costs
+
+## Common Rate Limiting Algorithms
+
+### 1. Token Bucket
+- Fixed number of tokens in a bucket
+- Each request consumes a token
+- Tokens refill at a fixed rate
+- Good for bursty traffic patterns
+
+### 2. Leaky Bucket
+- Similar to token bucket but with a queue
+- Fixed output rate
+- Smooths out traffic bursts
+- Enforces a strict output rate
+
+### 3. Fixed Window Counter
+- Tracks requests within fixed time windows
+- Simple to implement
+- Can allow bursts at window boundaries
+
+### 4. Sliding Logs
+- Tracks timestamps of each request
+- More accurate but memory-intensive
+- Prevents bursts at window boundaries
+
+## Implementing Rate Limiting
+
+### Basic Implementation in Node.js
+
+\`\`\`javascript
+class RateLimiter {
+  constructor(limit, windowMs) {
+    this.limit = limit;
+    this.windowMs = windowMs;
+    this.requests = new Map();
+  }
+
+  isAllowed(ip) {
+    const now = Date.now();
+    const windowStart = now - this.windowMs;
+    
+    // Clean up old entries
+    for (const [ip, timestamps] of this.requests.entries()) {
+      const filtered = timestamps.filter(ts => ts > windowStart);
+      if (filtered.length === 0) {
+        this.requests.delete(ip);
+      } else {
+        this.requests.set(ip, filtered);
+      }
+    }
+
+    // Check rate limit
+    const userRequests = this.requests.get(ip) || [];
+    if (userRequests.length >= this.limit) {
+      return false;
+    }
+
+    // Add new request
+    userRequests.push(now);
+    this.requests.set(ip, userRequests);
+    return true;
+  }
+}
+\`\`\`
+
+## Best Practices
+
+1. **Set appropriate limits**: Balance between security and user experience
+2. **Use HTTP headers**: Include rate limit information in responses
+3. **Implement backoff strategies**: Guide clients on when to retry
+4. **Monitor and adjust**: Continuously monitor and adjust limits as needed
+5. **Consider different limits**: Apply different limits for different endpoints or user types
+
+## Common HTTP Headers
+
+- **X-RateLimit-Limit**: Maximum requests allowed in a time window
+- **X-RateLimit-Remaining**: Remaining requests in the current window
+- **X-RateLimit-Reset**: Time when the limit resets (in seconds)
+- **Retry-After**: Time to wait before making another request (when rate limited)
+
+## Conclusion
+
+Rate limiting is an essential component of modern web applications. By implementing appropriate rate limiting strategies, you can protect your services, ensure fair usage, and maintain system stability. Start with reasonable defaults, monitor your traffic patterns, and adjust your rate limiting strategy as your application grows.`,
+    coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: defaultAuthor,
+    date: "2025-10-31",
+    readTime: calculateReadTime(`Rate limiting is a crucial mechanism for controlling the rate of requests a client can make to a server. In this post, we'll explore the importance of rate limiting, different strategies, and how to implement them in your applications.`),
+    tags: ["API", "Security", "Performance", "Backend"],
+    category: "Web Development",
+    featured: false
+  },
+  {
     id: "low-level-vs-high-level-languages-2025",
     title: "Understanding Low-Level vs High-Level Programming Languages",
     slug: "low-level-vs-high-level-languages",
