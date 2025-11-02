@@ -75,7 +75,7 @@ The GNU Project's most significant achievement is the creation of the GNU Genera
 ## Conclusion
 
 The GNU Project continues to be a driving force in the free software movement, reminding us of the importance of user freedom in the digital age.`,
-    coverImage: "https://images.unsplash.com/photo-1551024601-bec78aea704c?auto=format&fit=crop&w=1200&h=600&q=80",
+    coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=600&q=80",
     author: defaultAuthor,
     date: "2025-11-02",
     readTime: calculateReadTime(`The GNU Project, launched in 1983 by Richard Stallman, is one of the most influential initiatives in the history of computing. It set the foundation for the free software movement and played a crucial role in the development of modern open-source software.`),
