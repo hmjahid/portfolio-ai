@@ -10,8 +10,20 @@ const blogConfigPath = join(__dirname, 'src', 'config', 'blog.ts');
 // Read the blog configuration file
 let content = readFileSync(blogConfigPath, 'utf8');
 
-// Remove H1 headings from content fields
-const updatedContent = content.replace(/content: `# [^\n]+\n\n/g, 'content: `');
+// Function to remove H1 headings from content
+const removeH1FromContent = (content) => {
+  // Handle both single and double quotes in template literals
+  return content
+    // Handle content: `# Heading
+    .replace(/content: \`# ([^\n]+)\n\n/g, 'content: `')
+    // Handle content: '# Heading
+    .replace(/content: '\n# ([^\n]+)\n\n/g, 'content: `')
+    // Handle content: "# Heading
+    .replace(/content: "\n# ([^\n]+)\n\n/g, 'content: `');
+};
+
+// Process the content
+const updatedContent = removeH1FromContent(content);
 
 // Write the updated content back to the file
 writeFileSync(blogConfigPath, updatedContent, 'utf8');

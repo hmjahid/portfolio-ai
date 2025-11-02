@@ -37,13 +37,58 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "gnu-2025",
+    title: "The GNU Project: Pioneering Free Software",
+    slug: "gnu-project-free-software",
+    excerpt: "Explore the history, philosophy, and impact of the GNU Project, the foundation of the free software movement and the modern open-source ecosystem.",
+    content: `The GNU Project, launched in 1983 by Richard Stallman, is one of the most influential initiatives in the history of computing. It set the foundation for the free software movement and played a crucial role in the development of modern open-source software.
+
+## What is the GNU Project?
+
+GNU (a recursive acronym for "GNU's Not Unix!") is an extensive collection of free software that can be used as an operating system or alongside other operating systems. The project was created with the goal of developing a complete Unix-like operating system that is entirely free software.
+
+## Core Principles
+
+1. **Freedom to Use**: The freedom to run the program as you wish, for any purpose.
+2. **Freedom to Study**: The freedom to study how the program works, and change it.
+3. **Freedom to Redistribute**: The freedom to redistribute copies.
+4. **Freedom to Distribute Modified Versions**: The freedom to distribute copies of your modified versions to others.
+
+## Key Components
+
+- **GNU Compiler Collection (GCC)**: A collection of compilers for various programming languages.
+- **GNU C Library (glibc)**: The core library for the GNU system.
+- **GNU Core Utilities**: Basic file, shell, and text manipulation utilities.
+- **Bash**: The GNU Bourne-Again SHell, now the standard command-line shell on most Linux distributions.
+
+## Impact and Legacy
+
+The GNU Project's most significant achievement is the creation of the GNU General Public License (GPL), which ensures that software remains free and open. This license has been adopted by thousands of projects, including the Linux kernel.
+
+## Getting Involved
+
+- Contribute to GNU projects
+- Use and promote free software
+- Support the Free Software Foundation (FSF)
+- Spread awareness about software freedom
+
+## Conclusion
+
+The GNU Project continues to be a driving force in the free software movement, reminding us of the importance of user freedom in the digital age.`,
+    coverImage: "https://images.unsplash.com/photo-1551024601-bec78aea704c?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: defaultAuthor,
+    date: "2025-11-02",
+    readTime: calculateReadTime(`The GNU Project, launched in 1983 by Richard Stallman, is one of the most influential initiatives in the history of computing. It set the foundation for the free software movement and played a crucial role in the development of modern open-source software.`),
+    tags: ["GNU", "Open Source", "Free Software", "Linux"],
+    category: "Open Source",
+    featured: false
+  },
+  {
     id: "rate-limiting-2025",
     title: "Understanding Rate Limiting: Protecting Your APIs and Services",
     slug: "understanding-rate-limiting",
     excerpt: "Learn about rate limiting techniques, why they're essential for your applications, and how to implement them effectively to protect your APIs and services from abuse.",
-    content: `# Understanding Rate Limiting: Protecting Your APIs and Services
-
-Rate limiting is a crucial mechanism for controlling the rate of requests a client can make to a server. In this post, we'll explore the importance of rate limiting, different strategies, and how to implement them in your applications.
+    content: `Rate limiting is a crucial mechanism for controlling the rate of requests a client can make to a server. In this post, we'll explore the importance of rate limiting, different strategies, and how to implement them in your applications.
 
 ## What is Rate Limiting?
 
@@ -149,9 +194,7 @@ Rate limiting is an essential component of modern web applications. By implement
     title: "Understanding Low-Level vs High-Level Programming Languages",
     slug: "low-level-vs-high-level-languages",
     excerpt: "Explore the key differences between low-level and high-level programming languages, their use cases, and when to choose one over the other.",
-    content: `# Understanding Low-Level vs High-Level Programming Languages
-
-Programming languages can be broadly categorized into low-level and high-level languages, each with its own strengths, weaknesses, and ideal use cases. In this post, we'll explore the key differences between these two categories and when to use each type.
+    content: `Programming languages can be broadly categorized into low-level and high-level languages, each with its own strengths, weaknesses, and ideal use cases. In this post, we'll explore the key differences between these two categories and when to use each type.
 
 ## What are Low-Level Languages?
 
@@ -235,9 +278,7 @@ Both low-level and high-level languages have their place in modern software deve
     title: "Digital Forensics: Uncovering the Digital Footprints",
     slug: "digital-forensics-essentials",
     excerpt: "Explore the fascinating world of digital forensics, from evidence collection to analysis, and learn how investigators uncover digital evidence.",
-    content: `# Digital Forensics: Uncovering the Digital Footprints
-
-Digital forensics is a crucial field in cybersecurity that focuses on identifying, preserving, analyzing, and presenting digital evidence. In today's digital age, understanding digital forensics is essential for cybersecurity professionals, law enforcement, and IT specialists.
+    content: `Digital forensics is a crucial field in cybersecurity that focuses on identifying, preserving, analyzing, and presenting digital evidence. In today's digital age, understanding digital forensics is essential for cybersecurity professionals, law enforcement, and IT specialists.
 
 ## The Digital Forensics Process
 
@@ -6900,9 +6941,7 @@ Remember that database design is an iterative process. Start with a solid founda
     title: "The Evolving Landscape of Programming Languages in 2025",
     slug: "programming-languages-2025",
     excerpt: "Explore the latest trends, emerging languages, and the future of programming in this comprehensive guide to the programming language landscape of 2025.",
-    content: `# The Evolving Landscape of Programming Languages in 2025
-
-As we navigate through 2025, the programming language ecosystem continues to evolve at a rapid pace. New languages emerge, existing ones evolve, and development paradigms shift to meet the demands of modern software development.
+    content: `As we navigate through 2025, the programming language ecosystem continues to evolve at a rapid pace. New languages emerge, existing ones evolve, and development paradigms shift to meet the demands of modern software development.
 
 ## Top Programming Languages of 2025
 
@@ -7060,9 +7099,7 @@ The programming language landscape in 2025 offers more choices than ever, each w
     title: "Introduction to FreeBSD: A Powerful and Secure Operating System",
     slug: "introduction-to-freebsd",
     excerpt: "Discover FreeBSD, a powerful, secure, and high-performance operating system. Learn about its features, advantages, and why it's a great choice for servers and workstations.",
-    content: `# Introduction to FreeBSD: A Powerful and Secure Operating System
-  
-  FreeBSD is a free and open-source Unix-like operating system known for its advanced networking, performance, and security features. In this post, we'll explore what makes FreeBSD special and why you might want to consider using it.
+    content: `FreeBSD is a free and open-source Unix-like operating system known for its advanced networking, performance, and security features. In this post, we'll explore what makes FreeBSD special and why you might want to consider using it.
   
   ## What is FreeBSD?
   
