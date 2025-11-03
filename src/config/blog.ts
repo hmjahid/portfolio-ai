@@ -37,6 +37,71 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "rbac-2025",
+    title: "Understanding Role-Based Access Control (RBAC)",
+    slug: "understanding-role-based-access-control",
+    excerpt: "A comprehensive guide to Role-Based Access Control (RBAC), its benefits, implementation, and best practices for securing your applications.",
+    content: `Role-Based Access Control (RBAC) is a method of regulating access to computer or network resources based on the roles of individual users within an organization. In this post, we'll explore the fundamentals of RBAC, its advantages, and how to implement it effectively.
+
+## What is RBAC?
+
+RBAC is a security paradigm that restricts system access to authorized users. It works by assigning permissions to specific roles within an organization, and then assigning these roles to users. This approach simplifies security management by grouping permissions under roles rather than assigning them individually to users.
+
+## Core Components of RBAC
+
+1. **Users**: Individuals who need access to the system
+2. **Roles**: Job functions with specific permissions
+3. **Permissions**: Access rights to perform operations
+4. **Sessions**: User's active connection to the system
+
+## Benefits of RBAC
+
+- **Improved Security**: Limits users to only what they need
+- **Simplified Administration**: Manage permissions through roles
+- **Compliance**: Easier to demonstrate compliance with regulations
+- **Reduced Risk**: Minimizes potential for accidental data exposure
+
+## Implementing RBAC
+
+### 1. Define Roles
+Identify the different roles within your organization (e.g., Admin, Editor, Viewer).
+
+### 2. Assign Permissions
+Determine what actions each role can perform (e.g., read, write, delete).
+
+### 3. Map Users to Roles
+Assign users to the appropriate roles based on their job functions.
+
+### 4. Implement Access Control
+Enforce these permissions in your application's code and database.
+
+## Best Practices
+
+- Follow the principle of least privilege
+- Regularly review and update roles and permissions
+- Implement role hierarchies where appropriate
+- Audit access logs regularly
+- Consider using existing RBAC frameworks when possible
+
+## Common Challenges
+
+- Role explosion (too many roles)
+- Role management complexity
+- Handling temporary access
+- Cross-departmental access needs
+
+## Conclusion
+
+RBAC is a powerful security model that, when implemented correctly, can significantly enhance your application's security posture. By understanding and applying RBAC principles, you can create more secure and maintainable access control systems.`, 
+    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: defaultAuthor,
+    date: "2025-11-03",
+    readTime: calculateReadTime(`Role-Based Access Control (RBAC) is a security paradigm that restricts system access to authorized users. It works by assigning permissions to specific roles within an organization, and then assigning these roles to users.`),
+    tags: ["Security", "RBAC", "Access Control", "Authentication", "Authorization"],
+    category: "Security",
+    featured: false
+  },
+  {
     id: "gnu-2025",
     title: "The GNU Project: Pioneering Free Software",
     slug: "gnu-project-free-software",
@@ -2712,16 +2777,16 @@ Choose the right tool for your specific layout needs. Often, combining both prov
 Basic navigation commands:
 
 \`\`\`bash
-# List files and directories
+
 ls -la
 
-# Change directory
+
 cd /path/to/directory
 
-# Print working directory
+
 pwd
 
-# Create directory
+
 mkdir new_directory
 \`\`\`
 
@@ -2732,16 +2797,16 @@ mkdir new_directory
 Essential file manipulation:
 
 \`\`\`bash
-# Copy files
+
 cp source.txt destination.txt
 
-# Move/rename files
+
 mv old_name.txt new_name.txt
 
-# Remove files
+
 rm filename.txt
 
-# Remove directory recursively
+
 rm -rf directory_name
 \`\`\`
 
@@ -2752,16 +2817,16 @@ rm -rf directory_name
 Monitor system resources:
 
 \`\`\`bash
-# Check disk usage
+
 df -h
 
-# Check memory usage
+
 free -h
 
-# Check running processes
+
 ps aux
 
-# Monitor system resources
+
 top
 \`\`\`
 
@@ -2842,19 +2907,19 @@ Mastering these basic commands will make you more efficient in Linux environment
 Advanced Package Tool commands:
 
 \`\`\`bash
-# Update package list
+
 sudo apt update
 
-# Upgrade installed packages
+
 sudo apt upgrade
 
-# Install new package
+
 sudo apt install package_name
 
-# Remove package
+
 sudo apt remove package_name
 
-# Search for packages
+
 apt search keyword
 \`\`\`
 
@@ -2865,19 +2930,19 @@ apt search keyword
 Yellowdog Updater Modified:
 
 \`\`\`bash
-# Update system
+
 sudo yum update
 
-# Install package
+
 sudo yum install package_name
 
-# Remove package
+
 sudo yum remove package_name
 
-# Search packages
+
 yum search keyword
 
-# Modern alternative (dnf)
+
 sudo dnf install package_name
 \`\`\`
 
@@ -2970,16 +3035,16 @@ Understanding package managers is essential for efficient Linux system administr
 Creating and managing users:
 
 \`\`\`bash
-# Add new user
+
 sudo useradd -m username
 
-# Set password
+
 sudo passwd username
 
-# Add user to group
+
 sudo usermod -aG groupname username
 
-# Delete user
+
 sudo userdel -r username
 \`\`\`
 
@@ -2990,16 +3055,16 @@ sudo userdel -r username
 Understanding permission system:
 
 \`\`\`bash
-# Check file permissions
+
 ls -la filename
 
-# Change file permissions
+
 chmod 755 filename
 
-# Change file owner
+
 sudo chown user:group filename
 
-# Change directory permissions recursively
+
 chmod -R 755 directory/
 \`\`\`
 
@@ -3191,17 +3256,17 @@ Before you start coding:
 Essential repository setup:
 
 \`\`\`bash
-# Initialize git repository
+
 git init
 
-# Create README.md
+
 echo "# Project Name" > README.md
 
-# Add license file
-# Choose from MIT, Apache, GPL, etc.
 
-# Create .gitignore
-# Add appropriate ignore patterns
+
+
+
+
 \`\`\`
 
 ![Repository Setup](https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1200&h=600&q=80)
@@ -3878,8 +3943,7 @@ LLMs are used in chatbots, virtual assistants, content creation, programming hel
 
 ## The Future of LLMs
 
-As LLMs continue to evolve, they will become even more capable, efficient, and widely adopted across industries. Understanding their strengths and limitations is key to leveraging their power responsibly.
-`,
+As LLMs continue to evolve, they will become even more capable, efficient, and widely adopted across industries. Understanding their strengths and limitations is key to leveraging their power responsibly.`,
     coverImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&h=600&q=80",
     author: defaultAuthor,
     date: "2025-07-01",
@@ -6369,7 +6433,7 @@ ADRs document important architectural decisions, their context, and consequences
 
 ### ADR Template
 \`\`\`markdown
-# ADR-001: Use Microservices Architecture
+
 
 ## Status
 Accepted
@@ -6792,10 +6856,10 @@ GRANT read_only TO app_user;
 
 ### 3. Backup and Recovery
 \`\`\`bash
-# PostgreSQL backup
+
 pg_dump -h localhost -U username -d database_name > backup.sql
 
-# Point-in-time recovery
+
 pg_basebackup -h localhost -U username -D /backup/location
 \`\`\`
 
