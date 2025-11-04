@@ -37,6 +37,42 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "cloud-computing-2025",
+    title: "The Evolution and Impact of Cloud Computing",
+    slug: "evolution-impact-cloud-computing",
+    excerpt: "Exploring the transformative power of cloud computing, its evolution, and how it's reshaping modern businesses and technology landscapes.",
+    content: `Cloud computing has revolutionized how businesses and individuals access and manage computing resources. From startups to enterprises, the cloud has become an integral part of modern technology infrastructure.
+
+## What is Cloud Computing?
+
+Cloud computing delivers computing services—including servers, storage, databases, networking, software, and analytics—over the internet ("the cloud"). This enables faster innovation, flexible resources, and economies of scale.
+
+## Key Benefits of Cloud Computing
+
+- **Cost Efficiency**: Pay only for the resources you use
+- **Scalability**: Easily scale up or down based on demand
+- **Accessibility**: Access data and applications from anywhere
+- **Disaster Recovery**: Built-in backup and recovery solutions
+- **Automatic Updates**: Always have the latest features and security
+
+## Cloud Service Models
+
+1. **IaaS (Infrastructure as a Service)**: Basic building blocks like virtual machines and storage
+2. **PaaS (Platform as a Service)**: Development and deployment tools on cloud infrastructure
+3. **SaaS (Software as a Service)**: Web-based applications accessible via browsers
+
+## The Future of Cloud Computing
+
+As we look ahead, emerging technologies like edge computing, serverless architectures, and AI/ML integration are shaping the next generation of cloud services. The cloud will continue to be the backbone of digital transformation across industries.`,
+    coverImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: defaultAuthor,
+    date: "2025-11-04",
+    readTime: calculateReadTime("Exploring the transformative power of cloud computing, its evolution, and how it's reshaping modern businesses and technology landscapes."),
+    tags: ["Cloud Computing", "Technology", "Digital Transformation"],
+    category: "Cloud Computing",
+    featured: false
+  },
+  {
     id: "rbac-2025",
     title: "Understanding Role-Based Access Control (RBAC)",
     slug: "understanding-role-based-access-control",
