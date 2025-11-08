@@ -37,6 +37,105 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "serverless-architecture-patterns",
+    title: "Serverless Architecture Patterns: Building Scalable Cloud Applications",
+    slug: "serverless-architecture-patterns",
+    excerpt: "Explore the most effective serverless architecture patterns for building scalable, cost-effective cloud applications with real-world examples and best practices.",
+    content: `# Serverless Architecture Patterns: Building Scalable Cloud Applications
+
+Serverless computing has revolutionized how we build and deploy applications in the cloud. By abstracting away server management, it allows developers to focus on writing code while the cloud provider handles scaling, patching, and maintenance. In this post, we'll explore the most effective serverless architecture patterns that can help you build robust, scalable applications.
+
+## 1. Function as a Service (FaaS)
+
+The most fundamental pattern in serverless computing, FaaS allows you to execute individual functions in response to events. Key characteristics include:
+
+- Event-driven execution
+- Automatic scaling
+- Pay-per-execution pricing
+- Stateless by design
+
+## 2. API Gateway + Lambda
+
+A common pattern for building RESTful APIs:
+
+- API Gateway handles HTTP requests
+- Lambda functions process business logic
+- DynamoDB or other databases for persistence
+- Authentication and authorization at the API Gateway level
+
+## 3. Event-Driven Processing
+
+Perfect for asynchronous workflows:
+
+- S3 events triggering Lambda functions
+- SQS/SNS for message queuing
+- Step Functions for complex workflows
+- EventBridge for event bus patterns
+
+## 4. Serverless Microservices
+
+Decomposing applications into small, focused services:
+
+- Independent deployment and scaling
+- Polyglot persistence
+- Service discovery through API Gateway
+- Distributed tracing for monitoring
+
+## 5. Real-time File Processing
+
+Ideal for media processing and data transformation:
+
+- File uploads to S3 trigger processing
+- Multiple Lambda functions for different transformations
+- Results stored back in S3 or a database
+- SNS notifications for completion
+
+## Best Practices
+
+1. **Cold Start Mitigation**
+   - Keep functions warm with scheduled pings
+   - Optimize package size
+   - Use provisioned concurrency for critical paths
+
+2. **Security**
+   - Principle of least privilege for IAM roles
+   - Environment variables for secrets
+   - API Gateway request validation
+   - WAF for web application firewall
+
+3. **Monitoring and Observability**
+   - CloudWatch Logs and Metrics
+   - X-Ray for distributed tracing
+   - Custom metrics for business KPIs
+   - Alerting on errors and throttles
+
+## When to Go Serverless
+
+### Ideal Use Cases
+- Event-driven applications
+- APIs with variable traffic
+- Batch processing jobs
+- Real-time file processing
+- Scheduled tasks
+
+### Less Suitable For
+- Long-running processes
+- Stateful applications
+- High-performance computing
+- Applications with predictable, consistent traffic
+
+## Conclusion
+
+Serverless architecture offers unprecedented scalability and cost-efficiency for modern applications. By understanding and applying these patterns, you can build robust, maintainable systems that scale automatically with your user base. Remember to consider your specific use case and requirements when choosing which patterns to implement.`, 
+    coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: defaultAuthor,
+    date: "2025-11-08",
+    readTime: calculateReadTime(`Serverless Architecture Patterns: Building Scalable Cloud Applications. Explore the most effective serverless architecture patterns for building scalable, cost-effective cloud applications with real-world examples and best practices.`),
+    tags: ["Serverless", "Cloud Computing", "AWS", "Architecture", "Microservices"],
+    category: "Cloud Computing",
+    featured: false
+  },
+  {
     id: "load-balancing-essentials",
     title: "Load Balancing: The Backbone of Scalable Web Applications",
     slug: "load-balancing-essentials",
