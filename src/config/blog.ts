@@ -37,6 +37,79 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "documentation-as-code-2025",
+    title: "Documentation as Code: Streamlining Your Development Workflow",
+    slug: "documentation-as-code",
+    excerpt: "Learn how implementing Documentation as Code can improve your development workflow, enhance collaboration, and keep your documentation in sync with your codebase.",
+    content: `In today's fast-paced development environments, keeping documentation up-to-date is a common challenge. Documentation as Code (DaC) is an approach that applies software development best practices to documentation, treating it with the same importance as your source code.
+
+## What is Documentation as Code?
+
+Documentation as Code is the practice of writing and maintaining documentation using the same tools and workflows as software development. This means storing documentation in version control, using plain text formats, and automating the documentation build and deployment process.
+
+### Key Benefits
+
+- **Version Control Integration**: Track changes and collaborate effectively
+- **Automated Builds**: Generate documentation automatically with CI/CD pipelines
+- **Code Snippet Integration**: Include and test code examples directly from your codebase
+- **Review Process**: Use pull requests for documentation reviews
+- **Single Source of Truth**: Keep documentation and code in sync
+
+## Getting Started with Documentation as Code
+
+### 1. Choose Your Tools
+
+Popular tools for Documentation as Code include:
+
+- **Markdown**: Simple, readable syntax for writing documentation
+- **MkDocs**: Fast, static site generator for project documentation
+- **Sphinx**: Powerful documentation generator with extensive features
+- **Docusaurus**: Optimized for open source documentation
+- **GitBook**: Modern documentation platform with collaboration features
+
+### 2. Set Up Your Documentation Repository
+
+1. Create a dedicated \`docs\` directory in your project
+2. Initialize version control (if not already in use)
+3. Add a basic documentation structure
+4. Set up a CI/CD pipeline for automatic builds
+
+### 3. Write Effective Documentation
+
+- Keep it concise and focused
+- Use consistent formatting
+- Include code examples with proper syntax highlighting
+- Add diagrams and visuals when necessary
+- Keep documentation close to the code it describes
+
+## Best Practices
+
+- **Automate Everything**: Use CI/CD to build and deploy documentation
+- **Code Review for Docs**: Include documentation changes in code reviews
+- **Keep it Simple**: Focus on clarity and maintainability
+- **Version Your Documentation**: Match documentation versions with software releases
+- **Test Your Examples**: Ensure code snippets work as expected
+
+## Real-World Implementation
+
+Many successful open-source projects use Documentation as Code:
+
+- **Kubernetes**: Comprehensive documentation built with Hugo
+- **React**: Documentation powered by Docusaurus
+- **Python**: Sphinx-based documentation with Read the Docs
+
+## Conclusion
+
+Adopting Documentation as Code can significantly improve your development workflow by making documentation more maintainable, version-controlled, and integrated with your development process. Start small, automate what you can, and gradually improve your documentation practices over time.`,
+    coverImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: defaultAuthor,
+    date: "2025-11-11",
+    readTime: calculateReadTime(`Documentation as Code (DaC) is an approach that applies software development best practices to documentation, treating it with the same importance as your source code.`),
+    tags: ["Documentation", "Development", "Best Practices", "DevOps"],
+    category: "Software Development",
+    featured: false
+  },
+  {
     id: "zero-trust-architecture-2025",
     title: "Implementing Zero Trust Architecture: A Comprehensive Guide",
     slug: "zero-trust-architecture",
