@@ -37,6 +37,128 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "ebpf-network-observability-2025",
+    title: "eBPF for Network Observability: Deep Dive into Modern Monitoring",
+    slug: "ebpf-network-observability",
+    excerpt: "Explore how eBPF is revolutionizing network observability by providing deep visibility into Linux systems with minimal overhead. Learn about its architecture, benefits, and real-world applications.",
+    content: `eBPF (extended Berkeley Packet Filter) has emerged as a game-changing technology for network observability, offering unprecedented visibility into Linux systems with minimal performance overhead. In this post, we'll explore how eBPF is transforming the way we monitor and understand network behavior.
+
+## What is eBPF?
+
+eBPF is a revolutionary technology that allows sandboxed programs to run in the Linux kernel without changing kernel source code or loading kernel modules. It provides a safe way to extend the capabilities of the kernel for various use cases, with network observability being one of its most powerful applications.
+
+## Key Benefits for Network Observability
+
+1. **Low Overhead**: eBPF programs are highly efficient, running in the kernel space with minimal performance impact.
+2. **Rich Context**: Access to kernel-level data structures provides deep visibility into network operations.
+3. **Real-time Monitoring**: Enables real-time analysis of network traffic and system calls.
+4. **Security**: Runs in a restricted virtual machine with verifier guarantees for safety.
+5. **No Kernel Modifications**: No need to recompile the kernel or load kernel modules.
+
+## Core Components
+
+- **eBPF Programs**: Small programs that run in the kernel when specific events occur.
+- **eBPF Maps**: Data structures used for sharing data between the kernel and user space.
+- **eBPF Helpers**: Helper functions that eBPF programs can call to perform common tasks.
+- **BPF Type Format (BTF)**: Provides type information for better debugging and observability.
+
+## Common Use Cases
+
+1. **Network Performance Monitoring**
+   - Latency analysis
+   - Packet drops and errors
+   - Connection tracking
+   - Bandwidth usage
+
+2. **Security Monitoring**
+   - Intrusion detection
+   - Anomaly detection
+   - Access control
+
+3. **Application Performance Monitoring**
+   - System call tracing
+   - Function call tracing
+   - Resource utilization
+
+## Getting Started with eBPF for Network Observability
+
+### Prerequisites
+- Linux kernel 4.9 or later (5.x+ recommended)
+- BPF compiler collection (BCC) or BPF CO-RE (Compile Once - Run Everywhere)
+- Root or CAP_BPF privileges
+
+### Simple Example: Monitoring Network Connections
+
+\`\`\`c
+#include <linux/bpf.h>
+#include <bpf/bpf_helpers.h>
+
+struct event {
+    __u32 saddr, daddr;
+    __u16 sport, dport;
+};
+
+struct {
+    __uint(type, BPF_MAP_TYPE_PERF_EVENT_ARRAY);
+    __uint(key_size, sizeof(int));
+    __uint(value_size, sizeof(__u32));
+} events SEC(".maps");
+
+SEC("tracepoint/syscalls/sys_enter_connect")
+int trace_connect(struct trace_event_raw_sys_enter *ctx) {
+    struct event ev = {};
+    // Extract and process connection data
+    bpf_perf_event_output(ctx, &events, BPF_F_CURRENT_CPU, &ev, sizeof(ev));
+    return 0;
+}
+\`\`\`
+
+## Popular eBPF Tools for Network Observability
+
+1. **Cilium** - eBPF-based networking, security, and observability
+2. **Pixie** - Instant Kubernetes-native observability
+3. **Falco** - Cloud-native runtime security
+4. **BCC** - Tools for BPF-based Linux performance analysis
+5. **bpftrace** - High-level tracing language for Linux
+
+## Best Practices
+
+1. **Start Simple**: Begin with pre-built tools before writing custom eBPF programs.
+2. **Monitor Performance**: Be mindful of the performance impact of your eBPF programs.
+3. **Use CO-RE**: BPF CO-RE (Compile Once - Run Everywhere) for better compatibility.
+4. **Leverage Community Tools**: Many open-source projects provide ready-to-use eBPF-based observability tools.
+5. **Security First**: Ensure proper permissions and capabilities for eBPF programs.
+
+## Challenges and Considerations
+
+- **Kernel Version Requirements**: Some features require newer kernel versions.
+- **Learning Curve**: Steeper learning curve compared to traditional monitoring tools.
+- **Debugging**: Debugging eBPF programs can be challenging.
+- **Security Implications**: Requires careful consideration of security boundaries.
+
+## The Future of eBPF in Network Observability
+
+eBPF is rapidly evolving, with new features and capabilities being added regularly. As more organizations adopt cloud-native technologies, the importance of eBPF for observability will only continue to grow. Future developments may include:
+
+- Enhanced security features
+- Better integration with cloud platforms
+- More advanced observability capabilities
+- Improved developer experience
+
+## Conclusion
+
+eBPF has fundamentally changed the landscape of network observability, offering powerful capabilities that were previously difficult or impossible to achieve. By understanding and leveraging eBPF, organizations can gain deeper insights into their systems while maintaining high performance and security.
+
+Whether you're a network engineer, SRE, or developer, adding eBPF to your observability toolkit can provide valuable insights and help you build more reliable, performant systems.`,    
+    coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: defaultAuthor,
+    date: "2025-11-12",
+    readTime: calculateReadTime("eBPF (extended Berkeley Packet Filter) has emerged as a game-changing technology for network observability, offering unprecedented visibility into Linux systems with minimal performance overhead. In this post, we'll explore how eBPF is transforming the way we monitor and understand network behavior."),
+    tags: ["eBPF", "Networking", "Observability", "Linux", "Performance"],
+    category: "Networking",
+    featured: false
+  },
+  {
     id: "documentation-as-code-2025",
     title: "Documentation as Code: Streamlining Your Development Workflow",
     slug: "documentation-as-code",
