@@ -37,6 +37,63 @@ const yesterday = (() => {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "react2shell-vulnerability-2025",
+    title: "Critical Security Alert: React2Shell Vulnerability in Next.js",
+    slug: "react2shell-vulnerability-nextjs",
+    excerpt: "A critical Remote Code Execution (RCE) vulnerability dubbed 'React2Shell' has been discovered in Next.js, affecting versions using React Server Components. Learn how to protect your application.",
+    content: `## Critical Security Alert: React2Shell Vulnerability in Next.js
+
+A critical Remote Code Execution (RCE) vulnerability, dubbed "React2Shell" (CVE-2025-66478), has been identified in Next.js applications using React Server Components (RSC). This vulnerability allows unauthenticated attackers to execute arbitrary code on the server, posing a severe risk to affected applications.
+
+## What is React2Shell?
+
+React2Shell originates from an unsafe deserialization issue in the React Server Components "Flight" protocol. Attackers can exploit this by sending a specially crafted HTTP request to a Next.js application, triggering the execution of malicious code.
+
+### Key Details:
+- **CVE ID**: CVE-2025-66478 (Next.js), CVE-2025-55182 (React)
+- **Severity**: Critical (CVSS 10.0)
+- **Impact**: Unauthenticated Remote Code Execution (RCE)
+- **Disclosure Date**: December 3, 2025
+
+## Affected Versions
+
+The vulnerability impacts Next.js applications using the App Router and running the following versions:
+- **Next.js 15.x**: Versions prior to 15.0.5, 15.1.9, 15.2.6, 15.3.6, 15.4.8, 15.5.7
+- **Next.js 16.x**: Versions prior to 16.0.7
+- **Canary Releases**: 14.3.0-canary.77 and later
+
+## Mitigation and Fixes
+
+The Next.js team has released patches to address this vulnerability. It is imperative that you upgrade your Next.js version immediately to a secure release.
+
+### Recommended Actions:
+
+1.  **Upgrade Next.js**: Update your project to the latest patched version (e.g., 15.5.7+, 16.0.7+).
+    \`\`\`bash
+    npm install next@latest react@latest react-dom@latest
+    \`\`\`
+
+2.  **Verify Upgrade**: Ensure that your \`package.json\` and \`package-lock.json\` reflect the secure versions.
+
+3.  **Monitor Logs**: Check your server logs for any suspicious activity or anomalous requests that might indicate an attempted exploit.
+
+## Conclusion
+
+Security is a continuous process. The React2Shell vulnerability serves as a reminder of the importance of keeping dependencies up-to-date and monitoring for security advisories. Immediate action is required to secure your Next.js applications against this critical threat.
+
+## Resources
+
+- [Next.js Security Advisory](https://nextjs.org/blog/security-advisory-react2shell)
+- [CVE-2025-66478 Details](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-66478)`,
+    coverImage: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&h=600&q=80",
+    author: defaultAuthor,
+    date: "2025-12-10",
+    readTime: calculateReadTime("A critical Remote Code Execution (RCE) vulnerability dubbed 'React2Shell' has been discovered in Next.js, affecting versions using React Server Components. Learn how to protect your application."),
+    tags: ["Security", "Next.js", "Vulnerability", "React", "RCE"],
+    category: "Security",
+    featured: false
+  },
+  {
     id: "multi-cloud-dr-2025",
     title: "Multi-Cloud Disaster Recovery Strategies: Ensuring Business Continuity",
     slug: "multi-cloud-disaster-recovery-strategies",
