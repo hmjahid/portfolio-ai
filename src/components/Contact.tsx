@@ -37,35 +37,35 @@ const Contact = () => {
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
-    
+
     if (!formData.firstName.trim()) {
       newErrors.firstName = 'First name is required';
     }
-    
+
     if (!formData.lastName.trim()) {
       newErrors.lastName = 'Last name is required';
     }
-    
+
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Invalid email format';
     }
-    
+
     if (formData.phone && !/^\+?[\d\s-]{10,}$/.test(formData.phone)) {
       newErrors.phone = 'Invalid phone number format';
     }
-    
+
     if (!formData.subject.trim()) {
       newErrors.subject = 'Subject is required';
     }
-    
+
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
     } else if (formData.message.length < 10) {
       newErrors.message = 'Message must be at least 10 characters';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -73,7 +73,7 @@ const Contact = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -82,13 +82,13 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('https://formsubmit.co/ajax/mdjahidhasan919@gmail.com', {
         method: 'POST',
@@ -156,7 +156,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">
             Contact Me
           </h2>
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -171,18 +171,18 @@ const Contact = () => {
             Ready to bring your ideas to life? Let's discuss how we can work together to create something amazing.
           </motion.p>
         </motion.div>
-        
+
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 mt-12 md:max-w-[80%] md:mx-auto lg:max-w-none">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="flex flex-col h-full"
           >
             <div className="relative w-full h-48 mb-8 overflow-hidden rounded-xl shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="Contact Us" 
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Contact Us"
                 loading="lazy"
                 width={600}
                 height={400}
@@ -196,7 +196,7 @@ const Contact = () => {
               <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
                 Looking for a reliable developer for your next project? I'm here to help you achieve your goals with professional expertise and dedicated support.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex flex-col sm:flex-row items-start bg-gray-50 dark:bg-gray-700 p-4 md:p-6 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
                   <div className="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-sm mb-2 sm:mb-0 sm:mr-4">
@@ -204,15 +204,15 @@ const Contact = () => {
                   </div>
                   <div className="break-words break-all">
                     <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Phone</p>
-                    <a 
-                      href="tel:+8801771749213" 
+                    <a
+                      href="tel:+8801960576371"
                       className="font-medium text-gray-800 dark:text-gray-200 hover:text-portfolio-blue transition-colors"
                     >
-                      +88 01771-749213
+                      +88 01960-576371
                     </a>
-                    <a 
-                      href="https://wa.me/8801771749213" 
-                      target="_blank" 
+                    <a
+                      href="https://wa.me/8801960576371"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-gray-500 dark:text-gray-400 mt-1 flex items-center hover:text-portfolio-blue transition-colors"
                     >
@@ -221,31 +221,31 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col sm:flex-row items-start bg-gray-50 dark:bg-gray-700 p-4 md:p-6 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
                   <div className="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-sm mb-2 sm:mb-0 sm:mr-4">
                     <Mail className="h-5 w-5 text-portfolio-blue" />
                   </div>
                   <div className="break-words break-all">
                     <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Email</p>
-                    <a 
-                      href="mailto:mdjahidhasan919@gmail.com" 
+                    <a
+                      href="mailto:mdjahidhasan919@gmail.com"
                       className="font-medium text-gray-800 dark:text-gray-200 hover:text-portfolio-blue transition-colors"
                     >
                       mdjahidhasan919@gmail.com
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col sm:flex-row items-start bg-gray-50 dark:bg-gray-700 p-4 md:p-6 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
                   <div className="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-sm mb-2 sm:mb-0 sm:mr-4">
                     <Linkedin className="h-5 w-5 text-portfolio-blue" />
                   </div>
                   <div className="break-words break-all">
                     <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">LinkedIn</p>
-                    <a 
-                      href="https://www.linkedin.com/in/hmjahid/" 
-                      target="_blank" 
+                    <a
+                      href="https://www.linkedin.com/in/hmjahid/"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="font-medium text-gray-800 dark:text-gray-200 hover:text-portfolio-blue transition-colors"
                     >
@@ -256,8 +256,8 @@ const Contact = () => {
               </div>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -280,7 +280,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">
                 Drop a Line
               </h3>
-              <motion.div 
+              <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -322,12 +322,12 @@ const Contact = () => {
                       <Label htmlFor="firstName" className={cn("text-gray-700 dark:text-gray-300 font-medium", errors.firstName && "text-red-500")}>
                         First Name
                       </Label>
-                      <Input 
+                      <Input
                         id="firstName"
-                        name="firstName" 
+                        name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        placeholder="John" 
+                        placeholder="John"
                         className={cn(
                           "border-gray-300 dark:border-gray-600 focus:border-portfolio-blue focus:ring-portfolio-blue/20 dark:bg-gray-700 dark:text-gray-200",
                           errors.firstName && "border-red-500 focus-visible:ring-red-500"
@@ -337,17 +337,17 @@ const Contact = () => {
                         <p className="text-sm text-red-500">{errors.firstName}</p>
                       )}
                     </div>
-                    
+
                     <div className="space-y-2">
                       <Label htmlFor="lastName" className={cn("text-gray-700 dark:text-gray-300 font-medium", errors.lastName && "text-red-500")}>
                         Last Name
                       </Label>
-                      <Input 
+                      <Input
                         id="lastName"
-                        name="lastName" 
+                        name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        placeholder="Doe" 
+                        placeholder="Doe"
                         className={cn(
                           "border-gray-300 dark:border-gray-600 focus:border-portfolio-blue focus:ring-portfolio-blue/20 dark:bg-gray-700 dark:text-gray-200",
                           errors.lastName && "border-red-500 focus-visible:ring-red-500"
@@ -364,13 +364,13 @@ const Contact = () => {
                       <Label htmlFor="email" className={cn("text-gray-700 dark:text-gray-300 font-medium", errors.email && "text-red-500")}>
                         Email Address
                       </Label>
-                      <Input 
+                      <Input
                         id="email"
-                        name="email" 
-                        type="email" 
+                        name="email"
+                        type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="john@example.com" 
+                        placeholder="john@example.com"
                         className={cn(
                           "border-gray-300 dark:border-gray-600 focus:border-portfolio-blue focus:ring-portfolio-blue/20 dark:bg-gray-700 dark:text-gray-200",
                           errors.email && "border-red-500 focus-visible:ring-red-500"
@@ -380,18 +380,18 @@ const Contact = () => {
                         <p className="text-sm text-red-500">{errors.email}</p>
                       )}
                     </div>
-                    
+
                     <div className="space-y-2">
                       <Label htmlFor="phone" className={cn("text-gray-700 dark:text-gray-300 font-medium", errors.phone && "text-red-500")}>
                         Phone Number
                       </Label>
-                      <Input 
+                      <Input
                         id="phone"
-                        name="phone" 
-                        type="tel" 
+                        name="phone"
+                        type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+1 (555) 000-0000" 
+                        placeholder="+1 (555) 000-0000"
                         className={cn(
                           "border-gray-300 dark:border-gray-600 focus:border-portfolio-blue focus:ring-portfolio-blue/20 dark:bg-gray-700 dark:text-gray-200",
                           errors.phone && "border-red-500 focus-visible:ring-red-500"
@@ -402,17 +402,17 @@ const Contact = () => {
                       )}
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="subject" className={cn("text-gray-700 dark:text-gray-300 font-medium", errors.subject && "text-red-500")}>
                       Subject
                     </Label>
-                    <Input 
+                    <Input
                       id="subject"
-                      name="subject" 
+                      name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="Project Inquiry" 
+                      placeholder="Project Inquiry"
                       className={cn(
                         "border-gray-300 dark:border-gray-600 focus:border-portfolio-blue focus:ring-portfolio-blue/20 dark:bg-gray-700 dark:text-gray-200",
                         errors.subject && "border-red-500 focus-visible:ring-red-500"
@@ -422,17 +422,17 @@ const Contact = () => {
                       <p className="text-sm text-red-500">{errors.subject}</p>
                     )}
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="message" className={cn("text-gray-700 dark:text-gray-300 font-medium", errors.message && "text-red-500")}>
                       Message
                     </Label>
-                    <Textarea 
+                    <Textarea
                       id="message"
-                      name="message" 
+                      name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Hi, I'm interested in working with you on a project..." 
+                      placeholder="Hi, I'm interested in working with you on a project..."
                       className={cn(
                         "min-h-[150px] border-gray-300 dark:border-gray-600 focus:border-portfolio-blue focus:ring-portfolio-blue/20 dark:bg-gray-700 dark:text-gray-200",
                         errors.message && "border-red-500 focus-visible:ring-red-500"
@@ -450,9 +450,9 @@ const Contact = () => {
                       </p>
                     </div>
                   </div>
-                  
-                  <Button 
-                    type="submit" 
+
+                  <Button
+                    type="submit"
                     className="w-full bg-gradient-to-r from-portfolio-blue to-blue-600 hover:opacity-90 text-white font-medium py-2.5"
                     disabled={isSubmitting}
                   >
