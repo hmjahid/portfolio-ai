@@ -49,7 +49,7 @@ const Footer = () => {
             <h3 className="text-3xl font-bold mb-2 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">
               Md Jahid Hasan
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-lg">Crafting Seamless Web Experiences with a DevOps Mindset</p>
+            <p className="text-gray-600 dark:text-gray-300 text-lg">WordPress Infrastructure & Performance Engineer</p>
           </motion.div>
           
           <motion.div 
@@ -118,7 +118,7 @@ const Footer = () => {
           className="border-t border-gray-200 dark:border-gray-700 mt-6 md:mt-8 pt-4 md:pt-6 text-left text-gray-500 dark:text-gray-400"
         >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
-            <div className="flex space-x-6 order-1 md:order-2 pt-2 md:pt-0">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 order-1 md:order-2 pt-2 md:pt-0">
               <motion.a 
                 href="#about" 
                 className="hover:text-portfolio-blue transition-colors font-medium"
@@ -130,6 +130,45 @@ const Footer = () => {
                 }}
               >
                 About
+              </motion.a>
+              <motion.a 
+                href="/services" 
+                className="hover:text-portfolio-blue transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  sessionStorage.setItem('scrollToTop', 'true');
+                  navigate('/services');
+                }}
+              >
+                Services
+              </motion.a>
+              <motion.a 
+                href="/pricing" 
+                className="hover:text-portfolio-blue transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  sessionStorage.setItem('scrollToTop', 'true');
+                  navigate('/pricing');
+                }}
+              >
+                Pricing
+              </motion.a>
+              <motion.a 
+                href="/case-studies" 
+                className="hover:text-portfolio-blue transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  sessionStorage.setItem('scrollToTop', 'true');
+                  navigate('/case-studies');
+                }}
+              >
+                Case Studies
               </motion.a>
               <motion.a 
                 href="#projects" 
@@ -156,13 +195,14 @@ const Footer = () => {
                 Blog
               </motion.a>
               <motion.a 
-                href="#contact" 
+                href="/contact" 
                 className="hover:text-portfolio-blue transition-colors font-medium"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateToSection('contact');
+                  sessionStorage.setItem('scrollToTop', 'true');
+                  navigate('/contact');
                 }}
               >
                 Contact
@@ -170,6 +210,34 @@ const Footer = () => {
             </div>
             <p className="text-base order-2 md:order-1">
               &copy; {currentYear} <a href={currentUrl} className="hover:text-portfolio-blue transition-colors font-medium">Md Jahid Hasan</a>. All rights reserved.
+              <span className="mx-2">|</span>
+              <motion.a 
+                href="/terms" 
+                className="hover:text-portfolio-blue transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  sessionStorage.setItem('scrollToTop', 'true');
+                  navigate('/terms');
+                }}
+              >
+                Terms
+              </motion.a>
+              <span className="mx-2">|</span>
+              <motion.a 
+                href="/privacy" 
+                className="hover:text-portfolio-blue transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  sessionStorage.setItem('scrollToTop', 'true');
+                  navigate('/privacy');
+                }}
+              >
+                Privacy
+              </motion.a>
             </p>
           </div>
         </motion.div>

@@ -31,9 +31,9 @@ const BlogPost = () => {
 
   useEffect(() => {
     if (post) {
-      document.title = `${post.title} | Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast`;
+      document.title = `${post.title} | Blog | Md Jahid Hasan - WordPress Performance Specialist | DevOps Engineer`;
       const metaDescription = document.querySelector('meta[name="description"]');
-      const content = post.excerpt || 'Read this blog post by Md Jahid Hasan - Web & WordPress Developer and DevOps Enthusiast.';
+      const content = post.excerpt || 'Read this blog post by Md Jahid Hasan - WordPress Performance Specialist and DevOps Engineer.';
       if (metaDescription) {
         metaDescription.setAttribute('content', content);
       } else {

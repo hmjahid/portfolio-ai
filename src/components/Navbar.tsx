@@ -18,6 +18,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isBlogActive = location.pathname.startsWith('/blog');
+  const isPageActive = (path: string) => location.pathname === path;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,15 +37,17 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
+  const pagePaths = ['/services', '/pricing', '/case-studies', '/contact', '/book'];
+
   useEffect(() => {
     // Reset active section when on 404 page
-    if (location.pathname !== '/') {
+    if (location.pathname !== '/' && !pagePaths.includes(location.pathname)) {
       setActiveSection('');
       return;
     }
 
     // Set home as active section on initial load
-    if (window.scrollY === 0) {
+    if (window.scrollY === 0 && location.pathname === '/') {
       setActiveSection('home');
     }
 
@@ -55,18 +58,24 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 50);
 
       const sections = ['home', 'about', 'skills', 'projects', 'blog', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
+      const currentPage = pagePaths.find(path => location.pathname === path);
+      if (currentPage) {
+        setActiveSection(currentPage);
+      } else {
+        const current = sections.find(section => {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top <= 100 && rect.bottom >= 100;
+          }
+          return false;
+        });
+        if (current) setActiveSection(current);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Run once on mount/path change
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
@@ -75,8 +84,11 @@ const Navbar = () => {
     { label: 'About', href: 'about' },
     { label: 'Skills', href: 'skills' },
     { label: 'Projects', href: 'projects' },
+    { label: 'Services', href: '/services', isPageLink: true },
+    { label: 'Pricing', href: '/pricing', isPageLink: true },
+    { label: 'Case Studies', href: '/case-studies', isPageLink: true },
     { label: 'Blog', href: 'blog', isBlogLink: true },
-    { label: 'Contact', href: 'contact' },
+    { label: 'Contact', href: '/contact', isPageLink: true },
   ];
 
   const handleNavigation = (sectionId: string) => {
@@ -85,10 +97,10 @@ const Navbar = () => {
       navigateToBlog();
     } else if (sectionId.startsWith('/')) {
       navigate(sectionId);
+      sessionStorage.setItem('scrollToTop', 'true');
     } else {
       navigateToSection(sectionId);
     }
-    // Force show scroll-to-top button after navigation
     setShowScrollTop(true);
   };
 
@@ -120,13 +132,14 @@ const Navbar = () => {
             </motion.a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden nav:flex items-center space-x-8">
               {navItems.map((item) => {
-                const isActive = activeSection === item.href;
+                const isActive = item.isPageLink ? isPageActive(item.href) : activeSection === item.href;
+                const href = item.isPageLink ? item.href : item.isBlogLink ? '/blog' : `#${item.href}`;
                 return (
                   <motion.a
                     key={item.href}
-                    href={item.isBlogLink ? item.href : `#${item.href}`}
+                    href={href}
                     className={`text-sm font-medium transition-colors relative ${
                       isActive
                         ? 'text-portfolio-blue' 
@@ -136,7 +149,7 @@ const Navbar = () => {
                     whileTap={{ y: 0 }}
                     onClick={(e) => {
                       e.preventDefault();
-                      handleNavigation(item.href);
+                      handleNavigation(item.isPageLink ? item.href : item.href);
                     }}
                   >
                     {item.label}
@@ -162,13 +175,13 @@ const Navbar = () => {
                   asChild
                 >
                   <a 
-                    href="#contact" 
+                    href="/book" 
                     onClick={(e) => {
                       e.preventDefault();
-                      handleNavigation('contact');
+                      handleNavigation('/book');
                     }}
                   >
-                    Hire Me
+                    Book Consultation
                   </a>
                 </Button>
               </motion.div>
@@ -178,7 +191,7 @@ const Navbar = () => {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <motion.button 
-                  className="lg:hidden absolute right-4 top-4 p-2.5 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="nav:hidden absolute right-4 top-4 p-2.5 rounded-full bg-gradient-to-r from-portfolio-blue to-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95, y: 0 }}
                 >
@@ -234,13 +247,13 @@ const Navbar = () => {
                       asChild
                     >
                       <a 
-                        href="#contact" 
+                        href="/book" 
                         onClick={(e) => {
                           e.preventDefault();
-                          handleNavigation('contact');
+                          handleNavigation('/book');
                         }}
                       >
-                        Hire Me
+                        Book Consultation
                       </a>
                     </Button>
                   </motion.div>

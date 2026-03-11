@@ -183,7 +183,7 @@ const Hero = () => {
               </div>
               <div className="h-px w-12 bg-gradient-to-r from-portfolio-blue to-blue-600"></div>
               <span className="text-xl font-medium text-gray-600 dark:text-gray-300">
-                Web & WordPress Developer | DevOps Enthusiast
+                WordPress Infrastructure & Performance Engineer
               </span>
             </motion.div>
 
@@ -193,8 +193,8 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="text-gray-600 dark:text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg"
             >
-              Passionate about creating user-friendly websites using WordPress and modern web technologies. 
-              Experienced in theme development, plugin customization, and implementing DevOps practices.
+              I build fast, secure WordPress websites optimized for performance and scalability. 
+              With DevOps + server expertise, I deliver sites that load quickly, stay secure, and scale with your business.
             </motion.p>
             
             <motion.div 

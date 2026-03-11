@@ -3,6 +3,9 @@ export const RESUME_FILE = {
   label: 'Download CV'
 } as const;
 
+// Replace with your actual Calendly scheduling link
+export const CALENDLY_URL = 'https://calendly.com/mdjahidhasan/15min' as const;
+
 export const SOCIAL_LINKS = {
   github: 'https://github.com/hmjahid/',
   linkedin: 'https://www.linkedin.com/in/hmjahid/',

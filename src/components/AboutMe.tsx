@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Code, Briefcase, Award, Star, Users } from "lucide-react";
 import { RESUME_FILE } from '@/config/constants';
-import { images } from '@/config/images';
 
 const AboutMe = () => {
   const handleContactClick = () => {
@@ -77,12 +76,12 @@ const AboutMe = () => {
                 className="relative w-full h-[600px] flex items-start justify-center p-0 -mt-8"
               >
                 <img
-                  src={images.profile.about}
-                  alt="Md Jahid Hasan"
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                  alt="Code on screen, laptop workspace"
                   loading="lazy"
                   width={600}
                   height={800}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center"
                 />
                 <motion.div
                   animate={{ 
@@ -187,9 +186,10 @@ const AboutMe = () => {
             >
               <h3 className="text-xl font-semibold text-portfolio-blue mb-4">Professional Background</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                I am a passionate Web & WordPress Developer with 2 years of hands-on experience in WordPress and 3+ years in web development. 
-                My expertise lies in building high-quality WordPress sites using Elementor and Divi, with a strong focus on Linux-based environments. 
-                I specialize in creating robust, scalable, and user-friendly web applications that meet modern standards and client requirements.
+                I build high-performance WordPress websites optimized for speed, security, and scalability. 
+                With 2 years of hands-on WordPress experience and 3+ years in web development, I combine DevOps and server knowledge 
+                to deliver sites that load fast, stay secure, and scale with your business. I specialize in Elementor and Divi, 
+                with a strong focus on Linux-based environments and performance-first architecture.
               </p>
             </motion.div>
 

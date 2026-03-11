@@ -1,0 +1,55 @@
+import { images } from '@/config/images';
+
+export const CASE_STUDIES = [
+  {
+    id: 'shelly-obrien',
+    title: 'Hypnotherapy with Shelly O\'Brien',
+    client: 'Shelly O\'Brien - Hypnotherapist',
+    category: 'WordPress • Divi',
+    excerpt: 'A personalized hypnotherapy service website helping clients recognize their potential and achieve their goals.',
+    image: images.projects.wordpress.shellyObrien,
+    results: [
+      { label: 'Load Time', value: '< 2s' },
+      { label: 'Mobile Score', value: '98/100' },
+      { label: 'Pages', value: '8' },
+    ],
+    challenge: 'Creating a calming, professional design that builds trust while ensuring responsive functionality across all devices.',
+    solution: 'Built with Divi Theme and Divi Builder, featuring custom layouts, service pages, testimonials, and integrated contact forms.',
+    technologies: ['WordPress', 'Divi Theme', 'Contact Form 7', 'Yoast SEO'],
+    link: 'https://shellyobrienhypnotherapy.com/',
+  },
+  {
+    id: 'server-monitoring',
+    title: 'Server Monitoring Stack',
+    client: 'DevOps Infrastructure',
+    category: 'Docker • DevOps',
+    excerpt: 'A comprehensive server monitoring system with Prometheus, Grafana, and alerting for full observability.',
+    image: images.projects.devops.serverMonitoring,
+    results: [
+      { label: 'Uptime', value: '99.9%' },
+      { label: 'Alert Response', value: '< 5min' },
+      { label: 'Metrics', value: '50+' },
+    ],
+    challenge: 'Setting up persistent storage, configuring Alertmanager, and integrating multiple monitoring tools.',
+    solution: 'Deployed a Docker-based stack with Node Exporter, Prometheus, Grafana, Redis, Alertmanager, and cAdvisor.',
+    technologies: ['Docker', 'Prometheus', 'Grafana', 'Nagios', 'Uptime Kuma'],
+    link: 'https://github.com/hmjahid/devops-projects/tree/main/docker/server-monitoring-stack',
+  },
+  {
+    id: 'multi-tier-app',
+    title: 'Multi-Tier Web Application',
+    client: 'Scalable Architecture',
+    category: 'Docker • PHP',
+    excerpt: 'Six-tier web application deployment demonstrating containerization and DevOps best practices.',
+    image: images.projects.devops.multiTierApp,
+    results: [
+      { label: 'Tiers', value: '6' },
+      { label: 'Containers', value: '8+' },
+      { label: 'Deploy Time', value: '< 10min' },
+    ],
+    challenge: 'Designing a scalable architecture with proper separation of concerns and load balancing.',
+    solution: 'Implemented containerized microservices with Nginx, PHP-FPM, MySQL, Redis, and proper networking.',
+    technologies: ['Docker', 'Docker Compose', 'Nginx', 'PHP', 'MySQL', 'Redis'],
+    link: 'https://github.com/hmjahid/devops-projects/tree/main/docker/6-tier-php-app',
+  },
+] as const;

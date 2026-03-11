@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { Mail, ArrowRight, Sparkles, Download } from "lucide-react";
-import { RESUME_FILE } from '@/config/constants';
+import { Mail, Sparkles, Download, Calendar } from "lucide-react";
+import { RESUME_FILE, CALENDLY_URL } from '@/config/constants';
 import { images } from '@/config/images';
 import { navigateToSection } from '@/utils/navigation';
 
@@ -95,9 +95,9 @@ const CallToAction = () => {
               Transform Your Digital Vision
             </h2>
             <p className="text-lg sm:text-xl text-white/90 dark:text-white/95 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-2xl mx-auto">
-              With 3+ years of expertise in WordPress and Web development, 
-              I specialize in crafting high-performance websites and applications. From custom WordPress themes 
-              to complex Web solutions, I bring your digital vision to life with precision and innovation.
+              I build fast, secure WordPress websites optimized for performance and scalability. 
+              With DevOps + server expertise, I deliver sites that load quickly, rank better, and convert 
+              — from custom themes to enterprise solutions. Far more valuable than just “WordPress developer.”
             </p>
           </motion.div>
 
@@ -115,14 +115,30 @@ const CallToAction = () => {
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-white to-blue-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl blur opacity-30 dark:opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <Button 
-                onClick={handleContactClick}
                 className="relative bg-white hover:bg-blue-50 dark:bg-gray-900 dark:hover:bg-gray-800 text-portfolio-blue dark:text-white border border-gray-200 dark:border-gray-600 px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 text-base sm:text-lg md:text-xl shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl sm:rounded-2xl font-semibold"
+                asChild
               >
-                <Mail className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
-                Hire Me
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <Calendar className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
+                  Book Free Consultation
+                </a>
               </Button>
             </motion.div>
-            
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -5 }} 
+              whileTap={{ scale: 0.95 }}
+              className="relative group"
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-white to-blue-100 dark:from-portfolio-blue/50 dark:to-blue-600/50 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <Button 
+                onClick={handleContactClick}
+                variant="outline"
+                className="relative border-2 border-white dark:border-portfolio-blue text-white dark:text-portfolio-blue hover:bg-white hover:text-portfolio-blue dark:hover:bg-portfolio-blue dark:hover:text-white transition-all duration-300 px-6 sm:px-8 md:px-12 py-4 sm:py-6 md:py-8 text-base sm:text-lg md:text-xl shadow-md hover:shadow-lg rounded-xl sm:rounded-2xl bg-transparent backdrop-blur-sm"
+              >
+                <Mail className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
+                Contact Me
+              </Button>
+            </motion.div>
             <motion.div 
               whileHover={{ scale: 1.05, y: -5 }} 
               whileTap={{ scale: 0.95 }}

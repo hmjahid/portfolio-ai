@@ -20,6 +20,7 @@ export default {
 		extend: {
 			screens: {
 				'xsm': '320px',
+				'nav': '1367px', // Header menu toggles to hamburger below this
 			},
 			colors: {
 				border: 'hsl(var(--border))',

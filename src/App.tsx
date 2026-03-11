@@ -23,6 +23,13 @@ import Testimonials from './components/Testimonials';
 import Blog from '@/pages/Blog';
 import BlogPost from '@/pages/BlogPost';
 import BlogTag from '@/pages/BlogTag';
+import Services from '@/pages/Services';
+import Pricing from '@/pages/Pricing';
+import CaseStudies from '@/pages/CaseStudies';
+import ContactPage from '@/pages/Contact';
+import Book from '@/pages/Book';
+import Terms from '@/pages/Terms';
+import Privacy from '@/pages/Privacy';
 
 const queryClient = new QueryClient();
 
@@ -58,6 +65,13 @@ function App() {
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/tag/:tag" element={<BlogTag />} />
                   <Route path="/blog/:slug" element={<BlogPost />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/pricing" element={<Pricing />} />
+                  <Route path="/case-studies" element={<CaseStudies />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/book" element={<Book />} />
+                  <Route path="/terms" element={<Terms />} />
+                  <Route path="/privacy" element={<Privacy />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />

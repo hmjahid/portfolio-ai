@@ -46,7 +46,7 @@ const BlogSection = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl"
         >
-          Explore our featured articles and insights on DevOps, WordPress development, and more.
+          Explore our featured articles and insights on DevOps, high-performance WordPress, and more.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">

@@ -50,7 +50,7 @@ const BlogTag = () => {
 
   useEffect(() => {
     if (tag && tag !== 'all') {
-      document.title = `Posts tagged with ${originalTag} | Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast`;
+      document.title = `Posts tagged with ${originalTag} | Blog | Md Jahid Hasan - WordPress Performance Specialist | DevOps Engineer`;
       const metaDescription = document.querySelector('meta[name="description"]');
       const content = `Browse blog posts tagged with ${originalTag} on Md Jahid Hasan's blog. Discover insights on DevOps, WordPress, Linux, and web development.`;
       if (metaDescription) {
@@ -62,9 +62,9 @@ const BlogTag = () => {
         document.head.appendChild(meta);
       }
     } else {
-      document.title = 'Blog | Md Jahid Hasan - Web & WordPress Developer | DevOps Enthusiast';
+      document.title = 'Blog | Md Jahid Hasan - WordPress Performance Specialist | DevOps Engineer';
       const metaDescription = document.querySelector('meta[name="description"]');
-      const content = 'Read the latest articles on DevOps, WordPress, Linux, and web development by Md Jahid Hasan - Web & WordPress Developer and DevOps Enthusiast.';
+      const content = 'Read the latest articles on DevOps, WordPress, Linux, and web development by Md Jahid Hasan - WordPress Performance Specialist and DevOps Engineer.';
       if (metaDescription) {
         metaDescription.setAttribute('content', content);
       } else {
