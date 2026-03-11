@@ -2,7 +2,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'wordpress-development',
     title: 'WordPress Website Development',
-    description: 'Your core service. Custom WordPress websites built with Elementor, Divi, or WPBakery — business sites, landing pages, blogs, and corporate websites.',
+    description: 'Get a professional website that converts. Build your business presence with a custom WordPress site — from landing pages to full corporate websites that rank and sell.',
     icon: 'Globe',
     priceRange: '$1,000 – $3,500',
     features: [
@@ -17,7 +17,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'speed-optimization',
     title: 'WordPress Speed Optimization',
-    description: 'High-demand service. Optimize page load speed, Core Web Vitals, and database performance for better SEO and conversions.',
+    description: 'Slow site killing your rankings? Fix it. Boost your page speed, nail Core Web Vitals, and watch your SEO scores and conversion rates improve.',
     icon: 'Zap',
     priceRange: '$250 – $750',
     features: [
@@ -32,7 +32,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'server-migration',
     title: 'WordPress Server Migration',
-    description: 'Leverage server and DevOps knowledge. Seamless migration with zero downtime — shared hosting to VPS, cPanel to cloud.',
+    description: 'Ready to upgrade your hosting? Move your site with zero downtime — from shared hosting to VPS, cPanel to cloud. No stress, no data loss.',
     icon: 'Server',
     priceRange: '$200 – $600',
     features: [
@@ -45,7 +45,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'security-hardening',
     title: 'WordPress Security Hardening',
-    description: 'Protect your site from threats. Malware removal, firewall setup, login protection, and comprehensive security audits.',
+    description: 'Don\'t leave your site vulnerable. Get malware removal, firewall setup, login protection, and a full security audit — so you can sleep at night.',
     icon: 'Shield',
     priceRange: '$200 – $550',
     features: [
@@ -59,7 +59,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'maintenance-support',
     title: 'WordPress Maintenance & Support',
-    description: 'Profitable long-term. DevOps-grade monitoring with Prometheus, Grafana, and Uptime Kuma for peace of mind.',
+    description: 'Stop worrying about updates and downtime. Get DevOps-grade monitoring, backups, and updates — so your site stays fast, secure, and always online.',
     icon: 'Settings',
     priceRange: '$150 – $350 / month',
     features: [
@@ -74,7 +74,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'devops-setup',
     title: 'DevOps Setup for WordPress',
-    description: 'Very few WordPress developers offer this. Dockerized deployments, CI/CD pipelines, and staging environments.',
+    description: 'Scale with confidence. Dockerized deployments, CI/CD pipelines, and staging environments — so you can deploy changes without risk.',
     icon: 'Layers',
     priceRange: '$800 – $2,500',
     features: [
@@ -88,7 +88,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'performance-infrastructure',
     title: 'WordPress Performance Infrastructure',
-    description: 'High-end service for serious businesses. CDN architecture, Redis cache, load balancing, and server optimization.',
+    description: 'Ready for enterprise-level performance? CDN architecture, Redis cache, load balancing — built for sites that handle real traffic.',
     icon: 'Cpu',
     priceRange: '$1,500 – $4,500',
     features: [
@@ -102,7 +102,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'bug-fixing',
     title: 'WordPress Bug Fixing',
-    description: 'Very popular on freelance platforms. Quick resolution of plugin conflicts, broken layouts, PHP errors, and theme issues.',
+    description: 'Site broken? Fix it fast. Plugin conflicts, broken layouts, PHP errors, theme issues — resolved quickly so you can get back to business.',
     icon: 'Wrench',
     priceRange: '$75 – $250',
     features: [
@@ -116,7 +116,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'website-audit',
     title: 'WordPress Website Audit',
-    description: 'Great for generating leads. Comprehensive review of performance, SEO, security, and UX with actionable recommendations.',
+    description: 'Not sure what\'s wrong with your site? Get a clear picture. Performance review, SEO issues, security risks, and UX improvements — with actionable next steps.',
     icon: 'Search',
     priceRange: '$75 – $225',
     features: [
@@ -130,7 +130,7 @@ export const WORDPRESS_SERVICES = [
   {
     id: 'hosting-setup',
     title: 'Website Hosting Setup',
-    description: 'Many clients struggle with hosting. cPanel, hPanel, shared hosting, or VPS — domain + SSL, backups, and monitoring.',
+    description: 'Hosting confusion holding you back? Get cPanel, hPanel, shared, or VPS — with domain, SSL, backups, and monitoring done right.',
     icon: 'Cloud',
     priceRange: '$200 – $600',
     features: [
@@ -148,7 +148,7 @@ export const SERVICE_PACKAGES = [
     name: 'Starter Website',
     price: '$1,500',
     period: 'one-time',
-    description: 'Perfect for small businesses and startups',
+    description: 'Launch your online presence. Everything you need to get started.',
     features: [
       'WordPress website',
       'Speed optimization',
@@ -161,7 +161,7 @@ export const SERVICE_PACKAGES = [
     name: 'Business Website',
     price: '$2,800',
     period: 'one-time',
-    description: 'For growing businesses that need more',
+    description: 'Scale your business with a site that performs and converts.',
     features: [
       'Custom design',
       'Performance optimization',
@@ -175,7 +175,7 @@ export const SERVICE_PACKAGES = [
     name: 'Premium Infrastructure Website',
     price: '$4,500+',
     period: 'project-based',
-    description: 'Complete infrastructure for serious businesses',
+    description: 'Enterprise-grade setup for sites that can\'t afford to slow down.',
     features: [
       'WordPress development',
       'Server optimization',

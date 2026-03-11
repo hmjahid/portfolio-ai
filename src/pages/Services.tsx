@@ -90,10 +90,10 @@ const Services = () => {
               WordPress Infrastructure & Performance Engineer
             </span>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-portfolio-blue to-blue-600 bg-clip-text text-transparent">
-              Your Unique Advantage
+              Your Site Built Right
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              Most WordPress developers only know themes and plugins. But I know WordPress, Linux, DevOps, monitoring, and cloud infrastructure — positioning me for $2,000–$5,000 projects.
+              Get a site that's fast, secure, and built to scale. WordPress expertise backed by DevOps and infrastructure — so you get more than just a developer who knows themes.
             </p>
           </motion.div>
         </div>
@@ -181,7 +181,7 @@ const Services = () => {
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Best Service Packages</h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Instead of selling individual services, bundle them for better value and higher project sizes.
+              Save more when you bundle. Get everything you need in one package — from launch to full infrastructure.
             </p>
           </motion.div>
           <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
@@ -246,10 +246,10 @@ const Services = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Need a high-performance WordPress website?
+              Ready to get your site built right?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Book a free 15-minute consultation to discuss your project and get a custom quote.
+              Book a free 15-minute call. We'll discuss your project and get you a custom quote — no pressure.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
